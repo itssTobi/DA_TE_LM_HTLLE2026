@@ -1,103 +1,52 @@
 \newpage
 ## Dokumentation
 
-### Projektfortschritt 18. März bis 06. Juli 2025
+Im Abschnitt Projektdokumentation können Sie mit Hilfe eines Projektmanagementwerkzeuges Ihrer Wahl die Projektumsetzung dokumentieren. (Also ein fortlaufender Projektfortschrittsbericht)
+
+Normalerweise werden Sie die UserStories in mehrere SubTasks zerreissen und dann in einem agilen verfahen (Scrum, Kanban, was auch immer ihnen am geeignetsten erscheint) abarbeiten. Dazu können Sie natürlich eine Softwahre Ihrer Wahl verwenden.
+
+Am Ende sollten sie aber für jeden Projektabschnitt (Das ist die Zeit zwischen den Meilensteinen) eine Dokumentation entstehen aus der ersichtlich ist
+
+* Berichtszeitraum
+* Durchgeführte Arbeiten im Berichtszeitraum sowie die Aufwände der einzelnen Personen
+* Projektstatus (Im Plan, Schwierigkeiten, Risiko)
+* Gesamtstatus sowie die möglicherweise notwendigen Maßnahmen für
+    - Leistungsziele
+    - Terminziele
+    - Kostenziele
+    - Teamarbeit
+* Nächste Schritte und notwendige Entscheidungen
+
+Im folgenden Abschnitt ist ein solcher Fortschritt illustriert. 
+
+### Projektfortschritt 01. Juni bis 05. August 2020
 
 #### Gesamtstatus
 
 * Das Projekt befindet sich derzeit im Plan. 
-* Proxmox-Server wurde aufgesetzt und VPN-Verbindung eingerichtet
+* Es wurden alle Teile bestellt und die Hardware dimensioniert
+* Bei den Lieferungen hat es leichte Verspätungen gegeben
 
 
 | Dimension           | Status            |  Maßnahmen             |
 |:--------------------|:------------------|:-----------------------|
 | Leistungsziele      | In Ordnung        | keine                  |
-| Terminziele         | Kein Verzug | keine|
-| Kostenziele | keine Budgetüberschreitung | keine |
+| Terminziele         | Verzug durch Lieferprobleme | Bei restlichen Teilen Expresslieferung|
+| Kostenziele | Teile im Budget, Batterie sehr teuer | Günstigere Teile bei der restlichen Hardware verwenden |
 | Teamarbeit | optimal | keine |
 
-:Projektstatus am 2025-07-06
+:Projektstatus am 2020-08-05
 
 #### Notwendige Entscheidungen
 
-* keine
+* Die Zusammenbauphase muss etwas verschoben werden und startet nun um 14 Tage später. Das hat keinen Einfluss auf den Endtermin.
 
 #### Nächste Schritte
 
-* GNS3 installieren
+* Abklären ob die Expressbestellungen im Budget sind
+* Start dder Implementierungsphase
 
-### Projektfortschritt  07. Juli bis 20. Juli 2025
-
-#### Gesamtstatus
-
-* Das Projekt befindet sich derzeit im Plan. 
-* Proxmox-Server wurde aufgesetzt, VPN-Verbindung eingerichtet, GNS3 Server Installiert
+: Projektstatus Stand 05. August 2020
 
 
-| Dimension           | Status            |  Maßnahmen             |
-|:--------------------|:------------------|:-----------------------|
-| Leistungsziele      | In Ordnung        | keine                  |
-| Terminziele         | Kein Verzug | keine|
-| Kostenziele | keine Budgetüberschreitung | keine |
-| Teamarbeit | optimal | keine |
 
-:Projektstatus am 2025-07-20
-
-#### Notwendige Entscheidungen
-
-* keine
-
-#### Nächste Schritte
-
-* Windows Client und Windows Server Vm intsallieren
-
-* ### Projektfortschritt  21. Juli bis 17. August 2025
-
-#### Gesamtstatus
-
-* Das Projekt befindet sich derzeit im Plan. 
-* Proxmox-Server wurde aufgesetzt, VPN-Verbindung eingerichtet, GNS3 Server Installiert, Windows Client und Windows Server Vm installier und Client ist in der Domaine 
-
-
-| Dimension           | Status            |  Maßnahmen             |
-|:--------------------|:------------------|:-----------------------|
-| Leistungsziele      | In Ordnung        | keine                  |
-| Terminziele         | Kein Verzug | keine|
-| Kostenziele | keine Budgetüberschreitung | keine |
-| Teamarbeit | optimal | keine |
-
-:Projektstatus am 2025-07-17
-
-#### Notwendige Entscheidungen
-
-* keine
-
-#### Nächste Schritte
-
-* IDS - Systeme vergleichen
-* Wazuh aufsetzen
-
-* ### Projektfortschritt  17. August bis 07. September 2025
-
-#### Gesamtstatus
-
-* Das Projekt befindet sich derzeit im Plan. 
-* Proxmox-Server wurde aufgesetzt, VPN-Verbindung eingerichtet, GNS3 Server Installiert, Windows Client und Windows Server Vm installier und Client ist in der Domaine, Wazuh läuft auf einer extrigern Ubuntu Vm und Wazuh agents läuft auf Client und DC.
-
-
-| Dimension           | Status            |  Maßnahmen             |
-|:--------------------|:------------------|:-----------------------|
-| Leistungsziele      | In Ordnung        | keine                  |
-| Terminziele         | Kein Verzug | keine|
-| Kostenziele | keine Budgetüberschreitung | keine |
-| Teamarbeit | optimal | keine |
-
-:Projektstatus am 2025-07-17
-
-#### Notwendige Entscheidungen
-
-* keine
-
-#### Nächste Schritte
-
-* 
