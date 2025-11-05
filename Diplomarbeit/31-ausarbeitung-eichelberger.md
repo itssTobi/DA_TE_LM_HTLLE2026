@@ -1,7 +1,7 @@
 # Teilaufgabe Schüler Eichelbeger
 \textauthor{Tobias Eichelbeger}
 
-## Theorieteil
+## Theorie
 
 * Was ist ein Server.
 * Was ist Debian.
@@ -35,7 +35,7 @@ https://docs.securityonion.net/en/2.4/index.html
 
 
 
-## Praxisteil
+## Praktische Arbeit
 Aufsetzen des Proxmox-Servers
 Für die Umsetzung dieses Projekts ist es zunächst wichtig einen Server mit ausreichend Resourcen zu verfügung zu haben. In diesem FAll wurde ein HP ProLiant G7 mit 805 Gigabyte Speicher und 70 Gigabyte Arbeitsspeicher verwendet, zudem ist der Server mit 4 CPU's ausgestattet. Zunächst wurde Debian 12 auf einem PC gedownloadet und mithilfe von belenaEtcher, eine Software mit dem man USB-Sticks bootfähig bekommt, ein USB-Stick mit der ISO-Datei bootfähig und somit einsatzbereit für die installation am server gemacht. Die installation ist wiefolgt zu erledigen: USB-Stick in einen freien USB-Slot am server einstecken und den Server starten, nach dem hochfahren des Servers auswählen das er vom eingesteckten USB-Stick strarten soll. NAch ein paar Sekunden sollte ein Startbildschirm der Installationanleitung von Debian 12 erscheinen. Zunächst kann man der Installationanleitung folgen, wichtig ist hier nur ein root Passwort zu setzen, da es sonst später bei der Installation noch Proxmox zu komplikationen führen kann. Bei der Softwareauswahl ist zu beachten das nur das Standart System angehackt ist. Sollte es nach der Vollendung des Vorgangs und einem Restart einen Fehler geben, liegt dies an dem falsch zugewissenen GRUB Loader, dieser sollte auf einer bootfähigen Festplatte liegen. Hier ist vom Vorteil wenn man nach dem Restart in den Rescue Mode geht der einem Vorgeschlagen wird in mit Hilfe deer Anleitung die richtige Festplatte auswhählt. Wenn alles funktioniert kommt man in die Shell des Debian Systems wo die nächsten Schritte folgen. 
 Nun ist es wichtig eine statische IP-Adresse zu setzen ansonsten kommt es zu einem Fehler bei Proxmox. Hierzu mit nano /etc/network/interfaces in das netzwerkinterfaceeinstellungen gehen und bei dem jewiligen Netzwerkadapter das dhcp löschen und an stelle dieser static hinschreiben. Darunter kommt das die IP-Adresse, Netzwerkmaske und das Gateway, wichtig ist das die richtigen Addressen in dem Netzwerk wo sich der Server befindet stimmen ansonsten gibt es schwierigkeiten mit der Interetverbindung. Mit strg + O speichern und danach mit strg + X verlassen. Als nächsten Schritt mit nano /etc/hosts in die datei hineingehen und in der ersten Zeile localhost zu localhost.localdomain localhost ändern und in der zweiten Zeile die IP-Adresse zu der richtigen IP-Adresse ändern, die vorhin in der netzwerkinterfaceeinstellungen datei vergeben wurde. Wenn diese einstellungen geändert wurden wieder speichern und verlassen. Anschließend kann man man mit dem Befehl hostname --ip-adress überprüfen ob alles funktioniert hat, wenn hier die richtrige IP-Adresse kommt hat alles funktioniert. Als nächstes mit ifdown + Netzwerkadaptername und ifup + Netzwerkadaptername, die Netzwerkkarteneinstellungen neu laden und anschließend mit ip a überprüfen ob die richtige ip-Adresse ausgegeben wird. 
