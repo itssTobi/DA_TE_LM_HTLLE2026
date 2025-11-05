@@ -17,13 +17,11 @@ da-author:
   ki-tools:
   - name: ChatGPT3.5
     zweck: Informationsbeschaffung
-  - name: Midjourney
-    zweck: Künstlerische Illustration
 
 - vorname: Lukas 
   nachname: Macuha
   klasse: 5BHWIN
-  thema: Entwicklung eines Prototypen
+  thema: Red Team
   ki-tools:
   - name: Github Copilot
     zweck: Boilerplate codegenerierung, Codedokumentation
