@@ -4,10 +4,14 @@
 ## Theorie
 
 ### Was ist ein Server
+Ein Server ist ein Gerät beziehungsweise ein Computer der Ressourcen, Daten oder auch Dienste für Clients bereitstellt. 
+https://www.paessler.com/de/it-explained/server
 
 ### Was ist Debian
+https://www.ionos.at/digitalguide/server/knowhow/debian-die-universelle-system-software/
 
-### Was ist Proxmox
+### Was ist 
+https://www.ionos.at/digitalguide/server/knowhow/proxmox/
 
 ### Was ist ein Domaincontroller
 In dieser Dokumentation wird erklärt was ein Domaincontroller, kurz DC ist und welche Aufgaben beziehungsweise Funktionen er hat. Auch die Vorteile sowie Nachteile werden behandelt. https://specopssoft.com/de/blog/domaenen-controller/
@@ -15,6 +19,13 @@ In dieser Dokumentation wird erklärt was ein Domaincontroller, kurz DC ist und 
 
 ### Was VPN
 Virtuelles Privates Netzwerk oder auch VPN genannt.
+https://de.ryte.com/wiki/VPN/
+#### Tailscale
+https://tailscale.com/kb/1151/what-is-tailscale
+
+### Was ist GNS3
+https://docs.gns3.com/docs/
+
 
 
 ### Was ist eine IDS-System.
