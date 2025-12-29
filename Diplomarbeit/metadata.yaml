@@ -46,14 +46,7 @@ da-kiquellen:
 - ki: ChatGPT3.5
   short-prompt: Aufbau eines Atoms
   pdf-file: gpt-atom.pdf
-
-
-da-appendix:
-- abschnitt: Technische Dokumentation
-  pdf-file: 
-
-- abschnitt: Betreuungsprotokolle
-  pdf-file:     
+ 
 
 # Diplomarbeitsvereinbarungen müssen zum Schluss sein 
 
