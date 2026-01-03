@@ -51,28 +51,28 @@ da-kiquellen:
 
 da-appendix:
 - abschnitt: Server Erklärung
-  pdf-file: Server-Erklärung.pdf
+  pdf-file: server.pdf
 
 - abschnitt: Debian Erklärung
-  pdf-file: Debian-Erklärung.pdf
+  pdf-file: debian.pdf
 
 - abschnitt: Proxmox Erklärung
-  pdf-file: Proxmox-Erklärung.pdf
+  pdf-file: proxmox.pdf
 
 - abschnitt: Domaincontroller Erklärung
-  pdf-file: DomainController-Erklärung.pdf
+  pdf-file: domaincontroller.pdf
 
 - abschnitt: VPN Erklärung
-  pdf-file: VPN-Erklärung.pdf
+  pdf-file: vpn.pdf
 
 - abschnitt: Tailscale Erklärung
-  pdf-file: tailscale-Erklärung.pdf
+  pdf-file: tailscale.pdf
 
 - abschnitt: GNS3 Erklärung
-  pdf-file: GNS3-Erklärung.pdf
+  pdf-file: gns3.pdf
 
 - abschnitt: IDS Erklärung
-  pdf-file: IDS-Erklärung.pdf
+  pdf-file: ids.pdf
 
 - abschnitt: Betreuungsprotokolle
   pdf-file: betreuungsprotokolle.pdf    
