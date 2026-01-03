@@ -50,8 +50,8 @@ da-kiquellen:
 
 
 da-appendix:
-- abschnitt: Sever Erklärung
-  pdf-file: Sever-Erklärung.pdf
+- abschnitt: Server Erklärung
+  pdf-file: Server-Erklärung.pdf
 
 - abschnitt: Debian Erklärung
   pdf-file: Debian-Erklärung.pdf
