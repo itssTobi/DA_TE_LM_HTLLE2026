@@ -46,6 +46,7 @@ Hier dokumentieren Sie welche Kosten fallen Für Ihr Projekt an und wer kommt f�
 |:-------------|:---------:|:------:|--------:|-------------:|---------------|
 | Proxmos-Server eingerichtet     | Hardware  |  1 |   13,80 | 13,80      | Schüler       |
 | Abschluss der Verschriftlichung der Ergebnisse und der Diplomarbeit	 | Druck     |  3     |   26.00 |  53.00      | Schüler       |
+|Stromkosten Proxmox-Server | Betriebskosten | 7 Monate | 15 | 105 | Schüler |
 
  : Geplante Projektkosten
 
@@ -59,7 +60,7 @@ Am Ende der Diplomarbeit fügen Sie hier noch eine Liste der tatsächlich angefa
 
 | Risiko         | EW  | Auswirkungen     | Maßnahmen     |
 |:--------------:|:---:| :----------------|:--------------|
-| Überziehen der Kosten | 15% | Erhöhte Kosten für Schüler | Budgetierung |
+| Überziehen der Kosten | 20% | Erhöhte Kosten für Schüler | Budgetierung |
 | Ungenaue Schätzungen | 30% | Ungenaue Schätzungen führen zu Problem bezüglich Terminen und Budget. | Schätzungen mit Fachkollegen absprechen|
 
 : Projektrisiken
@@ -82,7 +83,6 @@ Hier werden den Kontakten von oben konkrete Rollen zuewiesen.
 | Projektrolle           | Rollenbeschreibung     | Name              |
 |------------------------|------------------------|-------------------|
 | Projektleiter | Verantwortlicher für Einhaltung des Projektrahmens | Eichelberger Tobias |
-| Auftraggeber | Auftraggeber der internen Diplomarbeit | Frank Borland |
 | Betreuer | Schulischer Betreuer | Günther Hutter |
 | Betreuer | Schulischer Betreuer | Thomas Messner |
 
@@ -150,41 +150,3 @@ Im Falle einer Änderung des Meilensteinplans müssen alle Projektmitglieder und
 - Unterschriebene DA Betreuungsprotokolle sind in der DA enthalten
 - DA liegt dem Betreuer in ausgedruckter Form vor
     
-
-## Anwendungsfälle
-
-Hier beschreiben Sie die Anwendungsfälle (=UseCases) Ihrer Anwendung / Diplomarbeit. Dabei sollte die Beschreibung auf hohem Niveau (also ohne implementierungsspezifische Details) erfolgen und typischerweise so benannt sein, wie die Ziele aus Sicht der Akteure heißen: Mitglied anmelden, Geld abheben, Auto zurückgeben.
-
-Jeder Anwendungsfall wird im selben Muster beschrieben. In den folgenden Absätzen ist zuerst eine allgemeine Beschreibung eines solchen Anwendungsfalls zu finden und dann ein Beispiel dazu.
-
-Damit man auch versteht wer mit welchem Anwendungsfall agiert bietet es sich an hier eine Übersichtsgrafik zu erstellen:
-
-![Übersicht Anwendungsfälle](img/anwendungsfalldiagramm.png){width=60%}
-
-\newpage
-### Anwendungsfallname
-Anwendungsfälle haben einen eindeutigen Namen aus dem man auf den Inhalt des Anwendungsfalls schließen kann. Wenn Sie agil arbeiten dann stellt ein Anwendungsfall eine UserStory dar welche im Backlog liegt und im Laufe des Projekts (in einem Sprint) abgearbeitet wird.
-
-#### Kurzbeschreibung
-Hier erfolgt eine kurze Beschreibung, was im Anwendungsfall passiert. Kurz bedeutet, dass es zwei oder drei Zeilen sind, selten mehr.
-      
-#### Trigger
-Der fachliche Grund bzw. die Gründe dafür, dass dieser Anwendungsfall ausgeführt 
-
-#### Vorbedingung
-Alle Bedingungen, die erfüllt sein müssen, damit dieser Anwendungsfall ausgeführt werden kann. Gibt es keine Vorbedingungen, so steht hier "keine".
-      
-#### Nachbedingung
-Der Zustand, der nach einem erfolgreichen Durchlauf des Anwendungsfalls erwartet wird.
-
-#### Akteure
-Akteure sind beteiligte Personen oder Systeme außerhalb (!) des beschriebenen Systems. Z. B. Anwender, angemeldeter Anwender, Kunde, System, Abrechnungsprozess.
-
-#### Standardablauf
-Hier wird das typische Szenario dargestellt, das leicht zu verstehen oder der am häufigsten vorkommende Fall ist. An seinem Ende steht die Zielerreichung des Primärakteurs. Die Ablaufschritte werden nummeriert und meist in strukturierter Sprache beschrieben. Ablaufpläne können jedoch ebenfalls benutzt werden, wenn es angebracht erscheint. Mittels der UML können diese Ablaufschritte in Aktivitätsdiagrammen oder Anwendungsfall-orientierten Sequenzdiagrammen dargestellt werden.
-
-#### Fehlersituationen
-Dies sind Szenarien, die sich außerhalb des Standardablaufs auch bei der (versuchten) Zielerreichung des Anwendungsfalls ereignen können. Sie werden meistens als konditionale Verzweigungen der normalen Ablaufschritte dargestellt. An ihrem Ende steht ein Misserfolg, die Zielerreichung des Primärakteurs oder eine Rückkehr zum Standardablauf.
-
-#### Systemzustand im Fehlerfall
-Der Zustand, der nach einem erfolglosen Durchlauf des Anwendungsfalls erwartet wird.
