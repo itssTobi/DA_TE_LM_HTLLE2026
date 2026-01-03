@@ -42,7 +42,7 @@ da-kurzfassung-en: Hier kommt eine englische Kurzfassung hin.
 da-kiquellen:
 - ki: ChatGPT4
   short-prompt: Alternativen zu Wireguard
-  pdf-file: AlternativenZuWireguard.pdf
+  pdf-file: AlternativenZuWireGuard.pdf
 
 da-appendix:
 - abschnitt: Server Erklärung
