@@ -48,7 +48,6 @@ da-kiquellen:
   short-prompt: Aufbau eines Atoms
   pdf-file: gpt-atom.pdf
 
-
 da-appendix:
 - abschnitt: Server Erklärung
   pdf-file: server.pdf
@@ -60,7 +59,7 @@ da-appendix:
   pdf-file: proxmox.pdf
 
 - abschnitt: Domaincontroller Erklärung
-  pdf-file: domaincontroller.pdf
+  pdf-file: dc.pdf
 
 - abschnitt: VPN Erklärung
   pdf-file: vpn.pdf
