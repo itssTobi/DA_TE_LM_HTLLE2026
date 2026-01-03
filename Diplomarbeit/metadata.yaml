@@ -50,9 +50,29 @@ da-kiquellen:
 
 
 da-appendix:
-- abschnitt: Technische Dokumentation
-  pdf-file: pandoc-manual.pdf
-  seiten: 53-73
+- abschnitt: Sever Erklärung
+  pdf-file: Sever-Erklärung.pdf
+
+- abschnitt: Debian Erklärung
+  pdf-file: Debian-Erklärung.pdf
+
+- abschnitt: Proxmox Erklärung
+  pdf-file: Proxmox-Erklärung.pdf
+
+- abschnitt: Domaincontroller Erklärung
+  pdf-file: DomainController-Erklärung.pdf
+
+- abschnitt: VPN Erklärung
+  pdf-file: VPN-Erklärung.pdf
+
+- abschnitt: Tailscale Erklärung
+  pdf-file: tailscale-Erklärung.pdf
+
+- abschnitt: GNS3 Erklärung
+  pdf-file: GNS3-Erklärung.pdf
+
+- abschnitt: IDS Erklärung
+  pdf-file: IDS-Erklärung.pdf
 
 - abschnitt: Betreuungsprotokolle
   pdf-file: betreuungsprotokolle.pdf    
