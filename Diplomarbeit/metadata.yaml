@@ -15,7 +15,7 @@ da-author:
   klasse: 5BHWIN
   thema: Blue Team
   ki-tools:
-  - name: ChatGPT3.5, Gemini 3 Pro
+  - name: ChatGPT 3.5,ChatGPT 4, Gemini 3 Pro
     zweck: Informationsbeschaffung, Rechtsschreibprüfung und Grammatikprüfung
 
 
@@ -41,12 +41,8 @@ da-kurzfassung-en: Hier kommt eine englische Kurzfassung hin.
 
 da-kiquellen:
 - ki: ChatGPT4
-  short-prompt: Erklärung Pandoc
-  pdf-file: gpt-pandoc.pdf
-
-- ki: ChatGPT3.5
-  short-prompt: Aufbau eines Atoms
-  pdf-file: gpt-atom.pdf
+  short-prompt: Alternativen zu Wireguard
+  pdf-file: AlternativenZuWireguard.pdf
 
 da-appendix:
 - abschnitt: Server Erklärung
