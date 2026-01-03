@@ -31,8 +31,7 @@ https://docs.gns3.com/docs/
 
 
 ### Was ist eine IDS-System.
-In diesem Kapitel wird erlärt was ein IDS-System ist, welche Arten es gibt und warum man ein solch ein System überhaupt verwenden sollte.
-In dem Artikel wird genau erläutert was ein solch ein System macht und wie sie funktionieren zudem wird auch die die verschiedenen Arten eingegangen.
+In diesem Kapitel wird erlärt was ein IDS-System ist, welche Arten es gibt und warum man ein solch ein System überhaupt verwenden sollte. In dem Artikel wird erläutert was ein ein IDS-System macht und wie sie funktionieren zudem wird auch auf die verschiedenen Arten eingegangen.
 https://www.ionos.at/digitalguide/server/sicherheit/intrusion-detection-system-ids/
 <br>
 Zudem ist wichtig zu erwähnen das solche Systeme zur Überwachung von Netzwerken immer wichtiger und wichtiger werden, mit der fortlaufenden Digitalisierung werden Computernetzwerke, besonders in Unternhemen von bösartigen Hackern angegriffen. Deswegen ist es enorm wichtig sich gegen solche Angriffe so gut es geht zu schützen um im ernstfall einen großen Schaden zu vermeiden.
