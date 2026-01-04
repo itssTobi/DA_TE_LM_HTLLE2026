@@ -28,11 +28,11 @@ da-author:
     zweck: Boilerplate codegenerierung, Codedokumentation
 
 da-betreuer:
-- paraffe: hg
-  name: Ing. DI(FH) Günther Hutter, Msc.
-
 - paraffe: me
   name: DI Dr. mont Thomas Messner
+  
+- paraffe: hg
+  name: Ing. DI(FH) Günther Hutter, Msc.
 
 da-kurzfassung-de: Hier kommt eine deutsche Kurzfassung hin.
 
