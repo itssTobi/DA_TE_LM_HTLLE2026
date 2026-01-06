@@ -1,19 +1,9 @@
-Teilaufgabe Schüler Macuha
-==========================
+# Teilaufgabe Schüler Macuha
 
-\\textauthor{Lukas Macuha}
+\textauthor{Lukas Macuha}
 
-Theorie
--------
+## Theorie
 
-### Was ist Active Directory
-
-Active Directory (AD) ist ein von Microsoft entwickelter Verzeichnisdienst, der speziell in Windows-basierten Netzwerken zur zentralen und effizienten Verwaltung von Benutzern, Computern, Gruppen sowie verschiedenen Ressourcen wie Druckern, Dateifreigaben oder Anwendungen eingesetzt wird. Dieser Dienst bildet das Herzstück vieler Unternehmensnetzwerke und ermöglicht eine zentrale Authentifizierung und Autorisierung innerhalb einer Domäne oder sogar über mehrere Domänen hinweg in einer Forest-Struktur. Dadurch können Benutzer sich mit einem einzigen Konto nahtlos an verschiedenen Systemen, Geräten oder Diensten anmelden, was den Alltag in großen Organisationen erheblich vereinfacht und die Produktivität steigert. Gleichzeitig bieten Administratoren die Möglichkeit, Richtlinien, Sicherheitsregeln und Berechtigungen zentral zu steuern, zu überwachen und anzupassen, ohne dass jede Änderung manuell auf jedem einzelnen Gerät vorgenommen werden muss.
-
-in wesentlicher Vorteil von Active Directory liegt in seiner beeindruckenden Skalierbarkeit, da es sowohl in kleinen Unternehmen mit nur wenigen Nutzern als auch in sehr großen, global verteilten Unternehmensnetzwerken mit Tausenden von Benutzern und Geräten problemlos eingesetzt werden kann. Es unterstützt Hierarchien, Gruppenrichtlinien (Group Policy Objects) und Integrationen mit anderen Microsoft-Produkten wie Exchange oder Azure. Dennoch stellt Active Directory aufgrund seiner zentralen Rolle ein äußerst attraktives Ziel für Cyberangreifer dar, da eine vollständige Kompromittierung der Domäne in der Regel auch den uneingeschränkten und vollständigen Zugriff auf alle angeschlossenen Systeme, Daten und Ressourcen bedeutet, was zu erheblichen Sicherheitsrisiken und potenziellen Datenlecks führen kann. 
-
-https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview
-https://www.proofpoint.com/us/threat-reference/active-directory
 
 ### Was ist Kerberos
 
@@ -104,21 +94,6 @@ https://www.hackthebox.com/blog/metasploit-tutorial
 https://www.kali.org/tools/metasploit-framework/
 https://www.imperva.com/learn/application-security/metasploit/
 
-### Was ist ein IDS-System
-
-Ein Intrusion Detection System (IDS) dient dazu, verdächtige Aktivitäten innerhalb eines Systems oder Netzwerks zu erkennen. IDS-Systeme analysieren Logdaten, Netzwerkverkehr oder Systemereignisse und schlagen Alarm, wenn Anomalien oder bekannte Angriffsmuster erkannt werden.
-
-Man unterscheidet grundsätzlich zwischen hostbasierten IDS-Systemen (HIDS) und netzwerkbasierten IDS-Systemen (NIDS). In diesem Projekt wird ein hostbasiertes IDS verwendet, da insbesondere Angriffe auf Active Directory stark auf System- und Sicherheitslogs basieren.
-
-https://www.geeksforgeeks.org/computer-networks/difference-between-hids-and-nids
-
-### Wazuh
-
-Wazuh ist ein quelloffenes, hostbasiertes Intrusion-Detection-System, das zur Überwachung einzelner Systeme eingesetzt wird. Die Architektur besteht aus einem zentralen Wazuh-Server sowie mehreren Wazuh-Agenten, welche auf den zu überwachenden Endgeräten installiert sind. Diese Agenten erfassen kontinuierlich Logdateien und sicherheitsrelevante Systemereignisse und übermitteln die gesammelten Daten an den Server. Dort werden sie zentral analysiert, korreliert und übersichtlich in einem Dashboard dargestellt.
-
-Besonders für Windows-Umgebungen ist Wazuh gut geeignet, da es sicherheitsrelevante Windows-Events, Sysmon-Protokolle sowie Active-Directory-spezifische Ereignisse auswerten kann. Auf diese Weise lassen sich verdächtige Aktivitäten und bekannte Angriffstechniken, wie beispielsweise Kerberoasting oder DCSync, zuverlässig erkennen und nachvollziehen.
-
-https://documentation.wazuh.com/current/getting-started/architecture.html
 
 ## Praktische Arbeit
 
