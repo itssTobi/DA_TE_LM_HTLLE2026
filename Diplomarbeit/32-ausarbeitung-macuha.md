@@ -1,5 +1,5 @@
-# Teilaufgabe Schüler Macuha
 
+# Teilaufgabe Schüler Macuha
 \textauthor{Lukas Macuha}
 
 ## Theorie
