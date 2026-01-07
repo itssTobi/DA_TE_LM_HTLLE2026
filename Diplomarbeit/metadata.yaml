@@ -24,8 +24,8 @@ da-author:
   klasse: 5BHWIN
   thema: Red Team
   ki-tools:
-  - name: Github Copilot
-    zweck: Boilerplate codegenerierung, Codedokumentation
+  - name: ChatGPT 4.0
+    zweck: Rechtsschreibprüfung und Grammatikprüfung
 
 da-betreuer:
 - paraffe: me
@@ -69,6 +69,35 @@ da-appendix:
 - abschnitt: IDS Erklärung
   pdf-file: ids.pdf
 
+- abschnitt: Nmap Erklärung
+  pdf-file: Nmap.pdf
+
+- abschnitt: Impacket Erklärung
+  pdf-file: Impacket.pdf
+
+- abschnitt: Golden-Ticket-Angriff Erklärung
+  pdf-file: Golden_Ticket.pdf
+
+- abschnitt: DCSync-Angriff Erklärung
+  pdf-file: DCSync_Attack.pdf
+
+- abschnitt: Kerberoasting Erklärung
+  pdf-file: Kerberoasting.pdf
+
+- abschnitt: Kerberos Erklärung
+  pdf-file: Kerberos.pdf
+
+- abschnitt: Active Directory Erklärung
+  pdf-file: Active_Directory.pdf
+
+- abschnitt: Metasploit Erklärung
+  pdf-file: Metasploit.pdf
+
+- abschnitt: Evil-WinRM Erklärung
+  pdf-file: evil_winrm.pdf
+
+- abschnitt: Responder Erklärung
+  pdf-file: responder.pdf
 
 # Diplomarbeitsvereinbarungen müssen zum Schluss sein 
 
