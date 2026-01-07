@@ -6,34 +6,32 @@
 
 ### Was ist ein Server
 Was ein Server ist und welche Arten von Servern es gibt wird in dem folgenden Artikel erklärt.
-`https://www.paessler.com/de/it-explained/server` oder siehe Anhang 
+`https://www.paessler.com/de/it-explained/server` [@paessler] oder siehe Anhang 
 
 ### Was ist Debian
 Was Debian ist und welche Vorteile dieses Betriebssystem hat wird in dem folgenden Artikel erklärt.
-`https://www.ionos.at/digitalguide/server/knowhow/debian-die-universelle-system-software/` oder siehe Anhang
-
+`https://www.ionos.at/digitalguide/server/knowhow/debian-die-universelle-system-software/` [@debian] oder siehe Anhang
 ### Was ist Proxmox
 Was Proxmox ist und welche Vorteile dieses Virtualisierungssoftware hat wird in dem folgenden Artikel erklärt.
-`https://www.ionos.at/digitalguide/server/knowhow/proxmox/` oder siehe Anhang
+`https://www.ionos.at/digitalguide/server/knowhow/proxmox/` [@proxmox] oder siehe Anhang
 
 ### Was ist ein Domaincontroller
-In diesem Artikel wird erklärt was ein Domaincontroller, kurz DC ist und welche Aufgaben beziehungsweise Funktionen er hat. Auch die Vorteile sowie Nachteile werden behandelt. `https://specopssoft.com/de/blog/domaenen-controller/` oder siehe Anhang
+In diesem Artikel wird erklärt was ein Domaincontroller, kurz DC ist und welche Aufgaben beziehungsweise Funktionen er hat. Auch die Vorteile sowie Nachteile werden behandelt. `https://specopssoft.com/de/blog/domaenen-controller/` [@specops] oder siehe Anhang
 
 ### Was ist ein VPN
 Was ein VPN ist und welche Vorteile es hat wird in dem folgenden Artikel erklärt.
-`https://de.ryte.com/wiki/VPN/` oder siehe Anhang
+`https://de.ryte.com/wiki/VPN/` [@ryte] oder siehe Anhang
 
 #### Tailscale
 Was Tailscale ist und wie es funktioniert wird in dem folgenden Artikel erklärt.
-`https://tailscale.com/kb/1151/what-is-tailscale` oder siehe Anhang
+`https://tailscale.com/kb/1151/what-is-tailscale` [@tailscale] oder siehe Anhang
 
 ### Was ist GNS3
 Was GNS3 ist und welche Vorteile diese Netzwerksimulationssoftware hat wird in dem folgenden Artikel erklärt.
-`https://docs.gns3.com/docs/` oder siehe Anhang
-
+`https://docs.gns3.com/docs/` [@gns3] oder siehe Anhang
 
 ### Was ist eine IDS-System.
-In diesem Kapitel wird erklärt, was ein IDS-System ist, welche Arten es gibt und warum man ein solches System überhaupt verwenden sollte. In dem Artikel wird erläutert, was ein IDS-System macht und wie es funktioniert; zudem wird auch auf die verschiedenen Arten eingegangen. `https://www.ionos.at/digitalguide/server/sicherheit/intrusion-detection-system-ids/` oder siehe Anhang.
+In diesem Kapitel wird erklärt, was ein IDS-System ist, welche Arten es gibt und warum man ein solches System überhaupt verwenden sollte. In dem Artikel wird erläutert, was ein IDS-System macht und wie es funktioniert; zudem wird auch auf die verschiedenen Arten eingegangen. `https://www.ionos.at/digitalguide/server/sicherheit/intrusion-detection-system-ids/` [@ionos] oder siehe Anhang.
 
 Zudem ist wichtig zu erwähnen, dass solche Systeme zur Überwachung von Netzwerken immer wichtiger und wichtiger werden; mit der fortlaufenden Digitalisierung werden Computernetzwerke, besonders in Unternehmen, von bösartigen Hackern angegriffen. Deswegen ist es enorm wichtig, sich gegen solche Angriffe so gut wie möglich zu schützen, um im Ernstfall einen großen Schaden zu vermeiden.
 
@@ -41,13 +39,13 @@ Zudem ist wichtig zu erwähnen, dass solche Systeme zur Überwachung von Netzwer
 Um zu entscheiden, welches System in dem Projekt angewendet wird, ist es umso wichtiger zu wissen, welche Vor- und Nachteile die Systeme haben. Für dieses Projekt wurden drei bekannte Systeme miteinander verglichen, die unterschiedliche Ansätze verfolgen.
 
 ##### Wazuh
-Wazuh ist ein Open-Source-System, was bedeutet, dass man den Quellcode einsehen kann. Zudem ist dieses IDS-System ein HIDS (hostbasiertes Intrusion-Detection-System), welches es in einer Gratis- beziehungsweise in einer Bezahlversion gibt, welche verschiedene Modelle je nach Größe des Unternehmens anbietet. Das System besteht aus verschiedenen Komponenten, die alle gemeinsam zusammenspielen, um vor Gefahren zu warnen. Das Herz des Systems sind die zentralen Komponenten, der Wazuh-Server und der Wazuh-Indexer. Der Wazuh-Indexer speichert die Daten, die vom Wazuh-Server kommen, welcher diese wiederum vom Wazuh-Agenten erhält, der auf den verschiedenen Endgeräten installiert ist. Die gesamten Informationen werden auf einem webbasierten Dashboard angezeigt, auf dem sich der Wazuh-User einloggen kann. Empfohlen wird die Installation des Wazuh-Servers auf einem Linux-Betriebssystem. Weitere Informationen über Wazuh sind auf der Website unter Dokumentationen verfügbar. Genauere Informationen finden Sie in der offiziellen Dokumentation von Wazuh: `https://documentation.wazuh.com/current/index.html`
+Wazuh ist ein Open-Source-System, was bedeutet, dass man den Quellcode einsehen kann. Zudem ist dieses IDS-System ein HIDS (hostbasiertes Intrusion-Detection-System), welches es in einer Gratis- beziehungsweise in einer Bezahlversion gibt, welche verschiedene Modelle je nach Größe des Unternehmens anbietet. Das System besteht aus verschiedenen Komponenten, die alle gemeinsam zusammenspielen, um vor Gefahren zu warnen. Das Herz des Systems sind die zentralen Komponenten, der Wazuh-Server und der Wazuh-Indexer. Der Wazuh-Indexer speichert die Daten, die vom Wazuh-Server kommen, welcher diese wiederum vom Wazuh-Agenten erhält, der auf den verschiedenen Endgeräten installiert ist. Die gesamten Informationen werden auf einem webbasierten Dashboard angezeigt, auf dem sich der Wazuh-User einloggen kann. Empfohlen wird die Installation des Wazuh-Servers auf einem Linux-Betriebssystem. Weitere Informationen über Wazuh sind auf der Website unter Dokumentationen verfügbar. Genauere Informationen finden Sie in der offiziellen Dokumentation von Wazuh: `https://documentation.wazuh.com/current/index.html` [@wazuh]
 
 ##### Snort
-Snort ist, anders als Wazuh, ein NIDS (netzwerkbasiertes Intrusion-Detection-System), aber dennoch ebenfalls Open Source. Auch hier gibt es eine kostenlose Version sowie eine kommerzielle Version, die kostenpflichtig ist. Snort funktioniert so, dass es alle Pakete, die in einem Netzwerk hin- und hergeschickt werden, scannt und Alarm schlägt, falls Unregelmäßigkeiten oder potenziell schädliche Pakete gesendet werden. Dieses System ist quasi ein Paket-Sniffer. Der große Unterschied zu einem HIDS-System wie Wazuh ist, dass man Snort nur auf einem Gerät im Netzwerk installiert – meist auf einem Server oder einer separaten Überwachungsmaschine. Da Snort lediglich Logs erzeugt und diese speichert, gibt es kein direktes Dashboard; hierzu benötigt man zusätzlich ein Frontend beziehungsweise eine Visualisierungsplattform. Hier gibt es verschiedene Anbieter, die solche Dashboard-Tools bereitstellen. Genauere Informationen finden Sie in der offiziellen Dokumentation von Snort: `https://www.snort.org/documents` oder unter folgendem Artikel: `https://www.zenarmor.com/docs/de/netzwerksicherheitstutorials/was-ist-snort#:~:text=Snort%20untersucht%20den%20Netzwerkverkehr%20in,au%C3%9Ferhalb%20eines%20Netzwerks%20gesendet%20werden`
+Snort ist, anders als Wazuh, ein NIDS (netzwerkbasiertes Intrusion-Detection-System), aber dennoch ebenfalls Open Source. Auch hier gibt es eine kostenlose Version sowie eine kommerzielle Version, die kostenpflichtig ist. Snort funktioniert so, dass es alle Pakete, die in einem Netzwerk hin- und hergeschickt werden, scannt und Alarm schlägt, falls Unregelmäßigkeiten oder potenziell schädliche Pakete gesendet werden. Dieses System ist quasi ein Paket-Sniffer. Der große Unterschied zu einem HIDS-System wie Wazuh ist, dass man Snort nur auf einem Gerät im Netzwerk installiert – meist auf einem Server oder einer separaten Überwachungsmaschine. Da Snort lediglich Logs erzeugt und diese speichert, gibt es kein direktes Dashboard; hierzu benötigt man zusätzlich ein Frontend beziehungsweise eine Visualisierungsplattform. Hier gibt es verschiedene Anbieter, die solche Dashboard-Tools bereitstellen. Genauere Informationen finden Sie in der offiziellen Dokumentation von Snort: `https://www.snort.org/documents` [@snort]oder unter folgendem Artikel: `https://www.zenarmor.com/docs/de/netzwerksicherheitstutorials/was-ist-snort#:~:text=Snort%20untersucht%20den%20Netzwerkverkehr%20in,au%C3%9Ferhalb%20eines%20Netzwerks%20gesendet%20werden` [@zenarmor_snort]
 
 ##### Security Onion
-Security Onion ist ebenso wie die anderen zwei Systeme Open Source, aber die Herangehensweise von Security Onion ist eine andere: Während sich Wazuh und Snort entweder für hostbasiertes oder netzwerkbasiertes Scannen entscheiden, nutzt Security Onion beide Seiten und kombiniert diese zum sogenannten hybriden Intrusion-Detection-System. Auch hier gibt es eine kostenlose Version beziehungsweise eine Bezahlversion. Das System wird ebenso wie Snort zentral auf einem Server installiert. Für das netzwerkbasierte Scannen verwendet Security Onion im Hintergrund Suricata und für das hostbasierte Scannen den Elastic-Agenten. Die Ereignisse werden auf einem Dashboard angezeigt. Genauere Informationen finden Sie in der offiziellen Dokumentation von Security Onion: `https://docs.securityonion.net/en/2.4/index.html`
+Security Onion ist ebenso wie die anderen zwei Systeme Open Source, aber die Herangehensweise von Security Onion ist eine andere: Während sich Wazuh und Snort entweder für hostbasiertes oder netzwerkbasiertes Scannen entscheiden, nutzt Security Onion beide Seiten und kombiniert diese zum sogenannten hybriden Intrusion-Detection-System. Auch hier gibt es eine kostenlose Version beziehungsweise eine Bezahlversion. Das System wird ebenso wie Snort zentral auf einem Server installiert. Für das netzwerkbasierte Scannen verwendet Security Onion im Hintergrund Suricata und für das hostbasierte Scannen den Elastic-Agenten. Die Ereignisse werden auf einem Dashboard angezeigt. Genauere Informationen finden Sie in der offiziellen Dokumentation von Security Onion: `https://docs.securityonion.net/en/2.4/index.html` [@securityonion]
 
 
 ## Praktische Arbeit
