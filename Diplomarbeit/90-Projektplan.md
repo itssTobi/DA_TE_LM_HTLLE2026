@@ -113,33 +113,53 @@ Im Falle einer Änderung des Meilensteinplans müssen alle Projektmitglieder und
 - Demonutzer wurde erstellt
 
 
-### 2025-08-28: Netzwerkscan mit Nmap und Netdiscover durchgeführt	
+### 2025-08-31: Drei IDS-Systeme miteinander verglichen
 
-- 
+- Es wurden drei verschiedene IDS-Systeme miteinander verglichen.
+    
+### 2025-09-07: Ausgewähltes IDS-System implementiert
 
-### 2025-08-31: Drei IDS-Systeme miteinander verglichen	
+- Das ausgewählte IDS-System ist im virtuellen Netzwerk aktiv.
+    
+### 2025-09-13: Erste Simulation mit Mimikatz durchgeführt
 
-- Es wurden 3 verschieden IDS-Systeme verglichen
-
-### 2025-09-07: Ausgewähltes IDS-System implementiert	
-
-- Das ausgewählte IDS-System ist aktiv auf dem virtuellen Netzwerk
-
-### 2025-09-13: Erste Simulation mit Mimikatz und Metasploit durchgeführt
-
--
-
+- Der Angriff wurde auf Windows durchgeführt, wobei NTLM-Hashes extrahiert wurden.
+    
 ### 2025-09-15: Reaktion des IDS überprüft
 
-- Es wurde überprüft ob das IDS-System bei dem Angriff anschlägt
+- Es wurde überprüft, ob das IDS-System bei dem Angriff Alarm schlägt.
+    
+### 2025-10-15: Kali als Angreifer eingesetzt
 
-### 2025-11-12: Erste Zwischenpräsentation der Diplomarbeit	
+- Kali Linux wurde dem Netzwerk als Angreifersystem hinzugefügt.
+    
+### 2025-10-20: Passwort online geknackt
 
-- Die erste Zwischenpräsentation wurde gehalten
+- Das Passwort eines Benutzers wurde online geknackt.
+    
+### 2025-10-23: Domain Controller
 
-### 2026-02-26: Zweite Zwischenpräsentation der Diplomarbeit	
+- Es wurde versucht, mit Kali Linux Domain-Administrator-Rechte zu erlangen.
+    
+### 2025-11-12: Erste Zwischenpräsentation der Diplomarbeit
 
-- Die zweite Zwischenpräsentation wurde gehalten
+- Die erste Zwischenpräsentation wurde gehalten.
+    
+### 2025-11-20: Passwort offline geknackt
+
+- Das Passwort wurde offline geknackt.
+    
+### 2025-12-18: Domain-Administrator
+
+- Durch Kerberoasting wurden Domain-Administrator-Rechte erlangt.
+    
+### 2025-12-22: Golden Ticket
+
+- Ein Golden Ticket wurde erstellt und verwendet.
+    
+### 2026-02-26: Zweite Zwischenpräsentation der Diplomarbeit
+
+- Die zweite Zwischenpräsentation wurde gehalten.
 
 ### 2026-02-28: Abschluss der Verschriftlichung der Ergebnisse und der Diplomarbeit	
 
