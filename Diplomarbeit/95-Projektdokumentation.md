@@ -100,4 +100,93 @@
 
 #### Nächste Schritte
 
-* 
+* Durchführung erster Angriffssimulationen
+* Überprüfung der Reaktion des IDS-Systems
+
+
+
+### Projektfortschritt 08. September bis 15. Oktober 2025
+
+#### Gesamtstatus
+
+* Das Projekt befindet sich weiterhin im Plan.
+* Erste Angriffssimulationen wurden mit Mimikatz durchgeführt.
+* Die Reaktion des IDS-Systems auf sicherheitsrelevante Ereignisse wurde überprüft.
+* Kali Linux wurde als Angreifersystem in das Netzwerk integriert.
+
+| Dimension      | Status                    | Maßnahmen |
+|:--------------|:--------------------------|:----------|
+| Leistungsziele| In Ordnung                | keine     |
+| Terminziele   | Kein Verzug               | keine     |
+| Kostenziele   | Keine Budgetüberschreitung| keine     |
+| Teamarbeit    | Optimal                   | keine     |
+
+:Projektstatus am 2025-10-15
+
+#### Notwendige Entscheidungen
+
+* keine
+
+#### Nächste Schritte
+
+* Passwortangriffe (online und offline) durchführen
+* Analyse der IDS-Erkennungsmechanismen
+
+
+
+### Projektfortschritt 16. Oktober bis 20. November 2025
+
+#### Gesamtstatus
+
+* Das Projekt befindet sich im Plan.
+* Online- und Offline-Passwortangriffe wurden durchgeführt.
+* Es wurde versucht, Domain-Administrator-Rechte zu erlangen.
+* IDS-System detection funkioniert.
+
+| Dimension      | Status                    | Maßnahmen |
+|:--------------|:--------------------------|:----------|
+| Leistungsziele| In Ordnung                | keine     |
+| Terminziele   | Kein Verzug               | keine     |
+| Kostenziele   | Keine Budgetüberschreitung| keine     |
+| Teamarbeit    | Optimal                   | keine     |
+
+:Projektstatus am 2025-11-20
+
+#### Notwendige Entscheidungen
+
+* keine
+
+#### Nächste Schritte
+
+* Kerberoasting-Angriffe durchführen
+* Golden-Ticket-Angriff vorbereiten
+
+
+
+### Projektfortschritt 21. November bis 22. Dezember 2025
+
+#### Gesamtstatus
+
+* Das Projekt befindet sich weiterhin im Plan.
+* Durch Kerberoasting konnten Domain-Administrator-Rechte erlangt werden.
+* Ein Golden Ticket wurde erstellt und erfolgreich eingesetzt.
+* Die Erkennungsfähigkeit des IDS-Systems wurde erneut überprüft.
+
+| Dimension      | Status                    | Maßnahmen |
+|:--------------|:--------------------------|:----------|
+| Leistungsziele| In Ordnung                | keine     |
+| Terminziele   | Kein Verzug               | keine     |
+| Kostenziele   | Keine Budgetüberschreitung| keine     |
+| Teamarbeit    | Optimal                   | keine     |
+
+:Projektstatus am 2025-12-22
+
+#### Notwendige Entscheidungen
+
+* keine
+
+#### Nächste Schritte
+
+* Vorbereitung der Zwischenpräsentation
+* Beginn der finalen Dokumentation
+
