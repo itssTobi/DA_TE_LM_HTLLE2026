@@ -143,7 +143,7 @@ https://www.youtube.com/watch?v=UjVxt_qXmI4
 
 something explain later
 
-![online_cracking]([http://url/to/img.png](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/online_cracking.jpg))
+![online_cracking](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/online_cracking.jpg)
 
 ### Credential Capture mit Responder
 
