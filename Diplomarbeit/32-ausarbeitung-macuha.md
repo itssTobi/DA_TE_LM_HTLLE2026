@@ -139,6 +139,12 @@ Mit Befehlen wie "nmap -sS 192.168.122.0/24" wurden alle 65.535 Ports auf offene
 
 https://www.youtube.com/watch?v=UjVxt_qXmI4
 
+### Online Cracking
+
+something explain later
+
+![online_cracking]([http://url/to/img.png](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/online_cracking.jpg))
+
 ### Credential Capture mit Responder
 
 Nach der Identifikation der Netzwerkkomponenten nutzte der Angreifer das Tool Responder auf Kali Linux, um eine LLMNR- und NBT-NS-Poisoning-Attacke durchzuführen, die darauf abzielt, fehlgeschlagene Namensauflösungsanfragen abzufangen und sensible Credentials zu erfassen. Responder wurde mit dem Befehl "responder -I eth0 -dw" gestartet, um auf dem Netzwerkinterface zu lauschen und rogue Server für LLMNR, NBT-NS und MDNS zu emulieren, die auf Anfragen von Windows-Systemen reagieren, wenn DNS-Auflösungen fehlschlagen
