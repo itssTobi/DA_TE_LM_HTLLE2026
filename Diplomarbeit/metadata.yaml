@@ -15,7 +15,7 @@ da-author:
   klasse: 5BHWIN
   thema: Blue Team
   ki-tools:
-  - name: ChatGPT 3.5,ChatGPT 4, Gemini 3 Pro
+  - name: ChatGPT 3.5,ChatGPT 4o, Gemini 3 Pro, Github Copilot
     zweck: Informationsbeschaffung, Rechtsschreibprüfung und Grammatikprüfung
 
 
