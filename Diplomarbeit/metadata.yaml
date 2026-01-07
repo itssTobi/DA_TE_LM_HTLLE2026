@@ -76,10 +76,10 @@ da-appendix:
   pdf-file: Impacket.pdf
 
 - abschnitt: Golden-Ticket-Angriff Erklärung
-  pdf-file: Golden_Ticket.pdf
+  pdf-file: Golden-Ticket.pdf
 
 - abschnitt: DCSync-Angriff Erklärung
-  pdf-file: DCSync_Attack.pdf
+  pdf-file: DCSync-Attack.pdf
 
 - abschnitt: Kerberoasting Erklärung
   pdf-file: Kerberoasting.pdf
@@ -88,13 +88,13 @@ da-appendix:
   pdf-file: Kerberos.pdf
 
 - abschnitt: Active Directory Erklärung
-  pdf-file: Active_Directory.pdf
+  pdf-file: Active-Directory.pdf
 
 - abschnitt: Metasploit Erklärung
   pdf-file: Metasploit.pdf
 
 - abschnitt: Evil-WinRM Erklärung
-  pdf-file: evil_winrm.pdf
+  pdf-file: evil-winrm.pdf
 
 - abschnitt: Responder Erklärung
   pdf-file: responder.pdf
