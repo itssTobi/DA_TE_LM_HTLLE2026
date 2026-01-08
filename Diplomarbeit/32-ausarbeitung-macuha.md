@@ -144,40 +144,40 @@ Als ich dann herausgefunden habe, welche Ports offen sind, war ich wie: „Aha, 
 Zum Hintergrund: In solch einem PenTest-Szenario, wie es in Labs wie HackTheBox practiced wird, startet das Ganze immer mit einem PortScan, im Regelfall mit Nmap, mit dem man Dienste wie SMB über Port 445, RDP über Port 3389 oder WinRM über Portn 5985 bzw. 5986 "scoutet". Dann, wenn man einige Credentials bzw. Hashes in der Hand hat, ist CME äußerst hilfreich, weil es modulartig ist und solche Dinge wie NTLM-Credentials bzw. Kerberos kenne, die dann wiederum Worte "scouten" sollen, nämlich die Passwords.
 Einen Test, hab ich dann mit dem SMB-Modul durchgeführt und einer Wortliste wie "rockyou.txt" durchlaufen lassen.
 
-![online-cracking](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/online-cracking.jpg)
-![online-cracking2](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/online-cracking2.jpg)
+![online-cracking](img/Macuha-bilder/online-cracking.jpg)
+![online-cracking2](img/Macuha-bilder/online-cracking2.jpg)
 
 ### Evilwin-RM
 
 Nachdem ich die Zugangsdaten hatte, konnte ich Evil-WinRM auf meinem Kali benutzen um eine PowerShell-Session auf dem Windows-11 System zu erstellen.
 Wozu ist das also gut? Evil-WinRM ist ein in Ruby geschriebenes Pen-Test-Tool, das WinRM (Windows Remote Management) ausnutzt, um remote Shells zu öffnen (konkret über Port 5985/86), ohne RDP oder SMB benutzen zu müssen. In Labs wie HackTheBox ist das das optimale Mittel für Lateral Movement, sobald du Zugangsdaten hast — einfach starten mit 'evil-winrm -i  -u  -p ' und du hast eine interaktive PowerShell. Pass aber auf Firewalls oder Virenscanner auf, die das eventuell blockieren könnten.
 
-![evilwin-rm-shell](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/evilwin-rm-access.jpg)
+![evilwin-rm-shell](img/Macuha-bilder/evilwin-rm-access.jpg)
 
 ### Credential Capture mit Responder
 
 Nach der Identifikation der Netzwerkkomponenten nutzte der Angreifer das Tool Responder auf Kali Linux, um eine LLMNR- und NBT-NS-Poisoning-Attacke durchzuführen, die darauf abzielt, fehlgeschlagene Namensauflösungsanfragen abzufangen und sensible Credentials zu erfassen. Responder wurde mit dem Befehl "responder -I eth0 -dw" gestartet, um auf dem Netzwerkinterface zu lauschen und rogue Server für LLMNR, NBT-NS und MDNS zu emulieren, die auf Anfragen von Windows-Systemen reagieren, wenn DNS-Auflösungen fehlschlagen
 Um die Attacke auszulösen, wurde auf dem Client-Gerät eine absichtliche Fehlanfrage simuliert, z.B. durch den Versuch, auf eine nicht existierende Ressource wie `\bogusshare` zuzugreifen, was das System dazu veranlasste, auf LLMNR/NBT-NS zurückzugreifen und eine Broadcast-Anfrage zu senden. Responder poisonte diese Anfrage, indem es sich als der angefragte Host ausgab, und forderte NTLM-Authentifizierung an, wodurch der NTLM-Hash des Basisbenutzers maxmustermann erbeutet wurde. Dieser Hash konnte anschließend offline mit Tools wie Hashcat geknackt werden, um das Passwort Datelm25# zu rekonstruieren, was den Einstieg in die Domäne als normaler Benutzer ermöglichte. Diese Technik ist besonders effektiv in Windows-Netzwerken, da sie auf standardmäßigen Protokollen basiert und keine hohen Rechte erfordert, aber zu erheblichen Kompromittierungen führen kann, wenn nicht durch Gruppenrichtlinien deaktiviert.
 
-![starting-responder](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/Responder.jpg)
+![starting-responder](img/Macuha-bilder/Responder.jpg)
 
 im windows 11 sysetem wurde eine falshe online datei gesucht 
 
-![wrong-file-path](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/wrong-File-path.jpg)
+![wrong-file-path](img/Macuha-bilder/wrong-File-path.jpg)
 
 Der Responder poisend den request und bekommt die Credentials
 
-![Responder-getting-creds](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/Success-Responder.jpg)
+![Responder-getting-creds](img/Macuha-bilder/Success-Responder.jpg)
 
 NTLM-hash speichern um offline zu cracken sodass es von wazuh schwieriger detected wird.
 
-![Responder-getting-creds](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/saving-NTLM-hash.jpg)
+![Responder-getting-creds](img/Macuha-bilder/saving-NTLM-hash.jpg)
 
 Jetzt mit Hashcat offline brute forcen/cracken. Völlig lautlos, Wazuh checkt gar nicht, dass du das machst, im Vergleich zum Online-Knacken
 
-![Responder-getting-creds](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/hashcat-cracking.jpg)
+![Responder-getting-creds](img/Macuha-bilder/hashcat-cracking.jpg)
 
-![show-correct-password](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/cracked-show.jpg)
+![show-correct-password](img/Macuha-bilder/cracked-show.jpg)
 
 https://www.youtube.com/watch?v=qIsUCVvJ-3U
 
@@ -196,12 +196,12 @@ Zunächst wurde ein dedizierter Service Account mit einem zugehörigen Service P
 
 Der Angreifer forderte mit einem standardmäßigen Kerberos-Request ein Service Ticket für diesen Account an, was ohne besondere Rechte möglich ist. Das erhaltene Ticket enthielt einen verschlüsselten Hash, der offline, also außerhalb des Netzwerks, analysiert werden konnte. Mithilfe des leistungsstarken Tools Hashcat wurde das Passwort des Service Accounts durch Brute-Force- oder Dictionary-Methoden erfolgreich rekonstruiert, oft innerhalb kurzer Zeit bei schwachen Passwörtern.
 
-![requesting-kerberos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/getting-kerebos-Ticket.jpg)
+![requesting-kerberos](img/Macuha-bilder/getting-kerebos-Ticket.jpg)
 
 Nachdem wir das Ticket erhalten haben, speichern wir es und verwenden Hashcat erneut, um es offline zu knacken.
 
-![cracking-kerebos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/cracking-kerebos.jpg)
-![cracking-kerebos2](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/cracking-kerebos2.jpg)
+![cracking-kerebos](img/Macuha-bilder/cracking-kerebos.jpg)
+![cracking-kerebos2](img/Macuha-bilder/cracking-kerebos2.jpg)
 
 
 Dieser Schritt verdeutlicht eindringlich, wie gefährlich schwache oder vorhersagbare Passwörter bei Service Accounts sind, da der Angriff keine besondere Berechtigung erfordert, vollständig offline abläuft und somit schwer zu erkennen ist, ohne spezialisierte Monitoring-Lösungen.
@@ -215,8 +215,8 @@ Mit den nun kompromittierten Zugangsdaten des Service Accounts wurde ein DCSync-
 
 Als Ergebnis konnten sämtliche Passwort-Hashes der gesamten Domäne extrahiert werden, darunter auch der Hash des Administrators sowie des besonders kritischen krbtgt-Kontos, das für die Ticket-Signatur verantwortlich ist. Ab diesem Zeitpunkt war die Domäne als vollständig kompromittiert zu betrachten, da der Angreifer nun Zugriff auf alle sensiblen Credentials hatte und weitere Eskalationen einleiten konnte.
 
-![dcsync-attack](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/dcsync-attack.jpg)
-![dcsync-attack2](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/dcsync-attack2.jpg)
+![dcsync-attack](img/Macuha-bilder/dcsync-attack.jpg)
+![dcsync-attack2](img/Macuha-bilder/dcsync-attack2.jpg)
 
 https://www.youtube.com/watch?v=pbneELowUSA
 
@@ -226,11 +226,11 @@ Anhand des extrahierten krbtgt-Hashes wurde ein Golden Ticket erzeugt, ein gefä
 
 Durch die Verwendung dieses Tickets war es möglich, sich als Domain Administrator auszugeben, ohne dass eine klassische Anmeldung am Domaincontroller erforderlich war oder Logs erzeugt wurden. Der Zugriff erfolgte vollständig über das Kerberos-Protokoll und war somit nur schwer zu erkennen, da es sich um eine legitime Authentifizierung handelt.
 
-![creating-golden-ticket](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/creating-goldenticket.jpg)
+![creating-golden-ticket](img/Macuha-bilder/creating-goldenticket.jpg)
 
 Das Goldene Ticket in eine Umgebungsvariable umwandeln, damit Impacket es nutzen kann. 'export KRB5CCNAME=/path/to/ticket.kirbi' so kann Impacket drauf zugreifen, ohne extra Params.
 
-![enviroment-goldenticket](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/enviroment-goldenticket.jpg)
+![enviroment-goldenticket](img/Macuha-bilder/enviroment-goldenticket.jpg)
 
 https://www.youtube.com/watch?v=pbneELowUSA
 
@@ -238,23 +238,23 @@ https://www.youtube.com/watch?v=pbneELowUSA
 
 Um eine Reverse-TCP-Verbindung zu einer Kali-Linux-Maschine herzustellen, wurde das Tool msfvenom aus dem Metasploit-Framework verwendet. Mithilfe von msfvenom lässt sich ein ausführbarer Payload generieren, der bei Ausführung auf dem Zielsystem eine Verbindung zum Angreifer zurück aufgebaut. Der Payload wurde bewusst einfach gehalten, um die Grundfunktionalität zu demonstrieren. In realen Szenarien würden zusätzliche Verschleierungstechniken (z. B. Encoder) eingesetzt, um Antivirenprogramme zu umgehen.
 
-![creating-malware](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/creating-malware.jpg)
+![creating-malware](img/Macuha-bilder/creating-malware.jpg)
 
 Um den Payload für das Zielsystem zugänglich zu machen, wurde auf der Kali-Maschine ein Apache-Webserver gestartet. Apache ermöglicht das einfache Hosten von Dateien, die über das lokale Netzwerk abgerufen werden können.
 
-![apache-server](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/apache-server.jpg)
+![apache-server](img/Macuha-bilder/apache-server.jpg)
 
 Nach der Erstellung wurde der Payload in das Webverzeichnis verschoben, um ihn für das Zielsystem zugänglich zu machen. Dies simuliert eine typische Angriffsmethode, bei der Malware über eine scheinbar harmlose Website verbreitet wird.
 
-![malware-to-apache](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/malware-to-apache.jpg)
+![malware-to-apache](img/Macuha-bilder/malware-to-apache.jpg)
 
 Auf der Windows-10-Maschine wurde der Payload über den Browser heruntergeladen. In der Praxis könnten Angreifer Social-Engineering-Techniken einsetzen, um Nutzer zum Download zu verleiten (z. B. gefälschte Software-Updates, manipulierte E-Mail-Anhänge oder Drive-by-Downloads).
 
-![downloading-malware-win10](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/downloading-malware-win10.jpg)
+![downloading-malware-win10](img/Macuha-bilder/downloading-malware-win10.jpg)
 
 Nach dem Download wurde der Payload auf der Windows-10-Maschine ausgeführt. Dies kann manuell durch den Nutzer oder automatisch durch Skripte erfolgen. Sobald der Payload läuft, baut er eine Verbindung zur Kali-Maschine auf und öffnet eine Meterpreter-Session.
 
-![running-malware](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/running-malware.jpg)
+![running-malware](img/Macuha-bilder/running-malware.jpg)
 
 
 Meterpreter bietet eine Vielzahl von Post-Exploitation-Tools, darunter:
@@ -265,8 +265,8 @@ Meterpreter bietet eine Vielzahl von Post-Exploitation-Tools, darunter:
 * Persistenzmechanismen einrichten (z. B. Autostart-Einträge)
 * Rechteeskalation (z. B. durch Exploits wie getsystem)
 
-![getting-meterpreter-session](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/getting-meterpreter-session.jpg)
-![getting-meterpreter-session2](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/getting-meterpreter-session2.jpg)
+![getting-meterpreter-session](img/Macuha-bilder/getting-meterpreter-session.jpg)
+![getting-meterpreter-session2](img/Macuha-bilder/getting-meterpreter-session2.jpg)
 
 
 ### Post-Exploitation und Persistenz
