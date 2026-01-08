@@ -177,7 +177,7 @@ Jetzt mit Hashcat offline brute forcen/cracken. Völlig lautlos, Wazuh checkt ga
 
 ![Responder-getting-creds](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/hashcat-cracking.jpg)
 
-![forogt to add screenshot --show](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/hashcat-craing.jpg)
+![show-correct-password](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/cracked-show.jpg)
 
 https://www.youtube.com/watch?v=qIsUCVvJ-3U
 
@@ -196,17 +196,15 @@ Zunächst wurde ein dedizierter Service Account mit einem zugehörigen Service P
 
 Der Angreifer forderte mit einem standardmäßigen Kerberos-Request ein Service Ticket für diesen Account an, was ohne besondere Rechte möglich ist. Das erhaltene Ticket enthielt einen verschlüsselten Hash, der offline, also außerhalb des Netzwerks, analysiert werden konnte. Mithilfe des leistungsstarken Tools Hashcat wurde das Passwort des Service Accounts durch Brute-Force- oder Dictionary-Methoden erfolgreich rekonstruiert, oft innerhalb kurzer Zeit bei schwachen Passwörtern.
 
-![requesting_kerberos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/getting-kerebos-Ticket.jpg)
+![requesting-kerberos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/getting-kerebos-Ticket.jpg)
 
 Nachdem wir das Ticket erhalten haben, speichern wir es und verwenden Hashcat erneut, um es offline zu knacken.
 
-![requesting_kerberos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/cracking-kerebos.jpg)
-![requesting_kerberos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/cracking-kerebos2.jpg)
-
+![cracking-kerebos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/cracking-kerebos.jpg)
+![cracking-kerebos2](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/cracking-kerebos2.jpg)
 
 
 Dieser Schritt verdeutlicht eindringlich, wie gefährlich schwache oder vorhersagbare Passwörter bei Service Accounts sind, da der Angriff keine besondere Berechtigung erfordert, vollständig offline abläuft und somit schwer zu erkennen ist, ohne spezialisierte Monitoring-Lösungen.
-
 
 
 https://www.youtube.com/watch?v=ZoGoBCviu6w
@@ -217,8 +215,8 @@ Mit den nun kompromittierten Zugangsdaten des Service Accounts wurde ein DCSync-
 
 Als Ergebnis konnten sämtliche Passwort-Hashes der gesamten Domäne extrahiert werden, darunter auch der Hash des Administrators sowie des besonders kritischen krbtgt-Kontos, das für die Ticket-Signatur verantwortlich ist. Ab diesem Zeitpunkt war die Domäne als vollständig kompromittiert zu betrachten, da der Angreifer nun Zugriff auf alle sensiblen Credentials hatte und weitere Eskalationen einleiten konnte.
 
-![requesting_kerberos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/dcsync-attack.jpg)
-![requesting_kerberos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/dcsync-attack2.jpg)
+![dcsync-attack](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/dcsync-attack.jpg)
+![dcsync-attack2](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/dcsync-attack2.jpg)
 
 https://www.youtube.com/watch?v=pbneELowUSA
 
@@ -228,11 +226,11 @@ Anhand des extrahierten krbtgt-Hashes wurde ein Golden Ticket erzeugt, ein gefä
 
 Durch die Verwendung dieses Tickets war es möglich, sich als Domain Administrator auszugeben, ohne dass eine klassische Anmeldung am Domaincontroller erforderlich war oder Logs erzeugt wurden. Der Zugriff erfolgte vollständig über das Kerberos-Protokoll und war somit nur schwer zu erkennen, da es sich um eine legitime Authentifizierung handelt.
 
-![requesting_kerberos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/creating-goldenticket.jpg)
+![creating-golden-ticket](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/creating-goldenticket.jpg)
 
 Das Goldene Ticket in eine Umgebungsvariable umwandeln, damit Impacket es nutzen kann. 'export KRB5CCNAME=/path/to/ticket.kirbi' so kann Impacket drauf zugreifen, ohne extra Params.
 
-![requesting_kerberos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/enviroment-goldenticket.jpg)
+![enviroment-goldenticket](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/enviroment-goldenticket.jpg)
 
 https://www.youtube.com/watch?v=pbneELowUSA
 
@@ -240,23 +238,23 @@ https://www.youtube.com/watch?v=pbneELowUSA
 
 Um eine Reverse-TCP-Verbindung zu einer Kali-Linux-Maschine herzustellen, wurde das Tool msfvenom aus dem Metasploit-Framework verwendet. Mithilfe von msfvenom lässt sich ein ausführbarer Payload generieren, der bei Ausführung auf dem Zielsystem eine Verbindung zum Angreifer zurück aufgebaut. Der Payload wurde bewusst einfach gehalten, um die Grundfunktionalität zu demonstrieren. In realen Szenarien würden zusätzliche Verschleierungstechniken (z. B. Encoder) eingesetzt, um Antivirenprogramme zu umgehen.
 
-![requesting_kerberos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/creating-malware.jpg)
+![creating-malware](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/creating-malware.jpg)
 
 Um den Payload für das Zielsystem zugänglich zu machen, wurde auf der Kali-Maschine ein Apache-Webserver gestartet. Apache ermöglicht das einfache Hosten von Dateien, die über das lokale Netzwerk abgerufen werden können.
 
-![requesting_kerberos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/apache-server.jpg)
+![apache-server](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/apache-server.jpg)
 
 Nach der Erstellung wurde der Payload in das Webverzeichnis verschoben, um ihn für das Zielsystem zugänglich zu machen. Dies simuliert eine typische Angriffsmethode, bei der Malware über eine scheinbar harmlose Website verbreitet wird.
 
-![requesting_kerberos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/malware-to-apache.jpg)
+![malware-to-apache](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/malware-to-apache.jpg)
 
 Auf der Windows-10-Maschine wurde der Payload über den Browser heruntergeladen. In der Praxis könnten Angreifer Social-Engineering-Techniken einsetzen, um Nutzer zum Download zu verleiten (z. B. gefälschte Software-Updates, manipulierte E-Mail-Anhänge oder Drive-by-Downloads).
 
-![requesting_kerberos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/downloading-malware-win10.jpg)
+![downloading-malware-win10](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/downloading-malware-win10.jpg)
 
 Nach dem Download wurde der Payload auf der Windows-10-Maschine ausgeführt. Dies kann manuell durch den Nutzer oder automatisch durch Skripte erfolgen. Sobald der Payload läuft, baut er eine Verbindung zur Kali-Maschine auf und öffnet eine Meterpreter-Session.
 
-![requesting_kerberos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/running-malware.jpg)
+![running-malware](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/running-malware.jpg)
 
 
 Meterpreter bietet eine Vielzahl von Post-Exploitation-Tools, darunter:
@@ -267,8 +265,8 @@ Meterpreter bietet eine Vielzahl von Post-Exploitation-Tools, darunter:
 * Persistenzmechanismen einrichten (z. B. Autostart-Einträge)
 * Rechteeskalation (z. B. durch Exploits wie getsystem)
 
-![requesting_kerberos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/getting-meterpreter-session.jpg)
-![requesting_kerberos](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/getting-meterpreter-session2.jpg)
+![getting-meterpreter-session](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/getting-meterpreter-session.jpg)
+![getting-meterpreter-session2](https://github.com/itssTobi/DA_TE_LM_HTLLE2026/blob/main/Diplomarbeit/img/Macuha-bilder/getting-meterpreter-session2.jpg)
 
 
 ### Post-Exploitation und Persistenz
