@@ -5,31 +5,38 @@
 ## Theorie
 
 ### Was ist ein Server
-Was ein Server ist und welche Arten von Servern es gibt wird in dem folgenden Artikel erklärt.
-`https://www.paessler.com/de/it-explained/server` [@paessler] oder siehe Anhang 
+Ein Server ist ein Gerät beziehungsweise ein großer Computer, der Ressourcen, Daten, Dienste oder Programme für andere Computer, sogenannte Clients, über ein Netzwerk bereitstellt. Zudem kann ein Server verschiedene Aufgaben erfüllen, wie zum Beispiel das Hosten von Websites, das Verwalten von E-Mails, das Speichern von Dateien oder das Bereitstellen von Anwendungen. Deswegen gibt es auch viele verschiedene Serverarten, die jeweils unterschiedliche Funktionen und Aufgaben haben, wie zum Beispiel Webserver, Datenbankserver, Mailserver oder Dateiserver. Deshalb sind Server ein wichtiger Bestandteil moderner IT-Infrastrukturen und werden in Unternehmen, Organisationen und auch im privaten Bereich eingesetzt. [@paessler] 
+Was ein Server genau ist und welche Arten von Servern es gibt wird in dem folgenden Artikel erklärt. 
+`https://www.paessler.com/de/it-explained/server` oder siehe Anhang 
 
 ### Was ist Debian
+Debian ist ein freies Betriebssystem, das auf dem Linux-Kernel basiert und von einer Gemeinschaft von Entwicklern gepflegt wird. Es ist bekannt für seine Stabilität, Sicherheit und umfangreiche Softwarebibliothek, die Tausende von Paketen umfasst. Debian wird oft als Grundlage für andere Linux-Distributionen verwendet, darunter auch Ubuntu. Es unterstützt eine Vielzahl von Hardwareplattformen und bietet regelmäßige Updates und Sicherheitsaktualisierungen. Zudem legt Debian großen Wert auf freie Software und die Einhaltung von Open-Source-Prinzipien. [@debian]
 Was Debian ist und welche Vorteile dieses Betriebssystem hat wird in dem folgenden Artikel erklärt.
-`https://www.ionos.at/digitalguide/server/knowhow/debian-die-universelle-system-software/` [@debian] oder siehe Anhang
+`https://www.ionos.at/digitalguide/server/knowhow/debian-die-universelle-system-software/` oder siehe Anhang
 
 ### Was ist Proxmox
+Proxmox VE (Virtual Environment) ist eine Open-Source-Virtualisierungsplattform, die es ermöglicht, virtuelle Maschinen und Container zu erstellen und zu verwalten. Proxmox basiert auf Debian Linux und verwendet KVM (Kernel-based Virtual Machine) für die Virtualisierung von Betriebssystemen sowie LXC (Linux Containers) für die Containerisierung. Proxmox bietet eine benutzerfreundliche Weboberfläche, über die Administratoren virtuelle Umgebungen einfach konfigurieren, überwachen und verwalten können. Zudem unterstützt Proxmox Funktionen wie Hochverfügbarkeit und integrierte Backup-Lösungen. Aufgrund seiner Flexibilität und Leistungsfähigkeit wird Proxmox häufig in Rechenzentren, Unternehmen und bei IT-Dienstleistern eingesetzt. [@proxmox]
 Was Proxmox ist und welche Vorteile dieses Virtualisierungssoftware hat wird in dem folgenden Artikel erklärt.
-`https://www.ionos.at/digitalguide/server/knowhow/proxmox/` [@proxmox] oder siehe Anhang
+`https://www.ionos.at/digitalguide/server/knowhow/proxmox/` oder siehe Anhang
 
 ### Was ist ein Domaincontroller
-In diesem Artikel wird erklärt was ein Domaincontroller, kurz DC ist und welche Aufgaben beziehungsweise Funktionen er hat. Auch die Vorteile sowie Nachteile werden behandelt. `https://specopssoft.com/de/blog/domaenen-controller/` [@specops] oder siehe Anhang
+Ein Domaincontroller (DC) ist ein Server in einem Computernetzwerk, der für die Verwaltung und Authentifizierung von Benutzern und Computern innerhalb einer Domäne verantwortlich ist. Er speichert und verwaltet zentrale Verzeichnisse, die Informationen über Benutzerkonten, Gruppenrichtlinien und Sicherheitsrichtlinien enthalten. Wenn sich ein Benutzer an einem Computer anmeldet, überprüft der Domaincontroller die Anmeldeinformationen und gewährt oder verweigert den Zugriff auf Netzwerkressourcen basierend auf den festgelegten Richtlinien. Domaincontroller sind ein wesentlicher Bestandteil von Netzwerken, die das Active Directory-Protokoll verwenden, wie zum Beispiel in Windows-basierten Umgebungen. Sie tragen zur Sicherheit und Organisation von Netzwerken bei, indem sie eine zentrale Verwaltung von Benutzern und Ressourcen ermöglichen. [@specops]
+In diesem Artikel wird erklärt was ein Domaincontroller, kurz DC ist und welche Aufgaben beziehungsweise Funktionen er hat. Auch die Vorteile sowie Nachteile werden behandelt. `https://specopssoft.com/de/blog/domaenen-controller/` oder siehe Anhang
 
 ### Was ist ein VPN
+Ein Virtual Private Network, kurz VPN, ist eine Technologie, die es ermöglicht, eine sichere und verschlüsselte Verbindung über ein öffentliches Netzwerk, wie das Internet, herzustellen. Durch die Verwendung eines VPNs können Benutzer ihre Online-Aktivitäten schützen, indem sie ihre IP-Adresse verbergen und ihre Daten vor unbefugtem Zugriff schützen. VPNs werden häufig verwendet, um die Privatsphäre zu erhöhen, geografische Beschränkungen zu umgehen und sicher auf Unternehmensnetzwerke zuzugreifen. Sie bieten eine zusätzliche Sicherheitsebene, insbesondere bei der Nutzung öffentlicher WLAN-Netzwerke. [@ryte]
 Was ein VPN ist und welche Vorteile es hat wird in dem folgenden Artikel erklärt.
-`https://de.ryte.com/wiki/VPN/` [@ryte] oder siehe Anhang
+`https://de.ryte.com/wiki/VPN/` oder siehe Anhang
 
 #### Tailscale
+Tailscale ist ein modernes VPN, das auf dem WireGuard-Protokoll basiert und es Benutzern ermöglicht, sichere Verbindungen zwischen ihren Geräten herzustellen, unabhängig von deren Standort. Tailscale vereinfacht die Einrichtung und Verwaltung von VPNs, indem es eine benutzerfreundliche Oberfläche und automatische Konfiguration bietet. Es verwendet ein Peer-to-Peer-Modell, bei dem Geräte direkt miteinander kommunizieren können, ohne dass ein zentraler Server erforderlich ist. Tailscale eignet sich besonders für Teams und Unternehmen, die eine einfache und sichere Möglichkeit suchen, ihre Netzwerke zu verbinden und den Zugriff auf Ressourcen zu verwalten. [@tailscale]
 Was Tailscale ist und wie es funktioniert wird in dem folgenden Artikel erklärt.
-`https://tailscale.com/kb/1151/what-is-tailscale` [@tailscale] oder siehe Anhang
+`https://tailscale.com/kb/1151/what-is-tailscale` oder siehe Anhang
 
 ### Was ist GNS3
+Graphical Network Simulator-3, kurz GNS3, ist eine Open-Source-Netzwerksimulationssoftware, die es Netzwerkadministratoren, Ingenieuren und Studenten ermöglicht, komplexe Netzwerktopologien zu erstellen und zu testen, ohne physische Hardware zu benötigen. GNS3 unterstützt die Integration von echten Netzwerkbetriebssystemen, wie Cisco IOS, Juniper Junos und vielen anderen, wodurch realistische Simulationen möglich sind. Die Software bietet eine benutzerfreundliche grafische Oberfläche, in der Benutzer Geräte per Drag-and-Drop hinzufügen und konfigurieren können. GNS3 wird häufig für Schulungen, Tests und die Entwicklung von Netzwerklösungen verwendet. [@gns3]
 Was GNS3 ist und welche Vorteile diese Netzwerksimulationssoftware hat wird in dem folgenden Artikel erklärt.
-`https://docs.gns3.com/docs/` [@gns3] oder siehe Anhang
+`https://docs.gns3.com/docs/` oder siehe Anhang
 
 ### Was ist eine IDS-System.
 In diesem Kapitel wird erklärt, was ein IDS-System ist, welche Arten es gibt und warum man ein solches System überhaupt verwenden sollte. In dem Artikel wird erläutert, was ein IDS-System macht und wie es funktioniert; zudem wird auch auf die verschiedenen Arten eingegangen. `https://www.ionos.at/digitalguide/server/sicherheit/intrusion-detection-system-ids/` [@ionos] oder siehe Anhang.
