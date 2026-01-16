@@ -23,7 +23,7 @@ Der Nutzen dieses Projekt besteht darin Chancengleichheit zu schaffen indem alle
 
 #### Projektauftraggeber/in
 
-Hier beschreiben Sie wer der Projektauftraggeber ist. Falls es eine externe Firma ist können Sie hier eine kurze Beschreibung des Unternehmens (sofern Projektrelevant) einfügen.
+Der Projektauftraggeber dieser Diplomarbeit ist die HTL Leoben. 
 
 #### Projekttermine
 
