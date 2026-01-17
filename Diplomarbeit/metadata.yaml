@@ -34,9 +34,34 @@ da-betreuer:
 - paraffe: hg
   name: Ing. DI(FH) Günther Hutter, Msc.
 
-da-kurzfassung-de: Hier kommt eine deutsche Kurzfassung hin.
+da-kurzfassung-de: In dieser Arbeit wurde evaluiert ob ein Einsatz eines zentralen Servers der 
+  die Infrastruktur für den Laborbetrieb bereitstellt sinnvoll ist und dokumentiert, wie ein Proxmox-Server aufgesetzt 
+  wird, um eine virtuelle Umgebung für Schulungszwecke zu erstellen. Es wurde eine VPN-Verbindung eingerichtet, um den 
+  sicheren Zugriff auf die virtuelle Umgebung von außerhalb zu ermöglichen. Zusätzlich wurde GNS3 installiert, um die 
+  Netzwerktopologie zu verknüpfen. Weiterhin wurden Windows-Clients- und Windows-Server-VMs installiert und die Clients 
+  in die Domäne integriert. Abschließend wurde dieses Netzwerk mit einem IDS ausgestattet. Zuletzt wurde die Funktionalität 
+  des IDS durch verschiedene Angriffssimulationen von einer Kali-Linux-VM getestet. Die Arbeit umfasst die Implementierung 
+  der virtuellen Umgebung sowie die Dokumentation der durchgeführten Schritte und Ergebnisse. Es wurden verschiedene Tools 
+  und Technologien verwendet, um die Anforderungen an Sicherheit, Skalierbarkeit und Benutzerfreundlichkeit zu erfüllen. 
+  Die Ergebnisse dieser Arbeit zeigen, dass der Einsatz eines zentralen Servers für den Laborbetrieb viele Vorteile bietet, 
+  darunter eine verbesserte Verwaltung, erhöhte Sicherheit und eine flexible Skalierbarkeit. Die virtuelle Umgebung ermöglicht 
+  es den Schülerinnen und Schüler der HTL Leoben, verschiedene Szenarien zu testen und zu lernen, ohne das Sie die Netzwerkumgebung 
+  auf Ihren eigenen Endgeräten aufsetzen müssen. Insgesamt bietet diese Arbeit wertvolle Einblicke in die Implementierung und 
+  Verwaltung einer virtuellen Laborumgebung für Schulungszwecke.
 
-da-kurzfassung-en: Hier kommt eine englische Kurzfassung hin.
+da-kurzfassung-en: In this thesis, it was evaluated whether it makes sense to use a central server that provides the 
+ infrastructure for laboratory operation and documents how a Proxmox server is set up to create a virtual environment 
+ for training purposes. A VPN connection has been set up to allow secure access to the virtual environment from outside. 
+ In addition, GNS3 was installed to link the network topology. Furthermore, Windows clients and Windows Server VMs were 
+ installed and the clients were integrated into the domain. Finally, this network was equipped with an IDS. Most recently, 
+ the functionality of the IDS was tested by various attack simulations of a Kali Linux VM. The work includes the implementation 
+ of the virtual environment as well as the documentation of the steps and results carried out. Various tools and technologies 
+ have been used to meet security, scalability, and ease of use requirements. The results of this thesis show that there are many 
+ benefits to using a central server for laboratory operations, including improved management, increased security, and flexible 
+ scalability. The virtual environment allows the students of HTL Leoben to test and learn different scenarios without having to 
+ set up the network environment on their own devices. Overall, this thesis provides valuable insights into the implementation and 
+ management of a virtual lab environment for training purposes.
+
 
 
 da-kiquellen:
