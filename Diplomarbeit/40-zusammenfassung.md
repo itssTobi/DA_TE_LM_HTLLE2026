@@ -33,7 +33,7 @@ Umfangreiche Penetrationstests wurden durchgeführt, um die Umgebung und die Erk
 - Passwortangriffe (online und offline Brute-Force-Attacken)
 - Kerberoasting-Angriffe zur Erlangung von Domain-Administrator-Rechten
 - Golden-Ticket-Angriffe zur Demonstration von Kerberos-Schwachstellen
-- Verschiedene Exploits mithilfe von Tools wie Mimikatz, Nmap, Responder und Evil-WinRM
+- Verschiedene Exploits mithilfe von Tools wie Impacket, Nmap, Responder, Metasploit und Evil-WinRM
 - Analyse der IDS-Erkennungsfähigkeiten bei verschiedenen Angriffsvektoren
 
 ## Fazit
