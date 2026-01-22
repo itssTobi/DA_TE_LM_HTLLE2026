@@ -72,7 +72,7 @@ Die jeweiligen Installationspakete sind unter `https://tailscale.com/download` v
 ### Einrichten der Benutzer auf dem Proxmox-Server
 Um den Betrieb ohne Root-Zugriff zu ermöglichen, werden rollenbasierte Berechtigungen eingerichtet. Unter „Datacenter > Permissions > Roles“ wird eine neue Rolle (z.B. „NurVMsSehen“) mit den benötigten Rechten (z.B. „PVEAuditor“, „VM.Console“) erstellt. Anschließend wird unter „Groups“ eine Gruppe (z.B. „VMUser“) angelegt und mit der Rolle verknüpft. 
 
-![proxmox-rollen-gruppen](img/Eichelberger-bilder/GruppenfuerBenutzer.png)
+![proxmox-rollen-gruppen](img/Eichelberger-bilder/GruppefuerBenutzer.png)
 
 Unter „Users“ werden individuelle Benutzerkonten erzeugt, die der Gruppe zugewiesen werden. Die Rechte der Nutzer sind damit auf den in der Rolle definierten Umfang begrenzt, wodurch die Sicherheit erhöht wird und die Schülerinnen und Schüler nur die vorgesehenen Funktionen nutzen können.
 
