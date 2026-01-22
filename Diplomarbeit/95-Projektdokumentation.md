@@ -49,7 +49,7 @@
 
 #### Nächste Schritte
 
-* Windows Client und Windows Server Vm intsallieren
+* Windows Client und Windows Server Vm installieren
 
 * ### Projektfortschritt  21. Juli bis 17. August 2025
 

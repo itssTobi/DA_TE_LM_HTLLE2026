@@ -5,12 +5,12 @@
 
 ### Projektauftrag
 
-Aktuell wird der Laborunterricht im Block „Pentesting“ so gestaltet, dass die Schülerinnen und Schüler die Testumgebung mittels virtueller Maschinen auf ihren eigenen Geräten selbst aufsetzen. Aufgrund unterschiedlicher Hardwareaustattung der einzelnen Geräte der Schülerinnen und Schüler, kommt zu erheblichen Unterschieden bzw. Fortschritten in der Abhandlung der Themenstellungen bzw. im Lernfortschritt.
+Aktuell wird der Laborunterricht im Block „Pentesting“ so gestaltet, dass die Schülerinnen und Schüler die Testumgebung mittels virtueller Maschinen auf ihren eigenen Geräten selbst aufsetzen. Aufgrund unterschiedlicher Hardwareaustattung der einzelnen Geräte der Schülerinnen und Schüler, kommt zu erheblichen Unterschieden bzw. Fortschritten in der Abhandlung der Themenstellungen bzw. im Lernfortschritt. Deswegen soll im Rahmen dieser Diplomarbeit eine zentrale virtuelle Laborumgebung auf einem Proxmox-Server aufgebaut werden, die von allen Schülerinnen und Schülern gleichermaßen genutzt werden kann.
 
 
 #### Projektziele
 
-Im Rahmen dieser Diplomarbeit soll evaluiert werden, ob dieser Aufbau einer virtuellen Netzwerkumgebung auf einem Server zu gestalten, bestehend aus einem Client und einem Domaincontroller, dem der Client untergeordnet ist, diese Umgebung soll durch ein IDS-System (Intrusion Detection System) abgesichert werden, das Angriffe von einem externen Client erkennen kann, im Schulunterricht eingesetzt und praktisch im Laborunterricht genutzt werden kann.
+Im Rahmen dieser Diplomarbeit soll evaluiert werden, ob dieser Aufbau einer virtuellen Netzwerkumgebung auf einem Server zu gestalten, bestehend aus Clients und einem Domaincontroller, dem die Clients untergeordnet sind, diese Umgebung soll durch ein IDS-System (Intrusion Detection System) abgesichert werden, das Angriffe von einem externen Client erkennen kann, im Schulunterricht eingesetzt und praktisch im Laborunterricht genutzt werden kann.
 
 
 #### Nicht-Ziele bzw. nicht Inhalte
@@ -23,7 +23,7 @@ Der Nutzen dieses Projekt besteht darin Chancengleichheit zu schaffen indem alle
 
 #### Projektauftraggeber/in
 
-Der Projektauftraggeber dieser Diplomarbeit ist die HTL Leoben. 
+Der Projektauftraggeber dieser Diplomarbeit ist das Bildungsinstitut HTL Leoben. 
 
 #### Projekttermine
 
@@ -40,8 +40,6 @@ Der Projektauftraggeber dieser Diplomarbeit ist die HTL Leoben.
 
 #### Projektkosten
 
-Hier dokumentieren Sie welche Kosten fallen Für Ihr Projekt an und wer kommt für diese Kosten auf ?
-
 | Meilenstein  | Kostenart | Menge  | Preis   | Gesamtkosten | Deckung durch |
 |:-------------|:---------:|:------:|--------:|-------------:|---------------|
 | Proxmos-Server eingerichtet     | Hardware  |  1 |   13,80 | 13,80      | Schüler       |
@@ -50,11 +48,9 @@ Hier dokumentieren Sie welche Kosten fallen Für Ihr Projekt an und wer kommt f�
 
  : Geplante Projektkosten
 
-Am ende sollten Sie eine Projektkostensumme ermitteln und hier angeben damit man sagen kann
-__Das Projekt kostet in Summe so und so viel Euro__. 
+Das Projekt kostet in Summe 171,80 €. 
+Die Gesamtkosten werden von den Schülern getragen und die geplanten Kosten wurden nicht überschritten.
 
-
-Am Ende der Diplomarbeit fügen Sie hier noch eine Liste der tatsächlich angefallenen Kosten ein.
 
 #### Projektrisiken
 
@@ -72,7 +68,7 @@ Am Ende der Diplomarbeit fügen Sie hier noch eine Liste der tatsächlich angefa
 | Vorname     | Nachname     | Organisation | Kontaktinfos      | Telefonnummer  |
 |:------------|:-------------|:-------------|:------------------|:---------------|
 | Tobias      | Eichelberger | HTL Leoben   | 211witb04@o365.htl-leoben.at | 0676 9024021 |
-| Lukas       | Macuha       | HTL Leoben   | 211witb@o365.htl-leoben.at   | 0660 5569396 |
+| Lukas       | Macuha       | HTL Leoben   | 211witb16@o365.htl-leoben.at   | 0660 5569396 |
 
 : Projektbeteiligte
 
@@ -164,9 +160,5 @@ Im Falle einer Änderung des Meilensteinplans müssen alle Projektmitglieder und
 ### 2026-02-28: Abschluss der Verschriftlichung der Ergebnisse und der Diplomarbeit	
 
 - Stilfehler sind behoben
-- DA Dokumentationsblatt ist unterschrieben, eingescannt und im Hauptdokument enthalten 
-- Praxisteil ist ebgeschlossen und verschriftlicht
-- Informationen sind im DA Portal eingegeben
-- Unterschriebene DA Betreuungsprotokolle sind in der DA enthalten
+- Praxisteil ist abgeschlossen und verschriftlicht
 - DA liegt dem Betreuer in ausgedruckter Form vor
-    
