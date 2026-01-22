@@ -5,12 +5,12 @@
 
 ### Projektauftrag
 
-Aktuell wird der Laborunterricht im Block „Pentesting“ so gestaltet, dass die Schülerinnen und Schüler die Testumgebung mittels virtueller Maschinen auf ihren eigenen Geräten selbst aufsetzen. Aufgrund unterschiedlicher Hardwareaustattung der einzelnen Geräte der Schülerinnen und Schüler, kommt zu erheblichen Unterschieden bzw. Fortschritten in der Abhandlung der Themenstellungen bzw. im Lernfortschritt. Deswegen soll im Rahmen dieser Diplomarbeit eine zentrale virtuelle Laborumgebung auf einem Proxmox-Server aufgebaut werden, die von allen Schülerinnen und Schülern gleichermaßen genutzt werden kann.
+Aktuell setzen die Schülerinnen und Schüler im Laborblock „Pentesting" die Testumgebung mit virtuellen Maschinen auf ihren eigenen Geräten auf. Unterschiedliche Hardwareausstattungen führen dabei zu erheblichen Abweichungen in Bearbeitungstempo und Lernfortschritt. Im Rahmen dieser Diplomarbeit soll daher eine zentrale virtuelle Laborumgebung auf einem Proxmox-Server aufgebaut werden, die von allen Schülerinnen und Schülern gleichermaßen genutzt werden kann.
 
 
 #### Projektziele
 
-Im Rahmen dieser Diplomarbeit soll evaluiert werden, ob dieser Aufbau einer virtuellen Netzwerkumgebung auf einem Server zu gestalten, bestehend aus Clients und einem Domaincontroller, dem die Clients untergeordnet sind, diese Umgebung soll durch ein IDS-System (Intrusion Detection System) abgesichert werden, das Angriffe von einem externen Client erkennen kann, im Schulunterricht eingesetzt und praktisch im Laborunterricht genutzt werden kann.
+Im Rahmen dieser Diplomarbeit soll evaluiert werden, ob eine virtuelle Netzwerkumgebung auf einem Server – bestehend aus Clients und einem Domaincontroller, dem die Clients untergeordnet sind, abgesichert durch ein Intrusion Detection System (IDS), das Angriffe externer Clients erkennt – im Schulunterricht eingesetzt und praktisch im Laborunterricht genutzt werden kann.
 
 
 #### Nicht-Ziele bzw. nicht Inhalte
@@ -19,7 +19,7 @@ Nicht Ziel dieser Arbeit ist es, eine produktive oder hochverfügbare Infrastruk
 
 #### Projektnutzen
 
-Der Nutzen dieses Projekt besteht darin Chancengleichheit zu schaffen indem allen Schülerinnen und Schüler die gleiche Ausgangsituation beziehungsweise die gleiche Hardware zu verfügung haben.
+Der Nutzen dieses Projekts besteht darin, Chancengleichheit zu schaffen, indem allen Schülerinnen und Schülern die gleiche Ausgangsituation sowie identische Hardwareressourcen zur Verfügung stehen.
 
 #### Projektauftraggeber/in
 
@@ -42,14 +42,13 @@ Der Projektauftraggeber dieser Diplomarbeit ist das Bildungsinstitut HTL Leoben.
 
 | Meilenstein  | Kostenart | Menge  | Preis   | Gesamtkosten | Deckung durch |
 |:-------------|:---------:|:------:|--------:|-------------:|---------------|
-| Proxmos-Server eingerichtet     | Hardware  |  1 |   13,80 | 13,80      | Schüler       |
+| Proxmox-Server eingerichtet     | Hardware  |  1 |   13,80 | 13,80      | Schüler       |
 | Abschluss der Verschriftlichung der Ergebnisse und der Diplomarbeit	 | Druck     |  3     |   26.00 |  53.00      | Schüler       |
 |Stromkosten Proxmox-Server | Betriebskosten | 7 Monate | 15 | 105 | Schüler |
 
  : Geplante Projektkosten
 
-Das Projekt kostet in Summe 171,80 €. 
-Die Gesamtkosten werden von den Schülern getragen und die geplanten Kosten wurden nicht überschritten.
+Die Gesamtkosten des Projekts belaufen sich auf 171,80 € und werden von den Schülern getragen. Die geplanten Kosten wurden nicht überschritten.
 
 
 #### Projektrisiken
@@ -74,8 +73,6 @@ Die Gesamtkosten werden von den Schülern getragen und die geplanten Kosten wurd
 
 #### Projektrollen
 
-Hier werden den Kontakten von oben konkrete Rollen zuewiesen.
-
 | Projektrolle           | Rollenbeschreibung     | Name              |
 |------------------------|------------------------|-------------------|
 | Projektleiter | Verantwortlicher für Einhaltung des Projektrahmens | Eichelberger Tobias |
@@ -86,7 +83,7 @@ Hier werden den Kontakten von oben konkrete Rollen zuewiesen.
 
 ### Vorgehen bei Änderungen
 
-Im Falle einer Änderung des Meilensteinplans müssen alle Projektmitglieder und Betreuer informiert werden. Änderungen müssen die Betreuer sowie die Projektmitglieder zustimmen, die Änderungen werden in der Projektdokumentation festgehalten.
+Im Falle einer Änderung des Meilensteinplans sind alle Projektmitglieder und Betreuer zu informieren. Änderungen bedürfen der Zustimmung durch Betreuer und Projektmitglieder und werden in der Projektdokumentation dokumentiert.
 
 ## Meilensteine
 

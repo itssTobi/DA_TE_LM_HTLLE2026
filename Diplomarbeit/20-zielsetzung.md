@@ -1,11 +1,11 @@
 
 # Zielsetzung
-Aktuell wird der Laborunterricht im Block „Pentesting“ so gestaltet, dass die Schülerinnen und Schüler die Testumgebung mittels virtueller Maschinen auf ihren eigenen Geräten selbst aufsetzen. Aufgrund unterschiedlicher Hardwareaustattung der einzelnen Geräte der Schülerinnen und Schüler, kommt zu erheblichen Unterschieden bzw. Fortschritten in der Abhandlung der Themenstellungen bzw. im Lernfortschritt.
+Aktuell setzen die Schülerinnen und Schüler im Laborblock „Pentesting“ ihre virtuellen Testumgebungen auf den eigenen Geräten auf. Unterschiedliche Hardwareausstattungen führen dabei zu abweichenden Bearbeitungsgeschwindigkeiten und Lernfortschritten.
 
-Die Motivation hinter dieser Diplomarbeit besteht darin, zu untersuchen, ob es möglich ist, die Testumgebung zentralisiert auf einem Server bereitzustellen. Ziel ist es, Chancengleichheit für alle Schülerinnen und Schüler zu schaffen, indem jeder unter den gleichen Bedingungen arbeiten und daraus lernen kann.
+Diese Diplomarbeit untersucht, ob die Testumgebung zentral auf einem Server bereitgestellt werden kann, um Chancengleichheit zu schaffen und allen Lernenden identische Rahmenbedingungen zu bieten.
 
-Das Ziel dieser Arbeit ist es, eine digitale Umgebung auf einem Server zu gestalten, bestehend aus einem Client und einem Domaincontroller, dem der Client untergeordnet ist. Diese Umgebung soll durch ein IDS-System (Intrusion Detection System) abgesichert werden, das Angriffe von einem externen Client erkennen kann.
+Konkret soll eine serverbasierte Umgebung implementiert werden, bestehend aus Clients und einem ihnen zugeordneten Domaincontroller. Diese Umgebung wird durch ein Intrusion Detection System (IDS) abgesichert, das Angriffe eines externen Clients erkennen kann.
 
-Nicht Ziel dieser Arbeit ist es, eine produktive oder hochverfügbare Infrastruktur bereitzustellen, sondern eine Testumgebung zu schaffen, die für Ausbildungszwecke geeignet ist.
+Nicht Ziel der Arbeit ist der Aufbau einer produktiven oder hochverfügbaren Infrastruktur, sondern die Bereitstellung einer für Ausbildungszwecke geeigneten Testumgebung.
 
-Durch die Umsetzung dieser Diplomarbeit entsteht eine virtuelle Umgebung, in der sich Schülerinnen und Schüler auf sichere Weise mit dem Thema Cybersecurity sowie der Bedeutung und Relevanz dieses Fachgebiets auseinandersetzen können.
+Das Ergebnis ist eine virtuelle Umgebung, in der Schülerinnen und Schüler sicher an Inhalten der Cybersecurity arbeiten und die Bedeutung dieses Fachgebiets praxisnah nachvollziehen können.

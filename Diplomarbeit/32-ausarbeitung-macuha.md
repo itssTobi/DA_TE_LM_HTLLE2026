@@ -7,15 +7,15 @@
 
 ### Was ist Kerberos
 
-Kerberos ist ein etabliertes Authentifizierungsprotokoll, das in Active Directory standardmäßig verwendet wird und auf Prinzipien der sicheren Netzwerkkommunikation basiert, die ursprünglich am Massachusetts Institute of Technology (MIT) entwickelt wurden. Es funktioniert auf Basis von Tickets und nutzt symmetrische Verschlüsselung, um die Identitäten von Benutzern, Diensten und Geräten innerhalb eines Netzwerks sicher und zuverlässig zu überprüfen, ohne dass Passwörter über das Netzwerk gesendet werden müssen. Der zentrale Bestandteil von Kerberos ist der sogenannte Key Distribution Center (KDC), welcher typischerweise auf dem Domaincontroller läuft und für die Ausstellung und Validierung von Tickets verantwortlich ist. Kerberos arbeitet in mehreren präzisen Schritten, um eine hohe Sicherheit zu gewährleisten: Zunächst authentifiziert sich ein Benutzer am KDC und erhält ein Ticket Granting Ticket (TGT), das als eine Art "Eintrittskarte" dient und mit dem Hash des Benutzerpassworts verschlüsselt ist. Mit diesem TGT kann der Benutzer anschließend ein Service Ticket (TGS) für bestimmte Dienste oder Ressourcen anfordern, ohne sich erneut anmelden zu müssen. Diese Tickets sind zeitlich begrenzt, um Missbrauch zu verhindern, und kryptografisch geschützt, oft mit Algorithmen wie AES. Schwachstellen entstehen vor allem dann, wenn Service Accounts mit schwachen, leicht zu knackenden Passwörtern konfiguriert werden, oder wenn die Verschlüsselung nicht auf dem neuesten Stand ist, was Angreifern Türen öffnet, um das System zu kompromittieren.
+Kerberos ist ein etabliertes Authentifizierungsprotokoll, das in Active Directory standardmäßig verwendet wird und auf Prinzipien der sicheren Netzwerkkommunikation basiert, die ursprünglich am Massachusetts Institute of Technology (MIT) entwickelt wurden. Es funktioniert auf Basis von Tickets und nutzt symmetrische Verschlüsselung, um die Identitäten von Benutzern, Diensten und Geräten innerhalb eines Netzwerks sicher und zuverlässig zu überprüfen, ohne dass Passwörter über das Netzwerk gesendet werden müssen. Der zentrale Bestandteil von Kerberos ist das sogenannte Key Distribution Center (KDC), welches typischerweise auf dem Domaincontroller läuft und für die Ausstellung und Validierung von Tickets verantwortlich ist. Kerberos arbeitet in mehreren präzisen Schritten, um eine hohe Sicherheit zu gewährleisten: Zunächst authentifiziert sich ein Benutzer am KDC und erhält ein Ticket Granting Ticket (TGT), das als eine Art "Eintrittskarte" dient und mit dem Hash des Benutzerpassworts verschlüsselt ist. Mit diesem TGT kann der Benutzer anschließend ein Service Ticket (TGS) für bestimmte Dienste oder Ressourcen anfordern, ohne sich erneut anmelden zu müssen. Diese Tickets sind zeitlich begrenzt, um Missbrauch zu verhindern, und kryptografisch geschützt, oft mit Algorithmen wie AES. Schwachstellen entstehen vor allem dann, wenn Service Accounts mit schwachen, leicht zu knackenden Passwörtern konfiguriert werden, oder wenn die Verschlüsselung nicht auf dem neuesten Stand ist, was Angreifern Türen öffnet, um das System zu kompromittieren.
 
 https://learn.microsoft.com/en-us/windows-server/security/kerberos/kerberos-authentication-overview
 https://www.hackthebox.com/blog/what-is-kerberos-authentication
 
 ### Was ist Kerberoasting
 
-Kerberoasting ist eine raffinierte Angriffstechnik auf Active Directory, bei der ein Angreifer Service Tickets (TGS) für Dienste mit registrierten Service Principal Names (SPN) anfordert, die in der Domäne konfiguriert sind, wie z.B. für SQL-Server oder Webdienste. Diese Tickets sind mit dem Passwort-Hash des jeweiligen Service Accounts verschlüsselt, was sie zu einem wertvollen Ziel macht, da sie Informationen über die zugrunde liegenden Credentials enthalten.
-Da jeder authentifizierte Domänenbenutzer selbst mit niedrigen Rechten solche Tickets ohne besondere Berechtigungen anfordern darf, kann ein Angreifer diese Tickets sammeln und sie offline, also außerhalb des Netzwerks, analysieren. Mit geeigneten Tools wie Hashcat oder John the Ripper versuchen sie dann, das zugrunde liegende Passwort durch Brute-Force- oder Dictionary-Attacken zu knacken. Besonders gefährlich ist diese Technik, da das eigentliche Knacken offline erfolgt und somit keine weiteren Logs oder Spuren auf dem Domaincontroller erzeugt werden, was die Entdeckung durch Sicherheitsüberwachungssysteme erschwert und den Angreifer lange unentdeckt lassen kann.
+Kerberoasting ist eine raffinierte Angriffstechnik auf Active Directory, bei der ein Angreifer Service Tickets (TGS) für Dienste mit registrierten Service Principal Names (SPN) anfordert, die in der Domäne konfiguriert sind, wie beispielsweise für SQL-Server oder Webdienste. Diese Tickets sind mit dem Passwort-Hash des jeweiligen Service Accounts verschlüsselt, was sie zu einem wertvollen Ziel macht, da sie Informationen über die zugrunde liegenden Credentials enthalten.
+Da jeder authentifizierte Domänenbenutzer, selbst mit niedrigen Rechten, solche Tickets ohne besondere Berechtigungen anfordern darf, kann ein Angreifer diese Tickets sammeln und sie offline, also außerhalb des Netzwerks, analysieren. Mit geeigneten Tools wie Hashcat oder John the Ripper versuchen sie dann, das zugrunde liegende Passwort durch Brute-Force- oder Dictionary-Attacken zu knacken. Besonders gefährlich ist diese Technik, da das eigentliche Knacken offline erfolgt und somit keine weiteren Logs oder Spuren auf dem Domaincontroller erzeugt werden, was die Entdeckung durch Sicherheitsüberwachungssysteme erschwert und den Angreifer lange unentdeckt lassen kann.
 
 https://www.crowdstrike.com/en-us/cybersecurity-101/cyberattacks/kerberoasting/
 https://netwrix.com/en/cybersecurity-glossary/cyber-security-attacks/kerberoasting/
@@ -23,8 +23,8 @@ https://www.sentinelone.com/cybersecurity-101/threat-intelligence/what-is-kerber
 
 ### Was ist ein DCSync-Angriff
 
-Ein DCSync-Angriff ist eine subtile und hochgefährliche Methode, die die normale Replikationsfunktion von Active Directory ausnutzt, um sensible Daten zu extrahieren. Domaincontroller replizieren regelmäßig Verzeichnisdaten untereinander, um Konsistenz in der gesamten Domäne oder Forest zu gewährleisten, was ein essentieller Bestandteil der Active-Directory-Architektur ist und für die Verfügbarkeit und Redundanz sorgt. Konten mit speziellen Rechten, wie z.B. Replicate Directory Changes All, dürfen diese Replikationsdaten legitim anfordern, um Änderungen zu synchronisieren.
-Hat ein Angreifer Zugriff auf ein solches Konto mit diesen erweiterten Rechten oft durch vorherige Kompromittierungen erreicht, kann er die Passwort-Hashes aller Benutzer, inklusive hochsensibler Administratoren und des besonders kritischen krbtgt-Kontos, abrufen, ohne dass zusätzliche Werkzeuge oder Exploits benötigt werden. Der Angriff ist besonders kritisch, da er keine traditionellen Exploits oder Schwachstellen ausnutzt, sondern legitime Active-Directory-Funktionen missbraucht, was ihn schwer zu erkennen macht und potenziell zu einer vollständigen Übernahme der Domäne führen kann, mit langfristigen Konsequenzen für die Sicherheit des gesamten Netzwerks.
+Ein DCSync-Angriff ist eine subtile und hochgefährliche Methode, die die normale Replikationsfunktion von Active Directory ausnutzt, um sensible Daten zu extrahieren. Domaincontroller replizieren regelmäßig Verzeichnisdaten untereinander, um Konsistenz in der gesamten Domäne oder Forest zu gewährleisten, was ein essenzieller Bestandteil der Active-Directory-Architektur ist und für die Verfügbarkeit und Redundanz sorgt. Konten mit speziellen Rechten, wie beispielsweise Replicate Directory Changes All, dürfen diese Replikationsdaten legitim anfordern, um Änderungen zu synchronisieren.
+Hat ein Angreifer Zugriff auf ein solches Konto mit diesen erweiterten Rechten, oft durch vorherige Kompromittierungen erreicht, kann er die Passwort-Hashes aller Benutzer, inklusive hochsensibler Administratoren und des besonders kritischen krbtgt-Kontos, abrufen, ohne dass zusätzliche Werkzeuge oder Exploits benötigt werden. Der Angriff ist besonders kritisch, da er keine traditionellen Exploits oder Schwachstellen ausnutzt, sondern legitime Active-Directory-Funktionen missbraucht, was ihn schwer zu erkennen macht und potenziell zu einer vollständigen Übernahme der Domäne führen kann, mit langfristigen Konsequenzen für die Sicherheit des gesamten Netzwerks.
 
 https://docs.tenable.com/identity-exposure/SaaS/Content/User/AttackPath/DCSync.htm
 https://www.sentinelone.com/blog/active-directory-dcsync-attacks/
@@ -32,8 +32,8 @@ https://fidelissecurity.com/cybersecurity-101/cyberattacks/dcsync-attack/
 
 ### Was ist ein Golden-Ticket-Angriff
 
-Ein Golden Ticket ist ein gefälschtes Kerberos Ticket Granting Ticket (TGT), das von einem Angreifer erstellt wird, um uneingeschränkten Zugriff auf die Domäne zu erlangen. Die Voraussetzung für diesen Angriff ist der Besitz des Passwort-Hashes des krbtgt-Kontos, das als das "Goldene Konto" gilt, da es alle Kerberos-Tickets innerhalb einer Domäne signiert und somit die Integrität des gesamten Authentifizierungssystems gewährleistet.
-Mit einem solchen Golden Ticket kann sich ein Angreifer als beliebiger Benutzer ausgeben, inklusive hochprivilegierter Domain Administratoren oder sogar Systemkonten, ohne dass echte Credentials benötigt werden. Diese Tickets können sehr lange gültig sein oft Jahre und ermöglichen einen nahezu unsichtbaren und dauerhaften Zugriff auf die Domäne, da sie nicht auf normale Authentifizierungslogs zurückgreifen und somit unter dem Radar der Sicherheitsüberwachung bleiben. Der Angriff kann nur effektiv gestoppt werden, indem das krbtgt-Passwort zweimal zurückgesetzt wird, was die Signatur aller Tickets invalidiert und den Angreifer aussperrt, aber dies erfordert sorgfältige Planung, um den Betrieb nicht zu stören.
+Ein Golden Ticket ist ein gefälschtes Kerberos Ticket Granting Ticket (TGT), das von einem Angreifer erstellt wird, um uneingeschränkten Zugriff auf die Domäne zu erlangen. Die Voraussetzung für diesen Angriff ist der Besitz des Passwort-Hashes des krbtgt-Kontos, das als das „Goldene Konto" gilt, da es alle Kerberos-Tickets innerhalb einer Domäne signiert und somit die Integrität des gesamten Authentifizierungssystems gewährleistet.
+Mit einem solchen Golden Ticket kann sich ein Angreifer als beliebiger Benutzer ausgeben, inklusive hochprivilegierter Domain Administratoren oder sogar Systemkonten, ohne dass echte Credentials benötigt werden. Diese Tickets können sehr lange gültig sein, oft Jahre, und ermöglichen einen nahezu unsichtbaren und dauerhaften Zugriff auf die Domäne, da sie nicht auf normale Authentifizierungslogs zurückgreifen und somit unter dem Radar der Sicherheitsüberwachung bleiben. Der Angriff kann nur effektiv gestoppt werden, indem das krbtgt-Passwort zweimal zurückgesetzt wird, was die Signatur aller Tickets invalidiert und den Angreifer aussperrt, aber dies erfordert sorgfältige Planung, um den Betrieb nicht zu stören.
 
 https://www.crowdstrike.com/en-us/cybersecurity-101/cyberattacks/golden-ticket-attack/
 https://www.picussecurity.com/resource/blog/golden-ticket-attack-mitre-t1558.001
@@ -41,7 +41,7 @@ https://www.hornetsecurity.com/en/blog/golden-ticket-attack/
 
 ### Was ist Impacket
 
-Impacket ist eine vielseitige Sammlung von Python-Bibliotheken und Tools, die speziell für die Arbeit mit Netzwerkprotokollen entwickelt wurden und in der IT-Sicherheit eine zentrale Rolle spielen, insbesondere bei Penetrationstests und der Analyse von Windows-basierten Systemen. Diese Open-Source-Lösung, die von Core Security gepflegt wird, ermöglicht die Implementierung und Manipulation von Protokollen wie SMB, MSRPC, Kerberos und WMI, was sie zu einem unverzichtbaren Werkzeug für Sicherheitsforscher und Ethical Hacker macht, die Schwachstellen in Netzwerken aufdecken und ausnutzen wollen. Impacket bietet eine Reihe von Skripten, darunter secretsdump.py für die Extraktion von Credentials aus SAM-Dateien oder NTDS.dit, sowie smbexec.py für die Ausführung von Befehlen über SMB, und unterstützt damit eine breite Palette an Szenarien von der Authentifizierung bis hin zur Remote-Code-Ausführung.
+Impacket ist eine vielseitige Sammlung von Python-Bibliotheken und Tools, die speziell für die Arbeit mit Netzwerkprotokollen entwickelt wurden und in der IT-Sicherheit eine zentrale Rolle spielen, insbesondere bei Penetrationstests und der Analyse von Windows-basierten Systemen. Diese Open-Source-Lösung, die von Core Security gepflegt wird, ermöglicht die Implementierung und Manipulation von Protokollen wie SMB, MSRPC, Kerberos und WMI, was sie zu einem unverzichtbaren Werkzeug für Sicherheitsforscher und Ethical Hacker macht, die Schwachstellen in Netzwerken aufdecken und ausnutzen möchten. Impacket bietet eine Reihe von Skripten, darunter secretsdump.py für die Extraktion von Credentials aus SAM-Dateien oder NTDS.dit, sowie smbexec.py für die Ausführung von Befehlen über SMB, und unterstützt damit eine breite Palette an Szenarien von der Authentifizierung bis hin zur Remote-Code-Ausführung.
 Ein wesentlicher Vorteil von Impacket liegt in seiner Flexibilität und der Fähigkeit, legitime Windows-Funktionen zu missbrauchen, ohne dass zusätzliche Exploits benötigt werden, was es Angreifern ermöglicht, unauffällig in Domänen vorzudringen und sensible Daten wie Passwort-Hashes oder Kerberos-Tickets zu erbeuten. Da die Tools auf Python basieren, sind sie plattformübergreifend einsetzbar, etwa auf Kali Linux, und integrieren sich nahtlos in andere Frameworks wie Metasploit. Besonders gefährlich ist Impacket in den Händen von Cyberkriminellen, da es eine vollständige Kompromittierung von Netzwerken erleichtern kann, indem es Protokolle wie SMB für Lateral Movement nutzt, was zu Datenexfiltration oder Ransomware-Angriffen führen kann, ohne dass herkömmliche Sicherheitslösungen es sofort erkennen. Dennoch wird es ethisch von Sicherheitsprofis genutzt, um Schwachstellen zu identifizieren und Systeme zu härten, solange es verantwortungsvoll eingesetzt wird.
 
 https://jumpcloud.com/it-index/what-is-impacket
@@ -51,8 +51,8 @@ https://www.kali.org/tools/impacket/
 
 ### Was ist Nmap
 
-Nmap ist ein leistungsstarkes und weit verbreitetes Open-Source-Tool für die Netzwerkscanning und -Erkundung, das von Gordon Lyon entwickelt wurde und in der IT-Sicherheit als Standardwerkzeug für die Entdeckung von Hosts, offenen Ports und laufenden Diensten gilt. Als Network Mapper bezeichnet, sendet es gezielt Pakete an Zielsysteme und analysiert die Antworten, um detaillierte Informationen über die Netzwerktopologie zu sammeln, einschließlich Betriebssystemversionen, Service-Details und potenzieller Schwachstellen. Nmap unterstützt eine Vielzahl von Scan-Techniken, wie TCP-SYN-Scans für unauffällige Erkundungen oder UDP-Scans für die Überprüfung von offenen Ports, und kann mit Skripten aus dem NSE (Nmap Scripting Engine) erweitert werden, um automatisierte Vulnerabilitätschecks durchzuführen.
-Da Nmap sowohl für kleine als auch für große Netzwerke skalierbar ist und Optionen wie Rate-Limiting bietet, um Entdeckung zu vermeiden, ist es ein essenzielles Tool für Penetrationstester, die Schwachstellen kartieren und Angriffsvektoren identifizieren wollen. Mit Befehlen wie "nmap -sS -p- [IP-Bereich]" können Administratoren offene Ports scannen und Dienste wie SMB oder RDP aufspüren, was hilft, Sicherheitslücken frühzeitig zu schließen. Besonders nützlich ist Nmap in der Reconnaissance-Phase von Angriffen, da es ohne hohe Rechte funktioniert und detaillierte Berichte erzeugt, die die Basis für weitere Exploits bilden können, was es zu einem doppelschneidigen Schwert macht wertvoll für Defender, aber gefährlich, wenn es von Angreifern genutzt wird, um Netzwerke zu kompromittieren.
+Nmap ist ein leistungsstarkes und weit verbreitetes Open-Source-Tool für das Netzwerkscanning und die Netzwerkerkundung, das von Gordon Lyon entwickelt wurde und in der IT-Sicherheit als Standardwerkzeug für die Entdeckung von Hosts, offenen Ports und laufenden Diensten gilt. Als Network Mapper bezeichnet, sendet es gezielt Pakete an Zielsysteme und analysiert die Antworten, um detaillierte Informationen über die Netzwerktopologie zu sammeln, einschließlich Betriebssystemversionen, Service-Details und potenzieller Schwachstellen. Nmap unterstützt eine Vielzahl von Scan-Techniken, wie TCP-SYN-Scans für unauffällige Erkundungen oder UDP-Scans für die Überprüfung von offenen Ports, und kann mit Skripten aus der NSE (Nmap Scripting Engine) erweitert werden, um automatisierte Vulnerabilitätschecks durchzuführen.
+Da Nmap sowohl für kleine als auch für große Netzwerke skalierbar ist und Optionen wie Rate-Limiting bietet, um Entdeckung zu vermeiden, ist es ein essenzielles Tool für Penetrationstester, die Schwachstellen kartieren und Angriffsvektoren identifizieren möchten. Mit Befehlen wie „nmap -sS -p- [IP-Bereich]" können Administratoren offene Ports scannen und Dienste wie SMB oder RDP aufspüren, was hilft, Sicherheitslücken frühzeitig zu schließen. Besonders nützlich ist Nmap in der Reconnaissance-Phase von Angriffen, da es ohne hohe Rechte funktioniert und detaillierte Berichte erzeugt, die die Basis für weitere Exploits bilden können, was es zu einem zweischneidigen Schwert macht: wertvoll für Defender, aber gefährlich, wenn es von Angreifern genutzt wird, um Netzwerke zu kompromittieren.
 
 https://nmap.org/book/man.html
 https://www.geeksforgeeks.org/linux-unix/what-is-nmap-a-comprehensive-guide-for-network-mapping/
@@ -84,9 +84,9 @@ https://www.hackthebox.com/blog/metasploit-tutorial
 https://www.kali.org/tools/metasploit-framework/
 https://www.imperva.com/learn/application-security/metasploit/
 
-###Was ist CrackMapExec
+### Was ist CrackMapExec
 
-CrackMapExec (oft abgekürzt als CME) ist ein Open-Source-Tool für Penetrationstests, das speziell für die Nachnutzung (Post-Exploitation) in Windows- und Active Directory-Umgebungen entwickelt wurde und auf Python basiert. Es dient als vielseitiges Werkzeug für Sicherheitsforscher und ethische Hacker, um Schwachstellen in Netzwerken zu identifizieren, indem es Befehle auf mehreren Systemen ausführt, Anmeldeinformationen extrahiert und Angriffsszenarien simuliert, ohne dass komplexe manuelle Skripte erforderlich sind. Der Fokus liegt auf der Automatisierung von Aufgaben wie dem Sammeln von Hashes, dem Zugriff auf Ressourcen oder der Lateralen Bewegung in kompromittierten Umgebungen, was es zu einem "Schweizer Taschenmesser" für Active Directory-Pentests macht.
+CrackMapExec (oft abgekürzt als CME) ist ein Open-Source-Tool für Penetrationstests, das speziell für die Nachnutzung (Post-Exploitation) in Windows- und Active Directory-Umgebungen entwickelt wurde und auf Python basiert. Es dient als vielseitiges Werkzeug für Sicherheitsforscher und ethische Hacker, um Schwachstellen in Netzwerken zu identifizieren, indem es Befehle auf mehreren Systemen ausführt, Anmeldeinformationen extrahiert und Angriffsszenarien simuliert, ohne dass komplexe manuelle Skripte erforderlich sind. Der Fokus liegt auf der Automatisierung von Aufgaben wie dem Sammeln von Hashes, dem Zugriff auf Ressourcen oder der lateralen Bewegung in kompromittierten Umgebungen, was es zu einem „Schweizer Taschenmesser" für Active Directory-Pentests macht.
 CrackMapExec funktioniert modular und nutzt Protokolle wie SMB, WinRM, WMI oder RDP, um mit Zielsystemen zu interagieren: Zunächst authentifiziert es sich mit bereitgestellten Credentials (z. B. NTLM-Hashes oder Passwörtern) und kann dann Befehle remote ausführen, SAM-Dateien dumpen oder Kerberos-Tickets manipulieren. Es unterstützt Erweiterungen durch benutzerdefinierte Module und ist so konzipiert, dass es skalierbar auf große Netzwerke anwendbar ist, mit Optionen für Stealth-Modi, um Detektion zu vermeiden. Schwachstellen entstehen hauptsächlich durch missbräuchliche Nutzung, da das Tool potenziell für echte Angriffe eingesetzt werden könnte, weshalb es nur in autorisierten Testumgebungen empfohlen wird; regelmäßige Updates sorgen für Kompatibilität mit aktuellen Windows-Versionen und Verschlüsselungsstandards.
 
 https://github.com/byt3bl33d3r/CrackMapExec
@@ -133,46 +133,49 @@ Zusätzlich wurden auf den Windows-Systemen Sysmon und Wazuh-Agenten installiert
 
 Bevor mit gezielten Angriffen begonnen wurde, führte der Angreifer eine umfassende Netzwerkreconnaissance durch, um offene Ports und erreichbare Dienste im simulierten Netzwerk zu identifizieren. Hierzu wurde das leistungsstarke Tool Nmap auf dem Kali-Linux-System eingesetzt, das als Standardwerkzeug für Port-Scans in Penetrationstests gilt und eine Vielzahl von Scan-Techniken unterstützt, darunter TCP-SYN-Scans für schnelle und unauffällige Erkundungen. Der Scan wurde so konfiguriert, dass er das gesamte Subnetz 192.168.122.0/24 abdeckte, um alle potenziellen Hosts zu entdecken, ohne unnötige Aufmerksamkeit zu erregen.
 
-Mit Befehlen wie "nmap -sS 192.168.122.0/24" wurden alle 65.535 Ports auf offene TCP-Verbindungen überprüft, wobei der SYN-Scan-Modus verwendet wurde, um die Scans effizient und stealthy durchzuführen, da er keine vollständige TCP-Handschake erfordert und somit weniger Logs erzeugt. Die Ergebnisse zeigten offene Ports auf dem Domaincontroller, wie Port 445 für SMB, Port 389 für LDAP und Port 88 für Kerberos, sowie auf dem Client-Gerät Ports wie 3389 für RDP, was wertvolle Einblicke in die Netzwerktopologie und potenzielle Angriffsvektoren lieferte. Dieser Schritt ist essenziell in realen Szenarien, da er hilft, Schwachstellen zu kartieren und den Angriffspfad zu planen, ohne sofort invasive Maßnahmen zu ergreifen.
+Mit Befehlen wie „nmap -sS 192.168.122.0/24" wurden alle 65.535 Ports auf offene TCP-Verbindungen überprüft, wobei der SYN-Scan-Modus verwendet wurde, um die Scans effizient und unauffällig durchzuführen, da er keine vollständige TCP-Handshake erfordert und somit weniger Logs erzeugt. Die Ergebnisse zeigten offene Ports auf dem Domaincontroller, wie Port 445 für SMB, Port 389 für LDAP und Port 88 für Kerberos, sowie auf dem Client-Gerät Ports wie 3389 für RDP, was wertvolle Einblicke in die Netzwerktopologie und potenzielle Angriffsvektoren lieferte. Dieser Schritt ist essenziell in realen Szenarien, da er hilft, Schwachstellen zu kartieren und den Angriffspfad zu planen, ohne sofort invasive Maßnahmen zu ergreifen.
 
 https://www.youtube.com/watch?v=UjVxt_qXmI4
 
 ### Online Cracking
 
-Als ich dann herausgefunden habe, welche Ports offen sind, war ich wie: „Aha, da gibt’s tatsächliche Möglichkeiten für ‘CrackMapExec‘ CME. Um das Passwort über Brute Force online zu cracken. Und tatsächlich: Es ging Promise! Aber alles war sehr laut auf dem ‘Wazuh-Deskop‘-Dashboard. Nur weil alle Fehlversuche immer als ‘falscher Login‘ aufblieben. War aber alles kein Problem. Nach einiger Zeit war ich mit dem richtigen Passwort drin.
-Zum Hintergrund: In solch einem PenTest-Szenario, wie es in Labs wie HackTheBox practiced wird, startet das Ganze immer mit einem PortScan, im Regelfall mit Nmap, mit dem man Dienste wie SMB über Port 445, RDP über Port 3389 oder WinRM über Portn 5985 bzw. 5986 "scoutet". Dann, wenn man einige Credentials bzw. Hashes in der Hand hat, ist CME äußerst hilfreich, weil es modulartig ist und solche Dinge wie NTLM-Credentials bzw. Kerberos kenne, die dann wiederum Worte "scouten" sollen, nämlich die Passwords.
-Einen Test, hab ich dann mit dem SMB-Modul durchgeführt und einer Wortliste wie "rockyou.txt" durchlaufen lassen.
+Nachdem die offenen Ports identifiziert wurden, bot sich die Möglichkeit, CrackMapExec (CME) für ein Online-Brute-Force-Verfahren einzusetzen. Der Versuch, das Passwort mittels Wörterbuchattacke zu ermitteln, war erfolgreich, allerdings wurden sämtliche Fehlversuche auf dem Wazuh-Dashboard als fehlgeschlagene Login-Versuche protokolliert, was auf eine hohe Erkennbarkeit des Angriffs hindeutet. Nach mehreren Iterationen konnte das korrekte Passwort identifiziert und ein erfolgreicher Login durchgeführt werden.
+
+In typischen Pentesting-Szenarien, wie sie in Laborumgebungen wie HackTheBox praktiziert werden, beginnt die Vorgehensweise stets mit einem Port-Scan, üblicherweise mittels Nmap, um Dienste wie SMB über Port 445, RDP über Port 3389 oder WinRM über Port 5985 bzw. 5986 zu identifizieren. Sobald erste Credentials oder Hashes erbeutet wurden, erweist sich CME als besonders nützlich, da es modular aufgebaut ist und verschiedene Authentifizierungsmethoden wie NTLM-Credentials oder Kerberos-Tickets unterstützt, um Passwörter zu ermitteln.
+
+Für den Test wurde das SMB-Modul von CrackMapExec in Kombination mit der Wortliste „rockyou.txt" verwendet.
 
 ![online-cracking](img/Macuha-bilder/online-cracking.jpg)
 ![online-cracking2](img/Macuha-bilder/online-cracking2.jpg)
 
-### Evilwin-RM
+### Evil-WinRM
 
-Nachdem ich die Zugangsdaten hatte, konnte ich Evil-WinRM auf meinem Kali benutzen um eine PowerShell-Session auf dem Windows-11 System zu erstellen.
-Wozu ist das also gut? Evil-WinRM ist ein in Ruby geschriebenes Pen-Test-Tool, das WinRM (Windows Remote Management) ausnutzt, um remote Shells zu öffnen (konkret über Port 5985/86), ohne RDP oder SMB benutzen zu müssen. In Labs wie HackTheBox ist das das optimale Mittel für Lateral Movement, sobald du Zugangsdaten hast — einfach starten mit 'evil-winrm -i  -u  -p ' und du hast eine interaktive PowerShell. Pass aber auf Firewalls oder Virenscanner auf, die das eventuell blockieren könnten.
+Nach erfolgreicher Erbeutung der Zugangsdaten wurde Evil-WinRM auf dem Kali-Linux-System eingesetzt, um eine PowerShell-Session auf dem Windows-11-System zu etablieren.
+
+Evil-WinRM ist ein in Ruby entwickeltes Penetrationstesting-Tool, das WinRM (Windows Remote Management) nutzt, um Remote-Shells über Port 5985/5986 zu öffnen, ohne auf RDP oder SMB angewiesen zu sein. In Laborumgebungen wie HackTheBox stellt dies ein effizientes Werkzeug für Lateral Movement dar, sobald gültige Zugangsdaten vorliegen. Die Verwendung erfolgt mittels des Befehls „evil-winrm -i <IP> -u <User> -p <Pass>", wodurch eine interaktive PowerShell-Sitzung etabliert wird. Zu beachten ist, dass Firewalls oder Antivirenprogramme diese Verbindungen potenziell blockieren können.
 
 ![evilwin-rm-shell](img/Macuha-bilder/evilwin-rm-access.jpg)
 
 ### Credential Capture mit Responder
 
-Nach der Identifikation der Netzwerkkomponenten nutzte der Angreifer das Tool Responder auf Kali Linux, um eine LLMNR- und NBT-NS-Poisoning-Attacke durchzuführen, die darauf abzielt, fehlgeschlagene Namensauflösungsanfragen abzufangen und sensible Credentials zu erfassen. Responder wurde mit dem Befehl "responder -I eth0 -dw" gestartet, um auf dem Netzwerkinterface zu lauschen und rogue Server für LLMNR, NBT-NS und MDNS zu emulieren, die auf Anfragen von Windows-Systemen reagieren, wenn DNS-Auflösungen fehlschlagen
-Um die Attacke auszulösen, wurde auf dem Client-Gerät eine absichtliche Fehlanfrage simuliert, z.B. durch den Versuch, auf eine nicht existierende Ressource wie `\bogusshare` zuzugreifen, was das System dazu veranlasste, auf LLMNR/NBT-NS zurückzugreifen und eine Broadcast-Anfrage zu senden. Responder poisonte diese Anfrage, indem es sich als der angefragte Host ausgab, und forderte NTLM-Authentifizierung an, wodurch der NTLM-Hash des Basisbenutzers maxmustermann erbeutet wurde. Dieser Hash konnte anschließend offline mit Tools wie Hashcat geknackt werden, um das Passwort Datelm25# zu rekonstruieren, was den Einstieg in die Domäne als normaler Benutzer ermöglichte. Diese Technik ist besonders effektiv in Windows-Netzwerken, da sie auf standardmäßigen Protokollen basiert und keine hohen Rechte erfordert, aber zu erheblichen Kompromittierungen führen kann, wenn nicht durch Gruppenrichtlinien deaktiviert.
+Nach der Identifikation der Netzwerkkomponenten nutzte der Angreifer das Tool Responder auf Kali Linux, um eine LLMNR- und NBT-NS-Poisoning-Attacke durchzuführen, die darauf abzielt, fehlgeschlagene Namensauflösungsanfragen abzufangen und sensible Credentials zu erfassen. Responder wurde mit dem Befehl „responder -I eth0 -dw" gestartet, um auf dem Netzwerkinterface zu lauschen und rogue Server für LLMNR, NBT-NS und MDNS zu emulieren, die auf Anfragen von Windows-Systemen reagieren, wenn DNS-Auflösungen fehlschlagen.
+Um die Attacke auszulösen, wurde auf dem Client-Gerät eine absichtliche Fehlanfrage simuliert, beispielsweise durch den Versuch, auf eine nicht existierende Ressource wie `\\bogusshare` zuzugreifen, was das System dazu veranlasste, auf LLMNR/NBT-NS zurückzugreifen und eine Broadcast-Anfrage zu senden. Responder poisonte diese Anfrage, indem es sich als der angefragte Host ausgab, und forderte NTLM-Authentifizierung an, wodurch der NTLM-Hash des Basisbenutzers maxmustermann erbeutet wurde. Dieser Hash konnte anschließend offline mit Tools wie Hashcat geknackt werden, um das Passwort Datelm25# zu rekonstruieren, was den Einstieg in die Domäne als normaler Benutzer ermöglichte. Diese Technik ist besonders effektiv in Windows-Netzwerken, da sie auf standardmäßigen Protokollen basiert und keine hohen Rechte erfordert, aber zu erheblichen Kompromittierungen führen kann, wenn nicht durch Gruppenrichtlinien deaktiviert.
 
 ![starting-responder](img/Macuha-bilder/Responder.jpg)
 
-im windows 11 sysetem wurde eine falshe online datei gesucht 
+Im Windows-11-System wurde eine nicht existierende Netzwerkressource angefragt.
 
 ![wrong-file-path](img/Macuha-bilder/wrong-File-path.jpg)
 
-Der Responder poisend den request und bekommt die Credentials
+Responder fängt die Anfrage ab (Poisoning) und erfasst die Credentials.
 
 ![Responder-getting-creds](img/Macuha-bilder/Success-Responder.jpg)
 
-NTLM-hash speichern um offline zu cracken sodass es von wazuh schwieriger detected wird.
+Der NTLM-Hash wird gespeichert, um ihn offline zu knacken, wodurch die Erkennung durch Wazuh erschwert wird.
 
 ![Responder-getting-creds](img/Macuha-bilder/saving-NTLM-hash.jpg)
 
-Jetzt mit Hashcat offline brute forcen/cracken. Völlig lautlos, Wazuh checkt gar nicht, dass du das machst, im Vergleich zum Online-Knacken
+Mittels Hashcat wird der Hash offline mittels Brute-Force-Verfahren geknackt. Im Gegensatz zum Online-Cracking erzeugt dieser Vorgang keine Netzwerkaktivität und bleibt somit für Wazuh unerkennbar.
 
 ![Responder-getting-creds](img/Macuha-bilder/hashcat-cracking.jpg)
 
@@ -187,7 +190,7 @@ Nach dem erfolgreichen Capture der Credentials stand dem Angreifer nun ein norma
 * Benutzername: maxmustermann
 * Passwort: Datelm25#
 
-Dieser Benutzer besitzt keinerlei administrative Rechte oder erweiterte Berechtigungen, was ihn zu einem typischen Low-Privilege-Account macht. Dieses Szenario entspricht einem realistischen Angriffsfall, bei dem initiale Zugangsdaten durch Netzwerkpoisoning oder ähnliche Techniken erbeutet werden, und unterstreicht, wie Angreifer mit minimalem Ausgangszugang schrittweise eskalieren können.
+Dieser Benutzer besitzt keinerlei administrative Rechte oder erweiterte Berechtigungen, was ihn zu einem typischen Konto mit niedrigen Privilegien (Low-Privilege-Account) macht. Dieses Szenario entspricht einem realistischen Angriffsfall, bei dem initiale Zugangsdaten durch Netzwerkpoisoning oder ähnliche Techniken erbeutet werden, und unterstreicht, wie Angreifer mit minimalem Ausgangszugang schrittweise eskalieren können.
 
 ### Durchführung des Kerberoasting-Angriffs
 
@@ -202,8 +205,7 @@ Nachdem wir das Ticket erhalten haben, speichern wir es und verwenden Hashcat er
 ![cracking-kerebos](img/Macuha-bilder/cracking-kerebos.jpg)
 ![cracking-kerebos2](img/Macuha-bilder/cracking-kerebos2.jpg)
 
-
-Dieser Schritt verdeutlicht eindringlich, wie gefährlich schwache oder vorhersagbare Passwörter bei Service Accounts sind, da der Angriff keine besondere Berechtigung erfordert, vollständig offline abläuft und somit schwer zu erkennen ist, ohne spezialisierte Monitoring-Lösungen.
+Dieser Schritt verdeutlicht, wie gefährlich schwache oder vorhersagbare Passwörter bei Service Accounts sind, da der Angriff keine besondere Berechtigung erfordert, vollständig offline abläuft und somit schwer zu erkennen ist, ohne spezialisierte Monitoring-Lösungen.
 
 
 https://www.youtube.com/watch?v=ZoGoBCviu6w
@@ -228,7 +230,7 @@ Durch die Verwendung dieses Tickets war es möglich, sich als Domain Administrat
 ![creating-golden-ticket](img/Macuha-bilder/creating-goldenticket.jpg)
 
 Das Goldene Ticket in eine Umgebungsvariable umwandeln, damit Impacket es nutzen kann. 'export KRB5CCNAME=/path/to/ticket.kirbi' so kann Impacket drauf zugreifen, ohne extra Params.
-
+ Ticket wird in eine Umgebungsvariable umgewandelt, damit Impacket es verwenden kann. Mittels „export KRB5CCNAME=/path/to/ticket.kirbi" kann Impacket auf das Ticket zugreifen, ohne dass zusätzliche Parameter erforderlich sind
 ![enviroment-goldenticket](img/Macuha-bilder/enviroment-goldenticket.jpg)
 
 https://www.youtube.com/watch?v=pbneELowUSA
@@ -236,7 +238,7 @@ https://www.youtube.com/watch?v=pbneELowUSA
 ### Erstellung und Einsatz eines Meterpreter-Payloads
 
 Um eine Reverse-TCP-Verbindung zu einer Kali-Linux-Maschine herzustellen, wurde das Tool msfvenom aus dem Metasploit-Framework verwendet. Mithilfe von msfvenom lässt sich ein ausführbarer Payload generieren, der bei Ausführung auf dem Zielsystem eine Verbindung zum Angreifer zurück aufgebaut. Der Payload wurde bewusst einfach gehalten, um die Grundfunktionalität zu demonstrieren. In realen Szenarien würden zusätzliche Verschleierungstechniken (z. B. Encoder) eingesetzt, um Antivirenprogramme zu umgehen.
-
+baut. Der Payload wurde bewusst einfach gehalten, um die Grundfunktionalität zu demonstrieren. In realen Szenarien würden zusätzliche Verschleierungstechniken (beispielsweise
 ![creating-malware](img/Macuha-bilder/creating-malware.jpg)
 
 Um den Payload für das Zielsystem zugänglich zu machen, wurde auf der Kali-Maschine ein Apache-Webserver gestartet. Apache ermöglicht das einfache Hosten von Dateien, die über das lokale Netzwerk abgerufen werden können.
@@ -259,11 +261,11 @@ Nach dem Download wurde der Payload auf der Windows-10-Maschine ausgeführt. Die
 Meterpreter bietet eine Vielzahl von Post-Exploitation-Tools, darunter:
 
 * Systeminformationen auslesen (z. B. Benutzername, Betriebssystem)
-* Dateien herunterladen/hochladen
+* Dateien herunterladen/hochladebeispielsweise Benutzername, Betriebssystem)
+* Dateien herunterladen und hochladen
 * Keylogging und Screenshot-Erstellung
-* Persistenzmechanismen einrichten (z. B. Autostart-Einträge)
-* Rechteeskalation (z. B. durch Exploits wie getsystem)
-
+* Persistenzmechanismen einrichten (beispielsweise Autostart-Einträge)
+* Rechteeskalation (beispielsweise
 ![getting-meterpreter-session](img/Macuha-bilder/getting-meterpreter-session.jpg)
 ![getting-meterpreter-session2](img/Macuha-bilder/getting-meterpreter-session2.jpg)
 
