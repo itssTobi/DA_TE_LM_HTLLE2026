@@ -1,6 +1,5 @@
 
 # Zusammenfassung
-
 Diese Diplomarbeit dokumentiert die erfolgreiche Planung und Umsetzung einer komplexen virtuellen Laborumgebung für die HTL Leoben. Das zentrale Ziel war die Evaluierung und Implementierung eines zentralen Servers, der die gesamte IT-Infrastruktur für den Laborbetrieb im Block "Pentestesting" bereitstellt, in der Cyberattacken auf sichere Weise simuliert werden können.
 
 ## Durchgeführte Arbeiten
