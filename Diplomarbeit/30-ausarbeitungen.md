@@ -6,4 +6,4 @@ Der Auftraggeber dieser Diplomarbeit ist die HTL Leoben, in der im Fach Smart Pr
 
 ## Ausgangssituation
 
-Aktuell setzen die Schülerinnen und Schüler im Laborblock „Pentesting“ die Testumgebung mit virtuellen Maschinen auf ihren eigenen Geräten auf. Unterschiedliche Hardwareausstattungen führen dabei zu spürbaren Abweichungen in Bearbeitungstempo und Fortschritt. Während einige Lernende die Umgebung zügig einrichten können, stoßen andere auf Ressourcenengpässe. Diese Heterogenität erzeugt ungleiche Lernverläufe und erschwert einen gleichmäßigen Unterrichtsablauf.
+Aktuell setzen die Schülerinnen und Schüler im Laborblock „Pentesting“ die Testumgebung mit virtuellen Maschinen auf ihren eigenen Geräten auf. Unterschiedliche Hardwareausstattungen führen dabei zu spürbaren Abweichungen in Bearbeitungstempo und Fortschritt. Während einige Lernende die Umgebung zügig einrichten können, stoßen andere auf Ressourcenengpässe. Diese Situation erzeugt ungleiche Lernverläufe und erschwert einen gleichmäßigen Unterrichtsablauf.

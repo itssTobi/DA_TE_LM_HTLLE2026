@@ -37,4 +37,4 @@ Zur Überprüfung der Umgebung und der Erkennungsleistung des IDS wurden unter a
 
 ## Fazit
 
-Die Arbeit belegt, dass eine zentralisierte, didaktisch nutzbare Laborumgebung auf Basis von Proxmox, Tailscale, GNS3 und Wazuh praxistauglich umgesetzt werden kann. Die Tests bestätigen die Funktionsfähigkeit der Plattform und ermöglichen realitätsnahe Übungen, ohne produktive Systeme zu gefährden. Damit entsteht eine belastbare Grundlage für vertiefte Cybersecurity-Schulungen an der HTL Leoben.
+Die Arbeit belegt, dass eine zentralisierte nutzbare Laborumgebung auf Basis von Proxmox, Tailscale, GNS3 und Wazuh praxistauglich umgesetzt werden kann. Die Tests bestätigen die Funktionsfähigkeit der Plattform und ermöglichen realitätsnahe Übungen, ohne produktive Systeme zu gefährden. Damit entsteht eine belastbare Grundlage für vertiefte Cybersecurity-Schulungen an der HTL Leoben.

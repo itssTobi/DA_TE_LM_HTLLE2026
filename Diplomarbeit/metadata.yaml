@@ -15,9 +15,8 @@ da-author:
   klasse: 5BHWIN
   thema: Blue Team
   ki-tools:
-  - name: ChatGPT 3.5,ChatGPT 4o, Gemini 3 Pro, Github Copilot
+  - name: ChatGPT 4o, Gemini 3 Pro, Github Copilot
     zweck: Informationsbeschaffung, Rechtsschreibprüfung und Grammatikprüfung
-
 
 - vorname: Lukas 
   nachname: Macuha
@@ -63,9 +62,8 @@ da-kurzfassung-en: In this thesis, it was evaluated whether it makes sense to us
  management of a virtual lab environment for training purposes.
 
 
-
 da-kiquellen:
-- ki: ChatGPT4
+- ki: ChatGPT4o
   short-prompt: Alternativen zu Wireguard
   pdf-file: AlternativenZuWireGuard.pdf
 
@@ -126,10 +124,16 @@ da-appendix:
 
 # Diplomarbeitsvereinbarungen müssen zum Schluss sein 
 
-- abschnitt: Diplomatbeitsvereinbarung Englisch
+- abschnitt: Erstes Betreuungsprotokoll
+  pdf-file: 1.Protokoll.pdf
+
+- abschnitt: Zweites Betreuungsprotokoll
+  pdf-file: 2.Protokoll.pdf
+
+- abschnitt: Diplomarbeitsvereinbarung Englisch
   pdf-file: HTL-DA-Doku-EN.pdf
 
-- abschnitt: Diplomatbeitsvereinbarung Deutsch
+- abschnitt: Diplomarbeitsvereinbarung Deutsch
   pdf-file: HTL-DA-Doku-DE.pdf
   
 ---

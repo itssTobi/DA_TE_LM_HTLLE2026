@@ -5,7 +5,7 @@
 ### Erfolgsmessung
 
 #### Erreichung Leistungs-/Qualitätsziele
-Die gesetzten Leistungs- und Qualitätsziele des Projekts wurden erreicht. Die virtuelle Netzwerkumgebung wurde erfolgreich auf dem Proxmox-Server eingerichtet; sie umfasst einen Client und einen Domaincontroller, die regelkonform miteinander kommunizieren. Das implementierte Intrusion Detection System (IDS) erkennt Angriffe eines externen Clients, die im Rahmen der Tests erfolgreich simuliert wurden.
+Die gesetzten Leistungs- und Qualitätsziele des Projekts wurden erreicht. Die virtuelle Netzwerkumgebung wurde erfolgreich auf dem Proxmox-Server eingerichtet; sie umfasst Clients und einen Domaincontroller, die regelkonform miteinander kommunizieren. Das implementierte Intrusion Detection System (IDS) erkennt Angriffe eines externen Clients, die im Rahmen der Tests erfolgreich simuliert wurden.
 
 #### Erreichung Terminziele
 Die meisten Meilensteine wurden innerhalb des vorgesehenen Zeitrahmens erreicht; vereinzelt traten jedoch Verzögerungen auf. Insbesondere bei der Simulation und den Tests des IDS-Systems ergaben sich unerwartete Herausforderungen, die zeitliche Verschiebungen zur Folge hatten. Dennoch konnten alle wesentlichen Meilensteine abgeschlossen werden, teilweise mit geringfügigen Verzögerungen.
@@ -25,5 +25,4 @@ Im Bereich des Projektmanagements wurde deutlich, dass Planung und insbesondere 
 Das Projekt bot umfassende Einblicke in die technischen Aspekte der Einrichtung virtueller Netzwerkumgebungen. Die praktischen Erfahrungen erweiterten das Verständnis für Netzwerksicherheit und virtuelle Infrastrukturen erheblich.
 
 ### Nachhaltigkeitsanalyse
-
 Das Projekt trägt zur Chancengleichheit im Bildungsbereich bei, indem allen Schülerinnen und Schülern eine einheitliche Lernumgebung unabhängig von ihrer individuellen Hardwareausstattung bereitgestellt wird. Dies unterstützt das Ziel hochwertiger Bildung (SDG 4) und fördert die Reduzierung von Ungleichheiten (SDG 10). Durch die zentrale virtuelle Umgebung wird der Ressourcenverbrauch optimiert, was zu einer nachhaltigeren Technologienutzung beiträgt (SDG 12). Insgesamt leistet das Projekt einen positiven Beitrag zur Förderung von Bildungsgerechtigkeit und nachhaltiger Ressourcennutzung.
