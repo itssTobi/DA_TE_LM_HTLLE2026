@@ -125,10 +125,10 @@ da-appendix:
 # Diplomarbeitsvereinbarungen müssen zum Schluss sein 
 
 - abschnitt: Erstes Betreuungsprotokoll
-  pdf-file: 1.Protokoll.pdf
+  pdf-file: erstesProtokoll.pdf
 
 - abschnitt: Zweites Betreuungsprotokoll
-  pdf-file: 2.Protokoll.pdf
+  pdf-file: zweitesProtokoll.pdf
 
 - abschnitt: Diplomarbeitsvereinbarung Englisch
   pdf-file: HTL-DA-Doku-EN.pdf
