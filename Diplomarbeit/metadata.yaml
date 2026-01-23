@@ -73,7 +73,7 @@ da-kiquellen:
 
 - ki: Gemini 3 Pro
   short-prompt: Bereitstellung von Internet in GNS3
-  pdf-file: GNS3InternetanbindungFürEndpunkte.pdf
+  pdf-file: GNS3Internetanbindung.pdf
 
 da-appendix:
 - abschnitt: Server Erklärung
