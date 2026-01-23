@@ -129,13 +129,13 @@ Als IDS wird Wazuh eingesetzt. Auf der Ubuntu-22.04-LTS-VM wird der Wazuh-Server
 Die Wazuh-Agenten werden auf den übrigen VMs installiert. Der Windows-Installer wird von der offiziellen Website geladen und per PowerShell angebunden, beispielsweise mit `./wazuh-agent-4.14.1-1.msi /q WAZUH_MANAGER="<IP-AdresseDesWazuhServers>"`. Anschließend wird der Dienst mit `Start-Service wazuhsvc` gestartet. Die Schritte werden auf allen relevanten Maschinen (hier Windows Server, Windows 10 und Windows 11) wiederholt. Nach erfolgreicher Registrierung erscheinen die Ereignisse im Wazuh-Dashboard. [@installWazuhAgent]
 
 ### Windows Server als Domaincontroller einrichten
-Auf dem Windows Server 2019 wird über den Server-Manager die Rolle „Active Directory-Domänendienste“ installiert. Nach der Installation erfolgt die Hochstufung zum Domaincontroller über „Promote this server to a domain controller“. Für den neuen Forest wird ein Domänenname (z.B. „datelm.local“) vergeben; die Standardpfade und Einstellungen werden übernommen. Nach Abschluss startet der Server neu und fungiert als Domaincontroller.
+Auf dem Windows Server 2019 wird über den Server-Manager die Rolle „Active Directory-Domänendienste“ installiert. Nach der Installation erfolgt die Hochstufung zum Domaincontroller über „Promote this server to a domain controller“. Für den neuen Forest wird ein Domänenname (z.B. „datelm.local“) vergeben; die Standardpfade und Einstellungen werden übernommen. Nach Abschluss startet der Server neu und fungiert als Domaincontroller. [@adInstallation]
 
 #### Benutzer im Active Directory anlegen
 In „Active Directory-Benutzer und -Computer“ werden unter der Domäne im Ordner „Users“ neue Benutzer erstellt. Für jeden Benutzer werden Name, Anmeldename und ein Passwort gemäß Richtlinie vergeben. Dieser Vorgang wird für alle benötigten Konten wiederholt.
 
 ### Windows 10 Client in die Domäne einbinden
-Voraussetzung ist, dass der Client als DNS-Server die IP des Domaincontrollers nutzt. Unter „Einstellungen > System > Info > Diesen PC umbenennen (erweiterte Einstellungen)“ wird „Domäne“ gewählt und der Domänenname (z.B. „datelm.local“) eingetragen. Nach Eingabe von Domänen-Anmeldedaten wird die Aufnahme bestätigt und der Rechner neu gestartet. Anschließend ist eine Anmeldung mit Domänenkonto möglich.
+Voraussetzung ist, dass der Client als DNS-Server die IP des Domaincontrollers nutzt. Unter „Einstellungen > System > Info > Diesen PC umbenennen (erweiterte Einstellungen)“ wird „Domäne“ gewählt und der Domänenname (z.B. „datelm.local“) eingetragen. Nach Eingabe von Domänen-Anmeldedaten wird die Aufnahme bestätigt und der Rechner neu gestartet. Anschließend ist eine Anmeldung mit Domänenkonto möglich. [@joinDomain]
 
 ### Windows 11 Client in die Domäne einbinden
 Die Einbindung erfolgt analog zum Windows-10-Client; dieselben Schritte werden angewendet.
