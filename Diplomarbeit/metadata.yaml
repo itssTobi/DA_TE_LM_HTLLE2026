@@ -67,6 +67,14 @@ da-kiquellen:
   short-prompt: Alternativen zu Wireguard
   pdf-file: AlternativenZuWireGuard.pdf
 
+- ki: ChatGPT4o
+  short-prompt: Benutzer anlegen in Proxmox
+  pdf-file: BenutzerAnlegenInProxmox.pdf
+
+- ki: Gemini 3 Pro
+  short-prompt: Bereitstellung von Internet in GNS3
+  pdf-file: GN3InternetanbindungFürEndpunkte.pdf
+
 da-appendix:
 - abschnitt: Server Erklärung
   pdf-file: server.pdf
