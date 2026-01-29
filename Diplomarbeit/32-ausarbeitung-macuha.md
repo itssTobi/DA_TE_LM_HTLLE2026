@@ -2,8 +2,11 @@
 # Teilaufgabe Schüler Macuha
 \textauthor{Lukas Macuha}
 
+In dieser Teilaufgabe wird die praktische Umsetzung eines vollständigen Angriffspfads in einer Active-Directory-Testumgebung beschrieben. Zunächst werden die theoretischen Grundlagen zu den verwendeten Technologien und Angriffstechniken erläutert, gefolgt von einer detaillierten Darstellung der praktischen Arbeit, einschließlich der Durchführung der Angriffe und der Analyse der Ergebnisse.
+
 ## Theorie
 
+In diesem Kapitel werden grundlegende Begriffe und Technologien erläutert, die für das Verständnis der praktischen Teilarbeit relevant sind.
 
 ### Was ist Kerberos
 

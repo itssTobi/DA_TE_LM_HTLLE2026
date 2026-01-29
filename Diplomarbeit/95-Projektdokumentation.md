@@ -119,7 +119,7 @@
 #### Gesamtstatus
 * Das Projekt befindet sich im Plan.
 * Online- und Offline-Passwortangriffe wurden durchgeführt.
-* Es wurde versucht, Domain-Administrator-Rechte zu erlangen.
+* Es wurde versucht, Domänen-Administrator-Rechte zu erlangen.
 * IDS-System-Erkennung funktioniert.
 
 | Dimension      | Status                    | Maßnahmen |
@@ -142,7 +142,7 @@
 
 #### Gesamtstatus
 * Das Projekt befindet sich weiterhin im Plan.
-* Durch Kerberoasting konnten Domain-Administrator-Rechte erlangt werden.
+* Durch Kerberoasting konnten Domänen-Administrator-Rechte erlangt werden.
 * Ein Golden Ticket wurde erstellt und erfolgreich eingesetzt.
 * Die Erkennungsfähigkeit des IDS-Systems wurde erneut überprüft.
 

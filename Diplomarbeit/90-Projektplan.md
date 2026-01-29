@@ -17,7 +17,7 @@ Nicht Ziel dieser Arbeit ist es, eine produktive oder hochverfügbare Infrastruk
 Der Nutzen dieses Projekts besteht darin, Chancengleichheit zu schaffen, indem allen Schülerinnen und Schülern die gleiche Ausgangsituation sowie identische Hardwareressourcen zur Verfügung stehen.
 
 #### Projektauftraggeber/in
-Der Projektauftraggeber dieser Diplomarbeit ist das Bildungsinstitut HTL Leoben. 
+Der Projektauftraggeber dieser Diplomarbeit ist die  HTL Leoben. 
 
 #### Projekttermine
 
@@ -85,7 +85,7 @@ Im Falle einer Änderung des Meilensteinplans sind alle Projektmitglieder und Be
 - Auf dem Server läuft Proxmox
 
 ### 2025-11-01: VPN-Verbindung erfolgreich eingerichtet	
-- Man kann von unterwegs auf das Proxmox Dashboard zugreifen
+- Tailscale ist auf Proxmox installiert sodass Nutzer von außen zugreifen können
 
 ### 2025-11-26: GNS3 installiert	
 - GNS3 Server wurde auf Proxmox installiert
@@ -94,7 +94,6 @@ Im Falle einer Änderung des Meilensteinplans sind alle Projektmitglieder und Be
 - Client und Domaincontroller laufen auf Proxmox
 - Client ist dem Domaincontroller zugeordnet
 - Demonutzer wurde erstellt
-
 
 ### 2025-08-31: Drei IDS-Systeme miteinander verglichen
 - Es wurden drei verschiedene IDS-Systeme miteinander verglichen.

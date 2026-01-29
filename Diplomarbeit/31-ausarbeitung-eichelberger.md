@@ -2,7 +2,11 @@
 # Teilaufgabe Schüler Eichelberger
 \textauthor{Tobias Eichelberger}
 
+In dieser Teilaufgabe wird die praktische Umsetzung der in der Zielsetzung definierten serverbasierten Testumgebung beschrieben. Zunächst werden relevante theoretische Grundlagen erläutert, gefolgt von einer detaillierten Darstellung der Installations- und Konfigurationsschritte zur Realisierung der Umgebung.
+
 ## Theorie
+
+In diesem Kapitel werden grundlegende Begriffe und Technologien erläutert, die für das Verständnis der praktischen Teilarbeit relevant sind. 
 
 ### Was ist ein Server
 Ein Server ist ein leistungsfähiges Computersystem, das Ressourcen, Daten, Dienste oder Anwendungen zentral über ein Netzwerk bereitstellt und von Clients angefragt wird. Er übernimmt spezialisierte Aufgaben wie Webhosting, E-Mail-Verwaltung, Dateiablage oder Anwendungsbereitstellung. Entsprechend existieren unterschiedliche Serverrollen, darunter Web-, Datenbank-, Mail- und Dateiserver. Server bilden eine Kernkomponente moderner IT-Infrastrukturen und werden in Unternehmen, öffentlichen Organisationen sowie privaten Umgebungen eingesetzt. [@paessler] Eine kompakte Einführung bietet der Artikel unter `https://www.paessler.com/de/it-explained/server` (siehe Anhang).
@@ -43,6 +47,8 @@ Snort ist ein netzwerkbasiertes IDS (NIDS) und ebenfalls Open Source, neben der 
 Security Onion ist eine Open-Source-Lösung, die host- und netzwerkbasierte Erkennung in einem hybriden Ansatz kombiniert. Die Plattform wird zentral auf einem Server betrieben, verwendet Suricata für das netzwerkbasierte Scannen und den Elastic-Agenten für das hostbasierte Monitoring. Ereignisse werden konsolidiert auf einem Dashboard dargestellt. Die Dokumentation ist unter `https://docs.securityonion.net/en/2.4/index.html` [@securityonion] verfügbar.
 
 ## Praktische Arbeit
+
+In diesem Kapitel wird die schrittweise Umsetzung der serverbasierten Testumgebung beschrieben. Beginnend mit der Installation und Konfiguration des Proxmox-Servers, über die Einrichtung des Tailscale-VPNs und des GNS3-Servers, bis hin zum Aufsetzen der virtuellen Maschinen, der Implementierung des IDS-Systems und der Konfiguration des Windows-Domaincontrollers.
 
 ### Installation und Konfiguration des Proxmox-Servers
 Für die Umsetzung wurde ein HP ProLiant G7 mit 805 Gigabyte Massenspeicher, 70 Gigabyte Arbeitsspeicher und vier CPUs eingesetzt.
