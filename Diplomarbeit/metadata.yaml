@@ -76,59 +76,59 @@ da-kiquellen:
   pdf-file: GNS3Internetanbindung.pdf
 
 da-appendix:
-- abschnitt: Server Erklärung
-  pdf-file: server.pdf
+# - abschnitt: Server Erklärung
+#  pdf-file: server.pdf
 
-- abschnitt: Debian Erklärung
-  pdf-file: debian.pdf
+# - abschnitt: Debian Erklärung
+#  pdf-file: debian.pdf
 
-- abschnitt: Proxmox Erklärung
-  pdf-file: proxmox.pdf
+# - abschnitt: Proxmox Erklärung
+#  pdf-file: proxmox.pdf
 
-- abschnitt: Domaincontroller Erklärung
-  pdf-file: dc.pdf
+# - abschnitt: Domaincontroller Erklärung
+#  pdf-file: dc.pdf
 
-- abschnitt: VPN Erklärung
-  pdf-file: vpn.pdf
+# - abschnitt: VPN Erklärung
+#  pdf-file: vpn.pdf
 
-- abschnitt: Tailscale Erklärung
-  pdf-file: tailscale.pdf
+# - abschnitt: Tailscale Erklärung
+#  pdf-file: tailscale.pdf
 
-- abschnitt: GNS3 Erklärung
-  pdf-file: gns3.pdf
+# - abschnitt: GNS3 Erklärung
+#  pdf-file: gns3.pdf
 
-- abschnitt: IDS Erklärung
-  pdf-file: ids.pdf
+# - abschnitt: IDS Erklärung
+#  pdf-file: ids.pdf
 
-- abschnitt: Nmap Erklärung
-  pdf-file: Nmap.pdf
+# - abschnitt: Nmap Erklärung
+#  pdf-file: Nmap.pdf
 
-- abschnitt: Impacket Erklärung
-  pdf-file: Impacket.pdf
+# - abschnitt: Impacket Erklärung
+#  pdf-file: Impacket.pdf
 
-- abschnitt: Golden-Ticket-Angriff Erklärung
-  pdf-file: Golden-Ticket.pdf
+# - abschnitt: Golden-Ticket-Angriff Erklärung
+#  pdf-file: Golden-Ticket.pdf
 
-- abschnitt: DCSync-Angriff Erklärung
-  pdf-file: DCSync-Attack.pdf
+# - abschnitt: DCSync-Angriff Erklärung
+#  pdf-file: DCSync-Attack.pdf
 
-- abschnitt: Kerberoasting Erklärung
-  pdf-file: Kerberoasting.pdf
+# - abschnitt: Kerberoasting Erklärung
+#  pdf-file: Kerberoasting.pdf
 
-- abschnitt: Kerberos Erklärung
-  pdf-file: Kerberos.pdf
+# - abschnitt: Kerberos Erklärung
+#  pdf-file: Kerberos.pdf
 
-- abschnitt: Active Directory Erklärung
-  pdf-file: Active-Directory.pdf
+# - abschnitt: Active Directory Erklärung
+#  pdf-file: Active-Directory.pdf
 
-- abschnitt: Metasploit Erklärung
-  pdf-file: Metasploit.pdf
+# - abschnitt: Metasploit Erklärung
+#  pdf-file: Metasploit.pdf
 
-- abschnitt: Evil-WinRM Erklärung
-  pdf-file: evil-winrm.pdf
+# - abschnitt: Evil-WinRM Erklärung
+#  pdf-file: evil-winrm.pdf
 
-- abschnitt: Responder Erklärung
-  pdf-file: responder.pdf
+# - abschnitt: Responder Erklärung
+#  pdf-file: responder.pdf
 
 # Diplomarbeitsvereinbarungen müssen zum Schluss sein 
 

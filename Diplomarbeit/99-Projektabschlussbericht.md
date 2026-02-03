@@ -41,10 +41,10 @@ Durch die zentrale Bereitstellung der virtuellen Umgebung auf dem Proxmox-Server
 #### SDG 12: Nachhaltiger Konsum und Produktion
 Die Zentralisierung der virtuellen Laborumgebung auf einem Server trägt zur Ressourceneffizienz bei. Anstatt dass jeder Schüler und jede Schülerin leistungsstarke Hardware für die lokale Ausführung virtueller Maschinen benötigt, wird die Rechenleistung zentral bereitgestellt und effizient genutzt. Dies hat mehrere positive Auswirkungen:
 
-- **Reduzierung des Hardwarebedarfs**: Es besteht keine Notwendigkeit für regelmäßige Hardware-Upgrades der Schülergeräte. Ältere Geräte können weiterhin produktiv genutzt werden.
-- **Optimierte Energienutzung**: Ein zentraler Server arbeitet energieeffizienter als viele individuelle Geräte, die für ressourcenintensive Virtualisierungsaufgaben genutzt werden.
-- **Verlängerte Lebensdauer von Endgeräten**: Da die Schülergeräte nicht die volle Rechenlast tragen, haben sie eine längere Nutzungsdauer, was zur Reduktion von Elektroschrott beiträgt.
-- **Wiederverwendung von Hardware**: Der eingesetzte HP ProLiant G7 Server zeigt, dass auch ältere Serverhardware für Bildungszwecke effektiv weiterverwendet werden kann.
+- Reduzierung des Hardwarebedarfs: Es besteht keine Notwendigkeit für regelmäßige Hardware-Upgrades der Schülergeräte. Ältere Geräte können weiterhin produktiv genutzt werden.
+- Optimierte Energienutzung: Ein zentraler Server arbeitet energieeffizienter als viele individuelle Geräte, die für ressourcenintensive Virtualisierungsaufgaben genutzt werden.
+- Verlängerte Lebensdauer von Endgeräten: Da die Schülergeräte nicht die volle Rechenlast tragen, haben sie eine längere Nutzungsdauer, was zur Reduktion von Elektroschrott beiträgt.
+- Wiederverwendung von Hardware: Der eingesetzte HP ProLiant G7 Server zeigt, dass auch ältere Serverhardware für Bildungszwecke effektiv weiterverwendet werden kann.
 
 #### Fazit
 Das Projekt leistet einen ganzheitlichen Beitrag zur nachhaltigen Entwicklung im Bildungsbereich. Die zentrale virtuelle Laborumgebung fördert hochwertige, praxisnahe Bildung im Bereich der Cybersecurity und schafft Chancengleichheit für alle Lernenden. Gleichzeitig werden durch die Ressourcenoptimierung ökologische Aspekte berücksichtigt. Die entwickelte Lösung kann als Modell für ähnliche Projekte an anderen Bildungseinrichtungen dienen und ermöglicht es zukünftigen Jahrgängen, von der aufgebauten Umgebung zu profitieren. 

@@ -149,6 +149,7 @@ In typischen Pentesting-Szenarien, wie sie in Laborumgebungen wie HackTheBox pra
 Für den Test wurde das SMB-Modul von CrackMapExec in Kombination mit der Wortliste „rockyou.txt" verwendet.
 
 ![online-cracking](img/Macuha-bilder/online-cracking.jpg)
+
 ![online-cracking2](img/Macuha-bilder/online-cracking2.jpg)
 
 ### Evil-WinRM
@@ -206,6 +207,7 @@ Der Angreifer forderte mit einem standardmäßigen Kerberos-Request ein Service 
 Nachdem wir das Ticket erhalten haben, speichern wir es und verwenden Hashcat erneut, um es offline zu knacken.
 
 ![cracking-kerebos](img/Macuha-bilder/cracking-kerebos.jpg)
+
 ![cracking-kerebos2](img/Macuha-bilder/cracking-kerebos2.jpg)
 
 Dieser Schritt verdeutlicht, wie gefährlich schwache oder vorhersagbare Passwörter bei Service Accounts sind, da der Angriff keine besondere Berechtigung erfordert, vollständig offline abläuft und somit schwer zu erkennen ist, ohne spezialisierte Monitoring-Lösungen.
@@ -220,6 +222,7 @@ Mit den nun kompromittierten Zugangsdaten des Service Accounts wurde ein DCSync-
 Als Ergebnis konnten sämtliche Passwort-Hashes der gesamten Domäne extrahiert werden, darunter auch der Hash des Administrators sowie des besonders kritischen krbtgt-Kontos, das für die Ticket-Signatur verantwortlich ist. Ab diesem Zeitpunkt war die Domäne als vollständig kompromittiert zu betrachten, da der Angreifer nun Zugriff auf alle sensiblen Credentials hatte und weitere Eskalationen einleiten konnte.
 
 ![dcsync-attack](img/Macuha-bilder/dcsync-attack.jpg)
+
 ![dcsync-attack2](img/Macuha-bilder/dcsync-attack2.jpg)
 
 https://www.youtube.com/watch?v=pbneELowUSA
@@ -234,6 +237,7 @@ Durch die Verwendung dieses Tickets war es möglich, sich als Domain Administrat
 
 Das Goldene Ticket in eine Umgebungsvariable umwandeln, damit Impacket es nutzen kann. 'export KRB5CCNAME=/path/to/ticket.kirbi' so kann Impacket drauf zugreifen, ohne extra Params.
  Ticket wird in eine Umgebungsvariable umgewandelt, damit Impacket es verwenden kann. Mittels „export KRB5CCNAME=/path/to/ticket.kirbi" kann Impacket auf das Ticket zugreifen, ohne dass zusätzliche Parameter erforderlich sind
+
 ![enviroment-goldenticket](img/Macuha-bilder/enviroment-goldenticket.jpg)
 
 https://www.youtube.com/watch?v=pbneELowUSA
@@ -242,6 +246,7 @@ https://www.youtube.com/watch?v=pbneELowUSA
 
 Um eine Reverse-TCP-Verbindung zu einer Kali-Linux-Maschine herzustellen, wurde das Tool msfvenom aus dem Metasploit-Framework verwendet. Mithilfe von msfvenom lässt sich ein ausführbarer Payload generieren, der bei Ausführung auf dem Zielsystem eine Verbindung zum Angreifer zurück aufgebaut. Der Payload wurde bewusst einfach gehalten, um die Grundfunktionalität zu demonstrieren. In realen Szenarien würden zusätzliche Verschleierungstechniken (z. B. Encoder) eingesetzt, um Antivirenprogramme zu umgehen.
 baut. Der Payload wurde bewusst einfach gehalten, um die Grundfunktionalität zu demonstrieren. In realen Szenarien würden zusätzliche Verschleierungstechniken (beispielsweise
+
 ![creating-malware](img/Macuha-bilder/creating-malware.jpg)
 
 Um den Payload für das Zielsystem zugänglich zu machen, wurde auf der Kali-Maschine ein Apache-Webserver gestartet. Apache ermöglicht das einfache Hosten von Dateien, die über das lokale Netzwerk abgerufen werden können.
@@ -268,8 +273,10 @@ Meterpreter bietet eine Vielzahl von Post-Exploitation-Tools, darunter:
 * Dateien herunterladen und hochladen
 * Keylogging und Screenshot-Erstellung
 * Persistenzmechanismen einrichten (beispielsweise Autostart-Einträge)
-* Rechteeskalation (beispielsweise
+* Rechteeskalation beispielsweise
+
 ![getting-meterpreter-session](img/Macuha-bilder/getting-meterpreter-session.jpg)
+
 ![getting-meterpreter-session2](img/Macuha-bilder/getting-meterpreter-session2.jpg)
 
 
@@ -291,7 +298,7 @@ Während des gesamten Angriffs wurden alle sicherheitsrelevanten Ereignisse durc
 
 	*Zusätzlich erfasste Sysmon Netzwerkscans (Event ID 3) und ungewöhnliche Broadcast-Anfragen, die auf Poisoning-Angriffe hindeuten.
 
-Diese Logs wurden im Wazuh-Dashboard korreliert, visualisiert und ermöglichten eine detaillierte, schrittweise Rekonstruktion des gesamten Angriffspfades, einschließlich Timestamps und beteiligter Entitäten, was für Incident Response essenziell ist.
+Diese Logs wurden im Wazuh-Dashboard korreliert, visualisiert und ermöglichten eine detaillierte, schrittweise Rekonstruktion des gesamten Angriffspfades, einschließlich Timestamps und beteiligter Entitäten, was für Incident Response essenziell ist. Die einzelnen Events lieferten klare Indikatoren für die verschiedenen Phasen des Angriffs, von der Reconnaissance über die Privilegieneskalation bis hin zur Post-Exploitation, der Verlauf des Angriffs konnte somit lückenlos nachvollzogen werden. Zudem sind die Events direkte Hinweise auf die genutzten Techniken und Taktiken gemäß MITRE ATT&CK Framework, was die Analyse und das Verständnis der Angriffsvektoren erleichtert. Sie sind somit direkte Abhandlungen der Angriffe und nicht nur erscheinte Symptome. Solche Logs sollten nicht ignoriert werden, da sie wertvolle Informationen für die Erkennung und Abwehr zukünftiger Angriffe liefern. 
 
 ## Fazit
 
