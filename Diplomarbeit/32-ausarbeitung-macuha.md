@@ -179,7 +179,7 @@ Nachdem wir das Ticket erhalten haben, wird es gespeichert und Hashcat erneut ve
 Dieser Schritt verdeutlicht, wie gefährlich schwache oder vorhersagbare Passwörter bei Service Accounts sind, da der Angriff keine besondere Berechtigung erfordert, vollständig offline abläuft und somit schwer zu erkennen ist, ohne spezialisierte Monitoring-Lösungen.
 
 
-[@youtube_adlab1] [31] https://www.youtube.com/watch?v=ZoGoBCviu6w (siehe Anhang)
+[@youtube_adlab1] https://www.youtube.com/watch?v=ZoGoBCviu6w (siehe Anhang)
 
 ### Privilegieneskalation mittels DCSync
 
@@ -206,12 +206,11 @@ Ticket wird in eine Umgebungsvariable umgewandelt, damit Impacket es verwenden k
 
 ![enviroment-goldenticket](img/Macuha-bilder/enviroment-goldenticket.jpg)
 
-[@youtube_adlab2] [32] https://www.youtube.com/watch?v=pbneELowUSA (siehe Anhang)
+[@youtube_adlab2] https://www.youtube.com/watch?v=pbneELowUSA (siehe Anhang)
 
 ### Erstellung und Einsatz eines Meterpreter-Payloads
 
 Um eine Reverse-TCP-Verbindung zu einer Kali-Linux-Maschine herzustellen, wurde das Tool msfvenom aus dem Metasploit-Framework verwendet. Mithilfe von msfvenom lässt sich ein ausführbarer Payload generieren, der bei Ausführung auf dem Zielsystem eine Verbindung zum Angreifer zurück aufgebaut. Der Payload wurde bewusst einfach gehalten, um die Grundfunktionalität zu demonstrieren. In realen Szenarien würden zusätzliche Verschleierungstechniken (z. B. Encoder) eingesetzt, um Antivirenprogramme zu umgehen.
-baut. Der Payload wurde bewusst einfach gehalten, um die Grundfunktionalität zu demonstrieren. In realen Szenarien würden zusätzliche Verschleierungstechniken (beispielsweise
 
 ![creating-malware](img/Macuha-bilder/creating-malware.jpg)
 
@@ -234,12 +233,14 @@ Nach dem Download wurde der Payload auf der Windows-10-Maschine ausgeführt. Die
 
 Meterpreter bietet eine Vielzahl von Post-Exploitation-Tools, darunter:
 
-* Systeminformationen auslesen (z. B. Benutzername, Betriebssystem)
-* Dateien herunterladen/hochladebeispielsweise Benutzername, Betriebssystem)
-* Dateien herunterladen und hochladen
-* Keylogging und Screenshot-Erstellung
-* Persistenzmechanismen einrichten (beispielsweise Autostart-Einträge)
-* Rechteeskalation beispielsweise
+| Kategorie                    | Beschreibung                                                                 |
+|-----------------------------|-------------------------------------------------------------------------------|
+| Systeminformationen          | Auslesen von Benutzername, Betriebssystem und weiteren Systemdetails         |
+| Dateiverwaltung              | Dateien herunterladen und hochladen                                           |
+| Überwachung                  | Keylogging und Erstellung von Screenshots                                     |
+| Persistenz                   | Einrichten von Persistenzmechanismen (z. B. Autostart-Einträge)               |
+| Rechteeskalation             | Durchführung von Maßnahmen zur Rechteeskalation                               |
+
 
 ![getting-meterpreter-session](img/Macuha-bilder/getting-meterpreter-session.jpg)
 
