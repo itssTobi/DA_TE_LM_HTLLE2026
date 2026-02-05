@@ -151,7 +151,7 @@ Mittels Hashcat wird der Hash offline mittels Brute-Force-Verfahren geknackt. Im
 
 ![show-correct-password](img/Macuha-bilder/cracked-show.jpg)
 
-[@youtube_Responde] `https://www.youtube.com/watch?v=qIsUCVvJ-3U` (siehe Anhang)
+[@youtube_responder] `https://www.youtube.com/watch?v=qIsUCVvJ-3U` (siehe Anhang)
 
 ### Ausgangssituation
 
