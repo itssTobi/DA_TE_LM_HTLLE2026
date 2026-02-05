@@ -16,7 +16,7 @@ Kerberos ist ein etabliertes Authentifizierungsprotokoll, das in Active Director
 
 ### Kerberoasting
 
-Kerberoasting ist eine raffinierte Angriffstechnik auf Active Directory, in dem ein Angreifer Service Tickets (TGS) für Dienste mit registrierten Service Principal Names (SPN) anfordert, die in der Domäne konfiguriert sind, wie beispielsweise für SQL-Server oder Webdienste. Diese Tickets sind mit dem Passwort-Hash des jeweiligen Service Accounts verschlüsselt, was sie zu einem wertvollen Ziel macht, da sie Informationen über die zugrunde liegenden Credentials enthalten [@crowd_Strike_kerberos] `https://www.crowdstrike.com/en-us/cybersecurity-101/cyberattacks/kerberoasting/` (siehe Anhang). Da jeder authentifizierte Domänenbenutzer, selbst mit niedrigen Rechten, solche Tickets ohne besondere Berechtigungen anfordern darf, kann ein Angreifer diese Tickets sammeln und sie offline, also außerhalb des Netzwerks, analysieren. Mit geeigneten Tools wie Hashcat oder John the Ripper versuchen sie dann, das zugrunde liegende Passwort durch Brute-Force- oder Dictionary-Attacken zu knacken [@sentinelone_kerberoasting] `https://www.sentinelone.com/cybersecurity-101/threat-intelligence/what-is-kerberoasting-attack/` (siehe Anhang). Besonders gefährlich ist diese Technik, da das eigentliche Knacken offline erfolgt und somit keine weiteren Logs oder Spuren auf dem Domaincontroller erzeugt werden, was die Entdeckung durch Sicherheitsüberwachungssysteme erschwert und den Angreifer lange unentdeckt lassen kann [@netwrix_kerbero] `https://netwrix.com/en/cybersecurity-glossary/cyber-security-attacks/kerberoasting/` (siehe Anhang).
+Kerberoasting ist eine raffinierte Angriffstechnik auf Active Directory, in dem ein Angreifer Service Tickets (TGS) für Dienste mit registrierten Service Principal Names (SPN) anfordert, die in der Domäne konfiguriert sind, wie beispielsweise für SQL-Server oder Webdienste. Diese Tickets sind mit dem Passwort-Hash des jeweiligen Service Accounts verschlüsselt, was sie zu einem wertvollen Ziel macht, da sie Informationen über die zugrunde liegenden Credentials enthalten [@crowd_Strike_kerberos] `https://www.crowdstrike.com/en-us/cybersecurity-101/cyberattacks/kerberoasting/` (siehe Anhang). Da jeder authentifizierte Domänenbenutzer, selbst mit niedrigen Rechten, solche Tickets ohne besondere Berechtigungen anfordern darf, kann ein Angreifer diese Tickets sammeln und sie offline, also außerhalb des Netzwerks, analysieren. Mit geeigneten Tools wie Hashcat oder John the Ripper versuchen sie dann, das zugrunde liegende Passwort durch Brute-Force- oder Dictionary-Attacken zu knacken [@sentinelone_kerberoasting] `https://www.sentinelone.com/cybersecurity-101/threat-intelligence/what-is-kerberoasting-attack/` (siehe Anhang). Besonders gefährlich ist diese Technik, da das eigentliche Knacken offline erfolgt und somit keine weiteren Logs oder Spuren auf dem Domaincontroller erzeugt werden, was die Entdeckung durch Sicherheitsüberwachungssysteme erschwert und den Angreifer lange unentdeckt lassen kann [@netwrix_kerberos] `https://netwrix.com/en/cybersecurity-glossary/cyber-security-attacks/kerberoasting/` (siehe Anhang).
 
 
 ### DCSync-Angriff
@@ -151,7 +151,7 @@ Mittels Hashcat wird der Hash offline mittels Brute-Force-Verfahren geknackt. Im
 
 ![show-correct-password](img/Macuha-bilder/cracked-show.jpg)
 
-https://www.youtube.com/watch?v=qIsUCVvJ-3U
+[@youtube_Responde] `https://www.youtube.com/watch?v=qIsUCVvJ-3U` (siehe Anhang)
 
 ### Ausgangssituation
 
@@ -191,7 +191,7 @@ Als Ergebnis konnten sämtliche Passwort-Hashes der gesamten Domäne extrahiert 
 
 ![dcsync-attack2](img/Macuha-bilder/dcsync-attack2.jpg)
 
-https://www.youtube.com/watch?v=pbneELowUSA
+[@youtube_adlab2] https://www.youtube.com/watch?v=pbneELowUSA (siehe Anhang)
 
 ### Erstellen eines Golden Tickets
 
