@@ -101,7 +101,7 @@ Im Falle einer Änderung des Meilensteinplans sind alle Projektmitglieder und Be
 ### 2025-09-07: Ausgewähltes IDS-System implementiert
 - Das ausgewählte IDS-System ist im virtuellen Netzwerk aktiv.
     
-### 2025-09-13: Erste Simulation mit Mimikatz durchgeführt
+### 2025-09-13: Erste Simulation mit Mimikatz
 - Der Angriff wurde auf Windows durchgeführt, wobei NTLM-Hashes extrahiert wurden.
     
 ### 2025-09-15: Reaktion des IDS überprüft

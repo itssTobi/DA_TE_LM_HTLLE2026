@@ -202,7 +202,7 @@ Durch die Verwendung dieses Tickets war es möglich, sich als Domain Administrat
 ![creating-golden-ticket](img/Macuha-bilder/creating-goldenticket.jpg)
 
 Das Goldene Ticket in eine Umgebungsvariable umwandeln, damit Impacket es nutzen kann. 'export KRB5CCNAME=/path/to/ticket.kirbi' so kann Impacket drauf zugreifen, ohne extra Params.
- Ticket wird in eine Umgebungsvariable umgewandelt, damit Impacket es verwenden kann. Mittels „export KRB5CCNAME=/path/to/ticket.kirbi" kann Impacket auf das Ticket zugreifen, ohne dass zusätzliche Parameter erforderlich sind
+Ticket wird in eine Umgebungsvariable umgewandelt, damit Impacket es verwenden kann. Mittels „export KRB5CCNAME=/path/to/ticket.kirbi" kann Impacket auf das Ticket zugreifen, ohne dass zusätzliche Parameter erforderlich sind
 
 ![enviroment-goldenticket](img/Macuha-bilder/enviroment-goldenticket.jpg)
 

@@ -8,28 +8,28 @@ In dieser Teilaufgabe wird die praktische Umsetzung der in der Zielsetzung defin
 
 In diesem Kapitel werden grundlegende Begriffe und Technologien erläutert, die für das Verständnis der praktischen Teilarbeit relevant sind. 
 
-### Was ist ein Server
+### Server
 Ein Server ist ein leistungsfähiges Computersystem, das Ressourcen, Daten, Dienste oder Anwendungen zentral über ein Netzwerk bereitstellt und von Clients angefragt wird. Er übernimmt spezialisierte Aufgaben wie Webhosting, E-Mail-Verwaltung, Dateiablage oder Anwendungsbereitstellung. Entsprechend existieren unterschiedliche Serverrollen, darunter Web-, Datenbank-, Mail- und Dateiserver. Server bilden eine Kernkomponente moderner IT-Infrastrukturen und werden in Unternehmen, öffentlichen Organisationen sowie privaten Umgebungen eingesetzt. [@paessler] Eine kompakte Einführung bietet der Artikel unter `https://www.paessler.com/de/it-explained/server` (siehe Anhang).
 
-### Was ist Debian
+### Debian
 Debian ist ein freies Betriebssystem auf Basis des Linux-Kernels, das von einer weltweiten Entwicklergemeinschaft gepflegt wird. Es zeichnet sich durch Stabilität, Sicherheit und eine umfangreiche Paketbibliothek aus, die mehrere Tausend Softwarepakete umfasst. Debian dient als Grundlage zahlreicher Distributionen, unter anderem für Ubuntu, unterstützt viele Hardwareplattformen und bietet regelmäßige Sicherheits- und Funktionsupdates. Die Distribution verfolgt konsequent freie Software- und Open-Source-Prinzipien. [@debian] Eine ausführliche Darstellung der Eigenschaften und Vorteile findet sich unter `https://www.ionos.at/digitalguide/server/knowhow/debian-die-universelle-system-software/` (siehe Anhang).
 
-### Was ist Proxmox
+### Proxmox
 Proxmox VE (Virtual Environment) ist eine Open-Source-Plattform zur Virtualisierung von Servern und Containern. Sie basiert auf Debian Linux und nutzt KVM für die Virtualisierung kompletter Betriebssysteme sowie LXC für Containerisierung. Über eine Weboberfläche lassen sich virtuelle Umgebungen komfortabel konfigurieren, überwachen und verwalten. Proxmox unterstützt Hochverfügbarkeit, integrierte Backup-Mechanismen und eignet sich aufgrund seiner Flexibilität für Rechenzentren, Unternehmensumgebungen und IT-Dienstleister. [@proxmox] Einen praxisnahen Überblick bietet `https://www.ionos.at/digitalguide/server/knowhow/proxmox/` (siehe Anhang).
 
-### Was ist ein Domaincontroller
+### Domaincontroller
 Ein Domaincontroller (DC) verwaltet in einer Domäne zentral die Authentifizierung von Benutzern und Computern sowie die Verzeichnis- und Richtlinieninformationen. Er prüft Anmeldeinformationen und steuert den Zugriff auf Netzwerkressourcen auf Grundlage vordefinierter Richtlinien. Domaincontroller sind essenzieller Bestandteil von Active-Directory-Umgebungen und unterstützen die sichere, zentrale Administration von Identitäten und Berechtigungen. [@specops] Eine detaillierte Erläuterung findet sich unter `https://specopssoft.com/de/blog/domaenen-controller/` (siehe Anhang).
 
-### Was ist ein VPN
+### VPN
 Ein Virtual Private Network (VPN) stellt über ein öffentliches Netzwerk eine verschlüsselte, logische Punkt-zu-Punkt-Verbindung bereit. Dadurch bleiben IP-Adressen verborgen, und Daten werden vor unbefugtem Zugriff geschützt. VPNs erhöhen die Privatsphäre, ermöglichen den Zugriff auf interne Unternehmensressourcen und helfen beim Umgehen geografischer Beschränkungen. Sie bieten insbesondere in öffentlichen WLANs eine zusätzliche Sicherheitsschicht. [@ryte] Grundlagen und Vorteile sind unter `https://de.ryte.com/wiki/VPN/` (siehe Anhang) beschrieben.
 
 #### Tailscale
 Tailscale ist ein VPN auf Basis des WireGuard-Protokolls, das Geräte standortunabhängig über ein Peer-to-Peer-Modell verbindet. Es automatisiert Konfiguration und Schlüsselverwaltung, bietet eine webbasierte Verwaltung und benötigt keinen zentralen Gateway-Server. Tailscale eignet sich für kleine Teams ebenso wie für Unternehmen, die eine einfach administrierbare, sichere Vernetzung benötigen. [@tailscale] Eine Einführung liefert `https://tailscale.com/kb/1151/what-is-tailscale` (siehe Anhang).
 
-### Was ist GNS3
+### GNS3
 Der Graphical Network Simulator-3 (GNS3) ist eine Open-Source-Lösung zur Netzwerksimulation und -emulation. Er ermöglicht das Abbilden komplexer Topologien ohne physische Hardware und unterstützt reale Netzwerkbetriebssysteme wie Cisco IOS oder Juniper Junos. Eine grafische Oberfläche erlaubt das Platzieren und Konfigurieren von Geräten per Drag-and-Drop. GNS3 wird für Schulungen, Testumgebungen und Entwicklungsaufgaben genutzt. [@gns3] Die Dokumentation steht unter `https://docs.gns3.com/docs/` (siehe Anhang) bereit.
 
-### Was ist ein IDS-System
+### IDS-System
 Ein Intrusion-Detection-System (IDS) erkennt unerwünschte oder schädliche Aktivitäten in IT-Systemen und Netzwerken. Es existieren hostbasierte (HIDS) und netzwerkbasierte Varianten (NIDS), die Ereignisse analysieren und bei Auffälligkeiten alarmieren. Eine Einführung zu Funktionsweise, Typen und Einsatzgründen bietet `https://www.ionos.at/digitalguide/server/sicherheit/intrusion-detection-system-ids/` [@ionos] (siehe Anhang).
 
 Mit zunehmender Digitalisierung steigt die Relevanz solcher Überwachungssysteme, da Unternehmensnetzwerke vermehrt Angriffen ausgesetzt sind. IDS-Lösungen helfen, Angriffe frühzeitig zu erkennen und Schäden zu begrenzen.
