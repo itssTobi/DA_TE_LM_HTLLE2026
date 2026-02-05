@@ -234,13 +234,14 @@ Nach dem Download wurde der Payload auf der Windows-10-Maschine ausgeführt. Die
 Meterpreter bietet eine Vielzahl von Post-Exploitation-Tools, darunter:
 
 
-| Kategorie | Beschreibung |
-| --- | --- |
-| **Systeminformationen** | Auslesen von Benutzername, Betriebssystem und weiteren Systemdetails |
-| **Dateiverwaltung** | Dateien herunterladen und hochladen |
-| **Überwachung** | Keylogging und Erstellung von Screenshots |
-| **Persistenz** | Einrichten von Persistenzmechanismen (z. B. Autostart-Einträge) |
-| **Rechteeskalation** | Durchführung von Maßnahmen zur Rechteeskalation |
+| Kategorie                    | Beschreibung                                                                 |
+|-----------------------------|-------------------------------------------------------------------------------|
+| Systeminformationen          | Auslesen von Benutzername, Betriebssystem und weiteren Systemdetails         |
+| Dateiverwaltung              | Dateien herunterladen und hochladen                                           |
+| Überwachung                  | Keylogging und Erstellung von Screenshots                                     |
+| Persistenz                   | Einrichten von Persistenzmechanismen (z. B. Autostart-Einträge)               |
+| Rechteeskalation             | Durchführung von Maßnahmen zur Rechteeskalation                               |
+
 
 ![getting-meterpreter-session](img/Macuha-bilder/getting-meterpreter-session.jpg)
 
