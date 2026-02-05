@@ -38,15 +38,12 @@ Mit zunehmender Digitalisierung steigt die Relevanz solcher Überwachungssysteme
 Für die Projektauswahl wurden drei etablierte IDS-Lösungen mit unterschiedlichen Ansätzen bewertet.
 
 ##### Wazuh
-
 Wazuh ist ein Open-Source-HIDS (hostbasiertes Intrusion-Detection-System) und steht in einer kostenfreien sowie in kommerziellen Varianten mit unterschiedlichen Service-Modellen zur Verfügung. Es besteht aus einem Server, einem Indexer und Agenten, die auf Endgeräten installiert werden. Der Server sammelt Ereignisdaten der Agenten, der Indexer speichert sie, und ein webbasiertes Dashboard stellt die Informationen bereit. Empfohlen wird der Betrieb des Wazuh-Servers auf Linux. Ausführliche Informationen finden sich in der offiziellen Dokumentation: `https://documentation.wazuh.com/current/index.html` [@wazuh].
 
 ##### Snort
-
 Snort ist ein netzwerkbasiertes IDS (NIDS) und ebenfalls Open Source, neben der kostenfreien Version existiert eine kostenpflichtige kommerzielle Variante. Snort analysiert den gesamten Netzwerkverkehr, erkennt Anomalien und potenziell schädliche Pakete und fungiert damit als Paket-Sniffer. Im Unterschied zu HIDS-Lösungen wird Snort zentral auf einem Netzwerkgerät, typischerweise einem Server, betrieben. Für die Visualisierung der Logdaten ist ein separates Frontend erforderlich. Die offizielle Dokumentation befindet sich unter `https://www.snort.org/documents` [@snort]; eine ergänzende Einführung bietet `https://www.zenarmor.com/docs/de/netzwerksicherheitstutorials/was-ist-snort#:~:text=Snort%20untersucht%20den%20Netzwerkverkehr%20in,au%C3%9Ferhalb%20eines%20Netzwerks%20gesendet%20werden` [@zenarmor_snort].
 
 ##### Security Onion
-
 Security Onion ist eine Open-Source-Lösung, die host- und netzwerkbasierte Erkennung in einem hybriden Ansatz kombiniert. Die Plattform wird zentral auf einem Server betrieben, verwendet Suricata für das netzwerkbasierte Scannen und den Elastic-Agenten für das hostbasierte Monitoring. Ereignisse werden konsolidiert auf einem Dashboard dargestellt. Die Dokumentation ist unter `https://docs.securityonion.net/en/2.4/index.html` [@securityonion] verfügbar.
 
 ## Praktische Arbeit
