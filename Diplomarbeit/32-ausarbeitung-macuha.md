@@ -235,7 +235,7 @@ Meterpreter bietet eine Vielzahl von Post-Exploitation-Tools, darunter:
 
 
 | Kategorie | Beschreibung |
-| :--- | :--- |
+| --- | --- |
 | **Systeminformationen** | Auslesen von Benutzername, Betriebssystem und weiteren Systemdetails |
 | **Dateiverwaltung** | Dateien herunterladen und hochladen |
 | **Überwachung** | Keylogging und Erstellung von Screenshots |
