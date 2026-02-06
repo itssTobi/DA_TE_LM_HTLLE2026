@@ -71,16 +71,16 @@ Für die spätere Anbindung der virtuellen Maschinen über GNS3 werden virtuelle
 Zur Erreichbarkeit des Proxmox-Servers außerhalb des lokalen Netzes wird Tailscale eingesetzt. Das Repository wird per `curl -fsSL https://tailscale.com/install.sh | sh` eingebunden, anschließend erfolgt die Installation mit `apt-get install tailscale`. Nach `tailscale up` erzeugt Tailscale einen Authentifizierungslink, der im Browser geöffnet wird, um den Server dem Tailscale-Netzwerk hinzuzufügen. Der Status lässt sich mit `tailscale status` prüfen. Damit der Dienst beim Systemstart aktiv wird, wird `systemctl enable tailscaled` gesetzt. [@installTailscale]
 
 #### Installation von Tailscale auf Endgeräten
-Die jeweiligen Installationspakete sind unter `https://tailscale.com/download` verfügbar. Nach der Installation auf den Clients wird der Authentifizierungsdialog durchlaufen, sodass die Geräte ihre Tailscale-IP erhalten und standortunabhängig miteinander kommunizieren können. Über das Tailscale-Dashboard lassen sich alle eingebundenen Geräte verwalten und überwachen. 
+Die jeweiligen Installationspakete sind unter `https://tailscale.com/download` verfügbar. Nach der Installation auf den Clients wird der Authentifizierungsdialog durchlaufen, sodass die Geräte ihre Tailscale-IP erhalten und standortunabhängig miteinander kommunizieren können. Über das Tailscale-Dashboard lassen sich alle eingebundenen Geräte verwalten und überwachen, wie im folgenden Bild dargestellt. 
 
 ![tailscale-dashboard](img/Eichelberger-bilder/Tailscale.png)
 
 ### Einrichten der Benutzer auf dem Proxmox-Server
-Um den Betrieb ohne Root-Zugriff zu ermöglichen, werden rollenbasierte Berechtigungen eingerichtet. Unter „Datacenter > Permissions > Roles“ wird eine neue Rolle (z.B. „NurVMsSehen“) mit den benötigten Rechten (z.B. „PVEAuditor“, „VM.Console“) erstellt. Anschließend wird unter „Groups“ eine Gruppe (z.B. „VMUser“) angelegt und mit der Rolle verknüpft. 
+Um den Betrieb ohne Root-Zugriff zu ermöglichen, werden rollenbasierte Berechtigungen eingerichtet. Unter „Datacenter > Permissions > Roles“ wird eine neue Rolle (z.B. „NurVMsSehen“) mit den benötigten Rechten (z.B. „PVEAuditor“, „VM.Console“) erstellt. Anschließend wird unter „Groups“ eine Gruppe (z.B. „VMUser“) angelegt und mit der Rolle verknüpft, wenn diese erstellt wurde, sollte sie in der Liste erscheinen, wie im folgenden Bild zu sehen ist.
 
 ![proxmox-rollen-gruppen](img/Eichelberger-bilder/GruppefuerBenutzer.png)
 
-Unter „Users“ werden individuelle Benutzerkonten erzeugt, die der Gruppe zugewiesen werden. Die Rechte der Nutzer sind damit auf den in der Rolle definierten Umfang begrenzt, wodurch die Sicherheit erhöht wird und die Schülerinnen und Schüler nur die vorgesehenen Funktionen nutzen können.
+Unter „Users“ werden individuelle Benutzerkonten erzeugt, die der Gruppe zugewiesen werden. Die Rechte der Nutzer sind damit auf den in der Rolle definierten Umfang begrenzt, wodurch die Sicherheit erhöht wird und die Schülerinnen und Schüler nur die vorgesehenen Funktionen nutzen können. Zur Erstellung eines Benutzers auf "erstellen" klicken, Benutzername, Passwort und Gruppe (z.B. „VMUser“) angeben und speichern, wie im folgenden Bild dargestellt.
 
 ![proxmox-benutzer-anlegen](img/Eichelberger-bilder/BenutzerAnlegen.png)
 
@@ -90,7 +90,7 @@ Zunächst wird das GNS3-VM-Image von `https://gns3.com/software/download-vm` gel
 Nach dem Start der VM wird auf der Konsole das Passwort für den Benutzer „gns3“ mittels `passwd` geändert. Die Netzwerkkonfiguration lässt sich mit `ip a` prüfen und bei Bedarf anpassen. Der GNS3-Client auf einem externen Rechner verbindet sich unter „Edit > Preferences > GNS3 Server“ mit der IP des Servers; außerhalb des lokalen Netzes kann die Tailscale-IP genutzt werden wenn auf dem GNS3-Server Tailscale installiert ist. Ein erfolgreicher Verbindungstest ermöglicht anschließend die Projektanlage und Topologieerstellung.
 
 ### Virtuelle Netzwerktopologie in GNS3 erstellen
-In GNS3 wird zunächst ein Switch auf die Arbeitsfläche gezogen. Für jede zuvor angelegte Bridge wird ein Cloud-Element hinzugefügt und jeweils genau ein Adapter aktiviert und entsprechend benannt. Sämtliche Clouds werden mit dem Switch verbunden. Für den Internetzugang wird eine zusätzliche Cloud eingebunden, die den „VirtIo“-Adapter nutzt; nach der Aktivierung verbindt sie den Switch mit dem externen Netzwerk. Die Topologie ist damit vollständig, und die virtuellen Maschinen können sowohl untereinander als auch mit dem Internet kommunizieren.
+In GNS3 wird zunächst ein Switch auf die Arbeitsfläche gezogen. Für jede zuvor angelegte Bridge wird ein Cloud-Element hinzugefügt und jeweils genau ein Adapter aktiviert und entsprechend benannt. Sämtliche Clouds werden mit dem Switch verbunden. Für den Internetzugang wird eine zusätzliche Cloud eingebunden, die den „VirtIo“-Adapter nutzt. Die Topologie ist damit vollständig, und sollte wie im folgenden Bild dargestellt aussehen. Die virtuellen Maschinen können sowohl untereinander als auch mit dem Internet kommunizieren.
 
 ![gns3-netzwerktopologie](img/Eichelberger-bilder/GNS3-topNeu.png)
 
@@ -98,11 +98,14 @@ Der Ansatz ermöglicht eine flexible Anpassung der Topologie, etwa das Hinzufüg
 
 ### Aufsetzen der virtuellen Maschinen
 Die folgenden Betriebssystem-Images wurden als ISO-Dateien heruntergeladen und über „Storage > Content > Upload“ in Proxmox bereitgestellt:
+
 - Windows 11
 - Windows 10
 - Windows Server 2019
 - Ubuntu 22.04 LTS
 - Kali Linux
+
+Im folgenden Bild ist der Upload der ISO-Dateien dargestellt.
 
 ![ISO-Upload](img/Eichelberger-bilder/IsoUpload.png)
 
@@ -123,7 +126,7 @@ Für die VM (z.B. „Ubuntu-Server“) werden die Ubuntu-22.04-LTS-ISO, BIOS „
 #### Kali Linux VM
 Die Kali-VM (z.B. „Kali-Linux“) nutzt die Kali-Linux-ISO, BIOS „OVMF (UEFI)“, Bus/Device „SCSI“, Speicher (z.B. 50 GB), CPU (z.B. 2 Kerne), RAM (z.B. 4096 MB) und die zugehörige Bridge. Danach wird das Betriebssystem installiert.
 
-Nach Abschluss stehen alle VMs im Proxmox-Webinterface zur Verfügung und können verwaltet werden.
+Nach Abschluss stehen alle VMs im Proxmox-Webinterface zur Verfügung, wie im Bild ersichtlich, und können verwaltet werden.
 
 ![proxmox-vms](img/Eichelberger-bilder/VMs.png)
 
@@ -147,15 +150,15 @@ Voraussetzung ist, dass der Client als DNS-Server die IP des Domaincontrollers n
 Die Einbindung erfolgt analog zum Windows-10-Client; dieselben Schritte werden angewendet.
 
 ### Wazuh-Dashboard
-Nach Anmeldung im Wazuh-Dashboard werden auf der Startseite die verbundenen Endpunkte („Endpoints“) und die Ereignisse der letzten 24 Stunden angezeigt.
+Nach Anmeldung im Wazuh-Dashboard werden auf der Startseite die verbundenen Endpunkte („Endpoints“) und die Ereignisse der letzten 24 Stunden angezeigt, wie im folgenden Bild dargestellt.
 
 ![Wazuh-Dashboard-Startseite](img/Eichelberger-bilder/overview.png)
 
-Über „Agents management > Summary“ lassen sich alle angebundenen Endpunkte einsehen.
+Über „Agents management > Summary“ lassen sich alle angebundenen Endpunkte einsehen, wie im folgenden Bild dargestellt.
 
 ![Wazuh-Dashboard-Agents](img/Eichelberger-bilder/endpointsummeryAgents.png)
 
-Durch Auswahl eines Endpunkts werden dessen Ereignisse und Warnungen angezeigt, die nach Datum, Schweregrad und Kategorie filterbar sind. Unter dem Tab „Threat Hunting“ erscheinen sämtliche Ereignisse im Detail.
+Durch Auswahl eines Endpunkts werden dessen Ereignisse und Warnungen angezeigt, die nach Datum, Schweregrad und Kategorie filterbar sind. Unter dem Tab „Threat Hunting“ erscheinen sämtliche Ereignisse im Detail, wie im folgenden Bild zu sehen ist.
 
 ![Wazuh-Dashboard-Endpoint-Details](img/Eichelberger-bilder/ThreatHuntingWazuhDash.png)
 
