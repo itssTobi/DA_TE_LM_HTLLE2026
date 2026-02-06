@@ -112,7 +112,7 @@ Nachdem die offenen Ports identifiziert wurden, bot sich die Möglichkeit, Crack
 
 In typischen Pentesting-Szenarien, wie sie in Laborumgebungen wie HackTheBox praktiziert werden, beginnt die Vorgehensweise stets mit einem Port-Scan, üblicherweise mittels Nmap, um Dienste wie SMB über Port 445, RDP über Port 3389 oder WinRM über Port 5985 bzw. 5986 zu identifizieren. Sobald erste Credentials oder Hashes erbeutet wurden, erweist sich CME als besonders nützlich, da es modular aufgebaut ist und verschiedene Authentifizierungsmethoden wie NTLM-Credentials oder Kerberos-Tickets unterstützt, um Passwörter zu ermitteln.
 
-Für den Test wurde das SMB-Modul von CrackMapExec in Kombination mit der Wortliste „rockyou.txt" verwendet.
+Für den Test wurde das WinRM-Modul von CrackMapExec in Kombination mit einer selbst erstellten Passwortliste "PasswordList.txt" verwendet.
 
 ![online-cracking](img/Macuha-bilder/online-cracking.jpg)
 
@@ -122,14 +122,14 @@ Für den Test wurde das SMB-Modul von CrackMapExec in Kombination mit der Wortli
 
 Nach erfolgreicher Erbeutung der Zugangsdaten wurde Evil-WinRM auf dem Kali-Linux-System eingesetzt, um eine PowerShell-Session auf dem Windows-11-System zu etablieren.
 
-Evil-WinRM ist ein in Ruby entwickeltes Penetrationstesting-Tool, das WinRM (Windows Remote Management) nutzt, um Remote-Shells über Port 5985/5986 zu öffnen, ohne auf RDP oder SMB angewiesen zu sein. In Laborumgebungen wie HackTheBox stellt dies ein effizientes Werkzeug für Lateral Movement dar, sobald gültige Zugangsdaten vorliegen. Die Verwendung erfolgt mittels des Befehls „evil-winrm -i <IP> -u <User> -p <Pass>", wodurch eine interaktive PowerShell-Sitzung etabliert wird. Zu beachten ist, dass Firewalls oder Antivirenprogramme diese Verbindungen potenziell blockieren können.
+Evil-WinRM ist ein in Ruby entwickeltes Penetrationstesting-Tool, das WinRM (Windows Remote Management) nutzt, um Remote-Shells über Port 5985/5986 zu öffnen, ohne auf RDP oder SMB angewiesen zu sein. In Laborumgebungen wie HackTheBox stellt dies ein effizientes Werkzeug für Lateral Movement dar, sobald gültige Zugangsdaten vorliegen. Die Verwendung erfolgt mittels des Befehls "evil-winrm -i 192.168.122.117 -u Administrator -p 'Datelm25#'", wodurch eine interaktive PowerShell-Sitzung etabliert wird (siehe Anhang). Zu beachten ist, dass Firewalls oder Antivirenprogramme diese Verbindungen potenziell blockieren können.
 
 ![evilwin-rm-shell](img/Macuha-bilder/evilwin-rm-access.jpg)
 
 ### Credential Capture mit Responder
 
-Nach der Identifikation der Netzwerkkomponenten nutzte der Angreifer das Tool Responder auf Kali Linux, um eine LLMNR- und NBT-NS-Poisoning-Attacke durchzuführen, die darauf abzielt, fehlgeschlagene Namensauflösungsanfragen abzufangen und sensible Credentials zu erfassen. Responder wurde mit dem Befehl „responder -I eth0 -dw" gestartet, um auf dem Netzwerkinterface zu lauschen und rogue Server für LLMNR, NBT-NS und MDNS zu emulieren, die auf Anfragen von Windows-Systemen reagieren, wenn DNS-Auflösungen fehlschlagen.
-Um die Attacke auszulösen, wurde auf dem Client-Gerät eine absichtliche Fehlanfrage simuliert, beispielsweise durch den Versuch, auf eine nicht existierende Ressource wie `\\wrong-folder` zuzugreifen, was das System dazu veranlasste, auf LLMNR/NBT-NS zurückzugreifen und eine Broadcast-Anfrage zu senden. Responder poisonte diese Anfrage, indem es sich als der angefragte Host ausgab, und forderte NTLM-Authentifizierung an, wodurch der NTLMv2-Hash des Basisbenutzers maxmustermann erbeutet wurde. Dieser Hash konnte anschließend offline mit Tools wie Hashcat geknackt werden, um das Passwort Datelm25# zu rekonstruieren. Bei einem 8-Zeichen-Passwort wie diesem hätte das Knacken mit einer RTX 4090 etwa 10–60 Minuten gedauert. Würde jedoch ein wirklich zufälliges Passwort mit 12 Zeichen verwendet werden, könnte das Knacken mehrere Tausend bis Millionen Jahre dauern und Offline-Cracking damit praktisch unmöglich machen. Genau das ermöglichte den Einstieg in die Domäne als normaler Benutzer. Diese Technik ist besonders effektiv in Windows-Netzwerken, da sie auf standardmäßigen Protokollen basiert und keine hohen Rechte erfordert, aber zu erheblichen Kompromittierungen führen kann, wenn sie nicht durch Gruppenrichtlinien deaktiviert wird.
+Nach der Identifikation der Netzwerkkomponenten nutzte der Angreifer das Tool Responder auf Kali Linux, um eine LLMNR- und NBT-NS-Poisoning-Attacke durchzuführen, die darauf abzielt, fehlgeschlagene Namensauflösungsanfragen abzufangen und sensible Credentials zu erfassen. Responder wurde mit dem Befehl „responder -I eth0 -wv" gestartet, um auf dem Netzwerkinterface zu lauschen und rogue Server für LLMNR, NBT-NS und MDNS zu emulieren, die auf Anfragen von Windows-Systemen reagieren, wenn DNS-Auflösungen fehlschlagen.
+Um die Attacke auszulösen, wurde auf dem Client-Gerät eine absichtliche Fehlanfrage simuliert, beispielsweise durch den Versuch, auf eine nicht existierende Ressource wie `\\wrong-folder` zuzugreifen, was das System dazu veranlasste, auf LLMNR/NBT-NS zurückzugreifen und eine Broadcast-Anfrage zu senden. Responder poisonte diese Anfrage, indem es sich als der angefragte Host ausgab, und forderte NTLM-Authentifizierung an, wodurch der NTLMv2-Hash des Basisbenutzers maxmustermann erbeutet wurde. In einer sicheren Domänencontroller-Konfiguration wären NTLMv1 und NTLMv2 jedoch deaktiviert. Aufgrund dieses Konfigurationsfehlers auf diesem DC konnten wir den schwachen Hash ausnutzen und offline entschlüsseln. Dieser Hash konnte anschließend mit Tools wie Hashcat geknackt werden, um das Passwort Datelm25# zu rekonstruieren. Bei einem 8-Zeichen-Passwort wie diesem hätte das Knacken mit einer RTX 4090 etwa 10–60 Minuten gedauert. Würde jedoch ein wirklich zufälliges Passwort mit 12 Zeichen verwendet werden, könnte das Knacken mehrere Tausend bis Millionen Jahre dauern und Offline-Cracking damit praktisch unmöglich machen. Genau das ermöglichte den Einstieg in die Domäne als normaler Benutzer. Diese Technik ist besonders effektiv in Windows-Netzwerken, da sie auf standardmäßigen Protokollen basiert und keine hohen Rechte erfordert, aber zu erheblichen Kompromittierungen führen kann, wenn sie nicht durch Gruppenrichtlinien deaktiviert wird.
 
 ![starting-responder](img/Macuha-bilder/Responder.jpg)
 
@@ -176,16 +176,16 @@ Nachdem wir das Ticket erhalten haben, wird es gespeichert und Hashcat erneut ve
 
 ![cracking-kerebos2](img/Macuha-bilder/cracking-kerebos2.jpg)
 
-Dieser Schritt verdeutlicht, wie gefährlich schwache oder vorhersagbare Passwörter bei Service Accounts sind, da der Angriff keine besondere Berechtigung erfordert, vollständig offline abläuft und somit schwer zu erkennen ist, ohne spezialisierte Monitoring-Lösungen.
+Dieser Schritt verdeutlicht, wie gefährlich schwache oder vorhersagbare Passwörter bei Service Accounts sind, da der Angriff keine besondere Berechtigung erfordert, vollständig offline abläuft und somit schwer zu erkennen ist, ohne spezialisierte Monitoring-Lösungen. Daher wird empfohlen, das Passwort des SVC-Kontos alle sechs Monate oder mindestens einmal pro Jahr zu ändern.
 
 
 [@youtube_adlab1] https://www.youtube.com/watch?v=ZoGoBCviu6w (siehe Anhang)
 
 ### Privilegieneskalation mittels DCSync
 
-Mit den nun kompromittierten Zugangsdaten des Service Accounts wurde ein DCSync-Angriff durchgeführt, der die legitime Replikationsfunktion von Active Directory ausnutzt. Dabei wurden Replikationsdaten direkt vom Domaincontroller angefordert, als ob es sich um eine normale Synchronisation zwischen Controllern handeln würde.
+Mit den nun kompromittierten Zugangsdaten des Service Accounts "Username: svcacount, PW: Summer2025!" wurde ein DCSync-Angriff durchgeführt, der die legitime Replikationsfunktion von Active Directory ausnutzt. Dabei wurden Replikationsdaten direkt vom Domaincontroller angefordert, als ob es sich um eine normale Synchronisation zwischen Controllern handeln würde.
 
-Als Ergebnis konnten sämtliche Passwort-Hashes der gesamten Domäne extrahiert werden, darunter auch der Hash des Administrators sowie des besonders kritischen krbtgt-Kontos, das für die Ticket-Signatur verantwortlich ist. Ab diesem Zeitpunkt war die Domäne als vollständig kompromittiert zu betrachten, da der Angreifer nun Zugriff auf alle sensiblen Credentials hatte und weitere Eskalationen einleiten konnte.
+Als Ergebnis konnten sämtliche Passwort-Hashes der gesamten Domäne extrahiert werden, darunter auch der Hash des Administrators sowie des besonders kritischen krbtgt-Kontos (siehe Abbildung 23: dcsync-attack2 weiß markierten Text), das für die Ticket-Signatur verantwortlich ist. Ab diesem Zeitpunkt war die Domäne als vollständig kompromittiert zu betrachten, da der Angreifer nun Zugriff auf alle sensiblen Credentials hatte und weitere Eskalationen einleiten konnte.
 
 ![dcsync-attack](img/Macuha-bilder/dcsync-attack.jpg)
 
@@ -195,13 +195,13 @@ Als Ergebnis konnten sämtliche Passwort-Hashes der gesamten Domäne extrahiert 
 
 ### Erstellen eines Golden Tickets
 
-Anhand des extrahierten krbtgt-Hashes wurde ein Golden Ticket erzeugt, ein gefälschtes Kerberos Ticket Granting Ticket, das uneingeschränkten Zugriff ermöglicht. Dieses Ticket wurde speziell für den Administrator-Account erstellt und lokal auf dem Angreifersystem gespeichert, um es bei Bedarf zu verwenden.
+Anhand des extrahierten krbtgt-Hashes wurde ein Golden Ticket erzeugt mit der hilfe von impacket-ticheter. Ein gefälschtes Kerberos Ticket Granting Ticket, das uneingeschränkten Zugriff ermöglicht. Dieses Ticket wurde speziell für den Administrator-Account erstellt und lokal auf dem Angreifersystem gespeichert, um es bei Bedarf zu verwenden.
 
 Durch die Verwendung dieses Tickets war es möglich, sich als Domain Administrator auszugeben, ohne dass eine klassische Anmeldung am Domaincontroller erforderlich war oder Logs erzeugt wurden. Der Zugriff erfolgte vollständig über das Kerberos-Protokoll und war somit nur schwer zu erkennen, da es sich um eine legitime Authentifizierung handelt.
 
 ![creating-golden-ticket](img/Macuha-bilder/creating-goldenticket.jpg)
 
-Das Goldene Ticket in eine Umgebungsvariable umwandeln, damit Impacket es nutzen kann. 'export KRB5CCNAME=/path/to/ticket.kirbi' so kann Impacket drauf zugreifen, ohne extra Params. Das Ticket wird in eine Umgebungsvariable umgewandelt, damit Impacket es verwenden kann. Mittels „export KRB5CCNAME=/path/to/ticket.kirbi" kann Impacket auf das Ticket zugreifen, ohne dass zusätzliche Parameter erforderlich sind
+Das Goldene Ticket in eine Umgebungsvariable umwandeln, damit Impacket es nutzen kann. 'export KRB5CCNAME=/path/to/ticket.ccache' so kann Impacket drauf zugreifen, ohne extra Params.
 
 ![enviroment-goldenticket](img/Macuha-bilder/enviroment-goldenticket.jpg)
 
@@ -209,7 +209,7 @@ Das Goldene Ticket in eine Umgebungsvariable umwandeln, damit Impacket es nutzen
 
 ### Erstellung und Einsatz eines Meterpreter-Payloads
 
-Um eine Reverse-TCP-Verbindung zu einer Kali-Linux-Maschine herzustellen, wurde das Tool msfvenom aus dem Metasploit-Framework verwendet. Mithilfe von msfvenom lässt sich ein ausführbarer Payload generieren, der bei Ausführung auf dem Zielsystem eine Verbindung zum Angreifer zurück aufgebaut. Der Payload wurde bewusst einfach gehalten, um die Grundfunktionalität zu demonstrieren. In realen Szenarien würden zusätzliche Verschleierungstechniken (z. B. Encoder) eingesetzt, um Antivirenprogramme zu umgehen.
+Um eine Reverse-TCP-Verbindung zu einer Kali-Linux-Maschine herzustellen, wurde das Tool msfvenom aus dem Metasploit-Framework verwendet. Mithilfe von msfvenom lässt sich ein ausführbarer Payload generieren, der bei Ausführung auf dem Zielsystem eine Verbindung zum Angreifer zurück aufgebaut "reverse_tcp". Der Payload wurde bewusst einfach gehalten, um die Grundfunktionalität zu demonstrieren. In realen Szenarien würden zusätzliche Verschleierungstechniken (z. B. Encoder) eingesetzt, um Antivirenprogramme zu umgehen.
 
 ![creating-malware](img/Macuha-bilder/creating-malware.jpg)
 
@@ -240,9 +240,11 @@ Meterpreter bietet eine Vielzahl von Post-Exploitation-Tools, darunter:
 | Überwachung                  | Keylogging und Erstellung von Screenshots                                     |
 | Persistenz                   | Einrichten von Persistenzmechanismen (z. B. Autostart-Einträge)               |
 | Rechteeskalation             | Durchführung von Maßnahmen zur Rechteeskalation                               |
-
+Durch das Ausführen der Payload auf der Zielmaschine wurde erfolgreich eine Verbindung hergestellt.
 
 ![getting-meterpreter-session](img/Macuha-bilder/getting-meterpreter-session.jpg)
+
+Hier ist zu sehen, dass eine Verbindung von der Kali-Maschine zur Windows-10-Maschine besteht.
 
 ![getting-meterpreter-session2](img/Macuha-bilder/getting-meterpreter-session2.jpg)
 
