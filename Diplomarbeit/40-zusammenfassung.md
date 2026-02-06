@@ -15,6 +15,7 @@ Mit GNS3 wurde eine flexible virtuelle Netzwerktopologie aufgebaut und über meh
 
 ### Virtualisierte Systeme
 Folgende virtuelle Maschinen wurden bereitgestellt:
+
 - Windows 11 Client als Zielsystem für Penetrationstests
 - Windows 10 Client als Zielsystem für Penetrationstests
 - Windows Server 2019 als Domaincontroller
@@ -29,6 +30,7 @@ Wazuh wurde als IDS implementiert. Der Wazuh-Server läuft auf Ubuntu, die Agent
 
 ### Sicherheitstests und Angriffsszenarien
 Zur Überprüfung der Umgebung und der Erkennungsleistung des IDS wurden unter anderem durchgeführt:
+
 - Passwortangriffe (online und offline Brute-Force)
 - Kerberoasting zur Erlangung erweiterter Berechtigungen
 - Golden-Ticket-Angriffe zur Demonstration von Kerberos-Schwachstellen
