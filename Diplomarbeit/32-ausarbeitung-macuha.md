@@ -257,15 +257,24 @@ Dieser Schritt zeigt eindrucksvoll, wie Angreifer nach der initialen Kompromitti
 
 ### Erkennung durch Wazuh und Sysmon
 
-Während des gesamten Angriffs wurden alle sicherheitsrelevanten Ereignisse durch die Kombination aus Sysmon für granulare Systemüberwachung und Wazuh für zentrale Log-Aggregation und -Analyse aufgezeichnet und in Echtzeit verarbeitet. Besonders auffällig waren dabei folgende Events, die typische Indikatoren für Angriffe darstellen:
+Während des gesamten Angriffs wurden alle sicherheitsrelevanten Ereignisse durch die Kombination aus Sysmon für granulare Systemüberwachung und Wazuh für zentrale Log-Aggregation und -Analyse aufgezeichnet und in Echtzeit verarbeitet. 
+
+Besonders aussagekräftig waren folgende Ereignistypen, die in den meisten Umgebungen als starke Indikatoren für Angriffe gewertet werden – allerdings stark abhängig davon, wie schnell und häufig sie auftreten:
 
 * Kerberos Service Ticket Requests (Event ID 4769), die auf ungewöhnliche Ticket-Anfragen hinweisen.
-
-* Directory Service Access Events (Event ID 4662), die Zugriffe auf sensible AD-Objekte protokollieren.	
+    * Typischerweise fallen 20–80 Tickets pro Stunde bei normalen Benutzern an.
+    * Um unauffällig zu bleiben, müsste ein Angreifer die Ticket-Anfragen auf 10–30 Minuten         Abstand verteilen
+* Directory Service Access Events (Event ID 4662), die Zugriffe auf sensible AD-Objekte protokollieren.
+    * Sehr häufiges Event bei normalem Betrieb
+    * Um nicht herauszustechen, sollten solche Zugriffe auf 5–20 Minuten Abstand verteilt         werden
 
 *   Anmeldungen mit erhöhten Rechten (Event ID 4672), die Eskalationen signalisieren.
+    * Normale Admins loggen sich meist 3–15 Mal am Tag mit hohen Rechten an.
+    * Um unauffällig zu bleiben, sollte ein Angreifer zwischen 30–90 Minuten (besser 1–3         Stunden) Pause einlegen
 
 * Zusätzlich erfasste Sysmon Netzwerkscans (Event ID 3) und ungewöhnliche Broadcast-Anfragen, die auf Poisoning-Angriffe hindeuten.
+    * Ein normaler Host erzeugt fast nie mehr als 1–5 neue Verbindungen pro Minute
+    * Poisoning-Angriffe (ständige Broadcast-Antworten) fallen bei Dauerbetrieb meist nach         10–60 Minuten auf.
 
 Diese Logs wurden im Wazuh-Dashboard korreliert, visualisiert und ermöglichten eine detaillierte, schrittweise Rekonstruktion des gesamten Angriffspfades, einschließlich Timestamps und beteiligter Entitäten, was für Incident Response essenziell ist. Die einzelnen Events lieferten klare Indikatoren für die verschiedenen Phasen des Angriffs, von der Reconnaissance über die Privilegieneskalation bis hin zur Post-Exploitation, der Verlauf des Angriffs konnte somit lückenlos nachvollzogen werden. Zudem sind die Events direkte Hinweise auf die genutzten Techniken und Taktiken gemäß MITRE ATT&CK Framework, was die Analyse und das Verständnis der Angriffsvektoren erleichtert. Sie sind somit direkte Abhandlungen der Angriffe und nicht nur erscheinte Symptome. Solche Logs sollten nicht ignoriert werden, da sie wertvolle Informationen für die Erkennung und Abwehr zukünftiger Angriffe liefern. 
 
