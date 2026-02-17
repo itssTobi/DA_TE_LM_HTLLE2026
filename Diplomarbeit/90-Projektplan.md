@@ -37,12 +37,12 @@ Der Projektauftraggeber dieser Diplomarbeit ist die  HTL Leoben.
 | Meilenstein  | Kostenart | Menge  | Preis   | Gesamtkosten | Deckung durch |
 |:-------------|:---------:|:------:|--------:|-------------:|---------------|
 | Proxmox-Server eingerichtet     | Hardware  |  1 |   13,80 | 13,80      | Schüler       |
-| Abschluss der Verschriftlichung der Ergebnisse und der Diplomarbeit	 | Druck     |  3     |   26.00 |  53.00      | Schüler       |
+| Abschluss der Verschriftlichung der Ergebnisse und der Diplomarbeit	 | Druck     |  3     |   26.00 |  78.00      | Schüler       |
 |Stromkosten Proxmox-Server | Betriebskosten | 7 Monate | 15 | 105 | Schüler |
 
  : Geplante Projektkosten
 
-Die Gesamtkosten des Projekts belaufen sich auf 171,80 € und werden von den Schülern getragen. Die geplanten Kosten wurden nicht überschritten.
+Die Gesamtkosten des Projekts belaufen sich auf 206,80 € und werden von den Schülern getragen. Die geplanten Kosten wurden nicht überschritten.
 
 
 #### Projektrisiken
