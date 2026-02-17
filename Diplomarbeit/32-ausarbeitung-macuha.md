@@ -94,7 +94,7 @@ Die Umgebung bestand aus folgenden sorgfältig konfigurierten virtuellen Maschin
         
     *   Verwendete Tools: Impacket, Hashcat, evil-winrm
  
-    *   IP-Adressen: 192.168.122.??? (kommt noch)
+    *   IP-Adressen: 192.168.122.127
         
 
 Zusätzlich wurden auf den Windows-Systemen Sysmon und Wazuh-Agenten installiert, um alle sicherheitsrelevanten Ereignisse zentral zu erfassen.
