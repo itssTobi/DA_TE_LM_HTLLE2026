@@ -73,16 +73,16 @@ Zur Erreichbarkeit des Proxmox-Servers außerhalb des lokalen Netzes wird Tailsc
 #### Installation von Tailscale auf Endgeräten
 Die jeweiligen Installationspakete sind unter `https://tailscale.com/download` verfügbar. Nach der Installation auf den Clients wird der Authentifizierungsdialog durchlaufen, sodass die Geräte ihre Tailscale-IP erhalten und standortunabhängig miteinander kommunizieren können. Über das Tailscale-Dashboard lassen sich alle eingebundenen Geräte verwalten und überwachen, wie im folgenden Bild dargestellt. 
 
-![tailscale-dashboard](img/Eichelberger-bilder/Tailscale.png)
+![Tailscale-Dashboard](img/Eichelberger-bilder/Tailscale.png)
 
 ### Einrichten der Benutzer auf dem Proxmox-Server
 Um den Betrieb ohne Root-Zugriff zu ermöglichen, werden rollenbasierte Berechtigungen eingerichtet. Unter „Datacenter > Permissions > Roles“ wird eine neue Rolle (z.B. „NurVMsSehen“) mit den benötigten Rechten (z.B. „PVEAuditor“, „VM.Console“) erstellt. Anschließend wird unter „Groups“ eine Gruppe (z.B. „VMUser“) angelegt und mit der Rolle verknüpft, wenn diese erstellt wurde, sollte sie in der Liste erscheinen, wie im folgenden Bild zu sehen ist.
 
-![proxmox-rollen-gruppen](img/Eichelberger-bilder/GruppefuerBenutzer.png)
+![Proxmox-Rollen-Gruppen](img/Eichelberger-bilder/GruppefuerBenutzer.png)
 
 Unter „Users“ werden individuelle Benutzerkonten erzeugt, die der Gruppe zugewiesen werden. Die Rechte der Nutzer sind damit auf den in der Rolle definierten Umfang begrenzt, wodurch die Sicherheit erhöht wird und die Schülerinnen und Schüler nur die vorgesehenen Funktionen nutzen können. Zur Erstellung eines Benutzers auf "erstellen" klicken, Benutzername, Passwort und Gruppe (z.B. „VMUser“) angeben und speichern, wie im folgenden Bild dargestellt.
 
-![proxmox-benutzer-anlegen](img/Eichelberger-bilder/BenutzerAnlegen.png)
+![Proxmox-Benutzer-anlegen](img/Eichelberger-bilder/BenutzerAnlegen.png)
 
 ### Einrichten des GNS3-Servers
 Zunächst wird das GNS3-VM-Image von `https://gns3.com/software/download-vm` geladen und über „Storage > Content > Upload“ in Proxmox bereitgestellt. Die VM wird mit „Create VM“ angelegt (z.B. Name „GNS3-Server“), als BIOS „OVMF (UEFI)“ und als Bus/Device „SCSI“ gewählt und das hochgeladene Image als Storage hinterlegt. CPU (z.B. 2 Kerne) und RAM (z.B. 4096 MB) werden zugewiesen; als Bridge wird die allgemeine virtuelle Bridge (z.B. vmbr1) konfiguriert. Nach dem Anlegen werden zusätzliche Netzwerkkarten für die übrigen Bridges ergänzt.
@@ -92,7 +92,7 @@ Nach dem Start der VM wird auf der Konsole das Passwort für den Benutzer „gns
 ### Virtuelle Netzwerktopologie in GNS3 erstellen
 In GNS3 wird zunächst ein Switch auf die Arbeitsfläche gezogen. Für jede zuvor angelegte Bridge wird ein Cloud-Element hinzugefügt und jeweils genau ein Adapter aktiviert und entsprechend benannt. Sämtliche Clouds werden mit dem Switch verbunden. Für den Internetzugang wird eine zusätzliche Cloud eingebunden, die den „VirtIo“-Adapter nutzt. Die Topologie ist damit vollständig, und sollte wie im folgenden Bild dargestellt aussehen. Die virtuellen Maschinen können sowohl untereinander als auch mit dem Internet kommunizieren.
 
-![gns3-netzwerktopologie](img/Eichelberger-bilder/GNS3-topNeu.png)
+![GNS3-Netzwerktopologie](img/Eichelberger-bilder/GNS3-topNeu.png)
 
 Der Ansatz ermöglicht eine flexible Anpassung der Topologie, etwa das Hinzufügen von Firewalls oder weiteren Netzwerkgeräten, ohne Änderungen an den Proxmox-Netzwerkeinstellungen der VMs. So können unterschiedliche Szenarien erprobt werden, ohne die reale Infrastruktur zu beeinträchtigen.
 
@@ -128,7 +128,7 @@ Die Kali-VM (z.B. „Kali-Linux“) nutzt die Kali-Linux-ISO, BIOS „OVMF (UEFI
 
 Nach Abschluss stehen alle VMs im Proxmox-Webinterface zur Verfügung, wie im Bild ersichtlich, und können verwaltet werden.
 
-![proxmox-vms](img/Eichelberger-bilder/VMs.png)
+![Proxmox-VMs](img/Eichelberger-bilder/VMs.png)
 
 Für die weitere Arbeit erhalten alle VMs statische IP-Adressen im selben Subnetz (IP, Subnetzmaske, Gateway, DNS). Die Erreichbarkeit wird mit `ping <Ziel-IP>` geprüft. Blockiert eine lokale Firewall ICMP-Verkehr, ist dieser für die Tests freizugeben.
 
