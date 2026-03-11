@@ -23,7 +23,7 @@ da-author:
   klasse: 5BHWIN
   thema: Red Team
   ki-tools:
-  - name: ChatGPT 4.0
+  - name: ChatGPT 4o
     zweck: Rechtsschreibprüfung und Grammatikprüfung
 
 da-betreuer:
