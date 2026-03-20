@@ -11,7 +11,7 @@ Aktuell setzen die Schülerinnen und Schüler im Laborblock „Pentesting" die T
 Im Rahmen dieser Diplomarbeit soll evaluiert werden, ob eine virtuelle Netzwerkumgebung auf einem Server – bestehend aus Clients und einem Domaincontroller, dem die Clients untergeordnet sind, abgesichert durch ein Intrusion Detection System (IDS), das Angriffe externer Clients erkennt – im Schulunterricht eingesetzt und praktisch im Laborunterricht genutzt werden kann.
 
 #### Nicht-Ziele bzw. nicht Inhalte
-Nicht Ziel dieser Arbeit ist es, eine produktive oder hochverfügbare Infrastruktur bereitzustellen, sondern eine Testumgebung zu schaffen, die für Ausbildungszwecke geeignet ist.
+Nicht Ziel dieser Arbeit ist es, eine produktive oder hochverfügbare Infrastruktur bereitzustellen, sondern eine für Ausbildungszwecke geeignete Testumgebung zu schaffen.
 
 #### Projektnutzen
 Der Nutzen dieses Projekts besteht darin, Chancengleichheit zu schaffen, indem allen Schülerinnen und Schülern die gleiche Ausgangsituation sowie identische Hardwareressourcen zur Verfügung stehen.
@@ -50,7 +50,7 @@ Die Gesamtkosten des Projekts belaufen sich auf 206,80 € und werden von den Sc
 | Risiko         | EW  | Auswirkungen     | Maßnahmen     |
 |:--------------:|:---:| :----------------|:--------------|
 | Überziehen der Kosten | 20% | Erhöhte Kosten für Schüler | Budgetierung |
-| Ungenaue Schätzungen | 30% | Ungenaue Schätzungen führen zu Problem bezüglich Terminen und Budget. | Schätzungen mit Fachkollegen absprechen|
+| Ungenaue Schätzungen | 30% | Ungenaue Schätzungen führen zu Problemen bezüglich Terminen und Budget. | Schätzungen mit Fachkollegen absprechen|
 
 : Projektrisiken
 
@@ -85,7 +85,7 @@ Im Falle einer Änderung des Meilensteinplans sind alle Projektmitglieder und Be
 - Auf dem Server läuft Proxmox
 
 ### 2025-11-01: VPN-Verbindung erfolgreich eingerichtet	
-- Tailscale ist auf Proxmox installiert sodass Nutzer von außen zugreifen können
+- Tailscale ist auf Proxmox installiert, sodass Nutzer von außen zugreifen können
 
 ### 2025-11-26: GNS3 installiert	
 - GNS3 Server wurde auf Proxmox installiert

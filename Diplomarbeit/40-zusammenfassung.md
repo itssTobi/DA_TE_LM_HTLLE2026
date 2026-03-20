@@ -5,7 +5,7 @@ Diese Diplomarbeit dokumentiert die Planung und Umsetzung einer virtuellen Labor
 ## Durchgeführte Arbeiten
 
 ### Infrastruktur-Aufbau
-Das Projekt startete mit der Installation und Konfiguration eines Proxmox-VE-Servers auf einem HP ProLiant G7 (80 GB Speicher, 70 GB RAM) als zentraler Virtualisierungsplattform. Der Server basiert auf Debian 12 und wurde mit statischer IP-Adresse für einen stabilen Betrieb konfiguriert.
+Das Projekt startete mit der Installation und Konfiguration eines Proxmox-VE-Servers auf einem HP ProLiant G7 (80 GB Speicher, 70 GB RAM) als zentrale Virtualisierungsplattform. Der Server basiert auf Debian 12 und wurde mit statischer IP-Adresse für einen stabilen Betrieb konfiguriert.
 
 ### Sicherer Fernzugriff
 Für den externen Zugang zur Laborumgebung wurde Tailscale als VPN auf Basis von WireGuard eingerichtet. Die Lösung ermöglicht Schülerinnen, Schülern und Lehrenden einen standortunabhängigen, abgesicherten Zugriff auf die virtuellen Maschinen; sie wurde sowohl auf dem Proxmox-Server als auch auf Endgeräten konfiguriert.
@@ -39,4 +39,4 @@ Zur Überprüfung der Umgebung und der Erkennungsleistung des IDS wurden unter a
 
 ## Fazit
 
-Die Arbeit belegt, dass eine zentralisierte nutzbare Laborumgebung auf Basis von Proxmox, Tailscale, GNS3 und Wazuh praxistauglich umgesetzt werden kann. Die Tests bestätigen die Funktionsfähigkeit der Plattform und ermöglichen realitätsnahe Übungen, ohne produktive Systeme zu gefährden. Damit entsteht eine belastbare Grundlage für vertiefte Cybersecurity-Schulungen an der HTL Leoben.
+Die Arbeit belegt, dass eine zentral nutzbare Laborumgebung auf Basis von Proxmox, Tailscale, GNS3 und Wazuh praxistauglich umgesetzt werden kann. Die Tests bestätigen die Funktionsfähigkeit der Plattform und ermöglichen realitätsnahe Übungen, ohne produktive Systeme zu gefährden. Damit entsteht eine belastbare Grundlage für vertiefte Cybersecurity-Schulungen an der HTL Leoben.
