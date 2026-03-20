@@ -129,7 +129,7 @@ Evil-WinRM ist ein in Ruby entwickeltes Penetrationstesting-Tool, das WinRM (Win
 ### Credential Capture mit Responder
 
 Nach der Identifikation der Netzwerkkomponenten nutzte der Angreifer das Tool Responder auf Kali Linux, um eine LLMNR- und NBT-NS-Poisoning-Attacke durchzuführen, die darauf abzielt, fehlgeschlagene Namensauflösungsanfragen abzufangen und sensible Credentials zu erfassen. Responder wurde mit dem Befehl „responder -I eth0 -wv" gestartet, um auf dem Netzwerkinterface zu lauschen und rogue Server für LLMNR, NBT-NS und MDNS zu emulieren, die auf Anfragen von Windows-Systemen reagieren, wenn DNS-Auflösungen fehlschlagen.
-Um die Attacke auszulösen, wurde auf dem Client-Gerät eine absichtliche Fehlanfrage simuliert, beispielsweise durch den Versuch, auf eine nicht existierende Ressource wie `\\wrong-folder` zuzugreifen, was das System dazu veranlasste, auf LLMNR/NBT-NS zurückzugreifen und eine Broadcast-Anfrage zu senden. Responder poisonte diese Anfrage, indem es sich als der angefragte Host ausgab, und forderte NTLM-Authentifizierung an, wodurch der NTLMv2-Hash des Basisbenutzers maxmustermann erbeutet wurde. In einer sicheren Domänencontroller-Konfiguration wären NTLMv1 und NTLMv2 jedoch deaktiviert. Aufgrund dieses Konfigurationsfehlers auf diesem DC konnten wir den schwachen Hash ausnutzen und offline entschlüsseln. Dieser Hash konnte anschließend mit Tools wie Hashcat geknackt werden, um das Passwort Datelm25# zu rekonstruieren. Bei einem 8-Zeichen-Passwort wie diesem hätte das Knacken mit einer RTX 4090 etwa 10–60 Minuten gedauert. Würde jedoch ein wirklich zufälliges Passwort mit 12 Zeichen verwendet werden, könnte das Knacken mehrere Tausend bis Millionen Jahre dauern und Offline-Cracking damit praktisch unmöglich machen. Genau das ermöglichte den Einstieg in die Domäne als normaler Benutzer. Diese Technik ist besonders effektiv in Windows-Netzwerken, da sie auf standardmäßigen Protokollen basiert und keine hohen Rechte erfordert, aber zu erheblichen Kompromittierungen führen kann, wenn sie nicht durch Gruppenrichtlinien deaktiviert wird.
+Um die Attacke auszulösen, wurde auf dem Client-Gerät eine absichtliche Fehlanfrage simuliert, beispielsweise durch den Versuch, auf eine nicht existierende Ressource wie `\\wrong-folder` zuzugreifen, was das System dazu veranlasste, auf LLMNR/NBT-NS zurückzugreifen und eine Broadcast-Anfrage zu senden. Responder poisonte diese Anfrage, indem es sich als der angefragte Host ausgab, und forderte NTLM-Authentifizierung an, wodurch der NTLMv2-Hash des Basisbenutzers maxmustermann erbeutet wurde.In einer sicheren Domänencontroller-Konfiguration wären NTLMv1 und NTLMv2 jedoch deaktiviert. Aufgrund dieses Konfigurationsfehlers auf dem Domänencontroller konnte der schwache Hash ausgenutzt und offline entschlüsselt werden. Anschließend konnte dieser Hash mit Tools wie Hashcat geknackt werden, wodurch das Passwort „Datelm25#“ rekonstruiert werden konnte. Bei einem 8-Zeichen-Passwort wie diesem hätte das Knacken mit einer RTX 4090 etwa 10–60 Minuten gedauert. Würde jedoch ein wirklich zufälliges Passwort mit 12 Zeichen verwendet werden, könnte das Knacken mehrere Tausend bis Millionen Jahre dauern und Offline-Cracking damit praktisch unmöglich machen. Genau das ermöglichte den Einstieg in die Domäne als normaler Benutzer. Diese Technik ist besonders effektiv in Windows-Netzwerken, da sie auf standardmäßigen Protokollen basiert und keine hohen Rechte erfordert, aber zu erheblichen Kompromittierungen führen kann, wenn sie nicht durch Gruppenrichtlinien deaktiviert wird.
 
 ![starting-responder](img/Macuha-bilder/Responder.jpg)
 
@@ -170,7 +170,7 @@ Der Angreifer forderte mit einem standardmäßigen Kerberos-Request ein Service 
 
 ![requesting-kerberos](img/Macuha-bilder/getting-kerebos-Ticket.jpg)
 
-Nachdem wir das Ticket erhalten haben, wird es gespeichert und Hashcat erneut verwendet, um es offline zu knacken.
+Nachdem das Ticket erhalten wurde, wurde es gespeichert und anschließend erneut mit Hashcat offline geknackt.
 
 ![cracking-kerebos](img/Macuha-bilder/cracking-kerebos.jpg)
 
@@ -230,9 +230,10 @@ Nach dem Download wurde der Payload auf der Windows-10-Maschine ausgeführt. Die
 ![running-malware](img/Macuha-bilder/running-malware.jpg)
 
 
-Meterpreter bietet eine Vielzahl von Post-Exploitation-Tools, darunter:
+Meterpreter bietet eine Vielzahl von Post-Exploitation-Tools,in der folgenden Tabelle **Meterpreter-Exploit-tools**:
 
 
+**Meterpreter-Exploit-tools**
 | Kategorie                    | Beschreibung                                                                 |
 |-----------------------------|-------------------------------------------------------------------------------|
 | Systeminformationen          | Auslesen von Benutzername, Betriebssystem und weiteren Systemdetails         |
